@@ -160,6 +160,22 @@ body{padding-bottom:0!important}
 #rs-list{align-content:start}
 .faq summary::after,.c-faq summary::after,.rs-q summary::after{display:none}
 </style>
+<style id="nav-res-css">
+.nav-dd{position:relative;display:flex;align-items:center;height:100%}
+.nav-dd-t{display:flex;align-items:center;gap:5px}
+.nav-dd-m{position:absolute;top:calc(100% + 14px);left:50%;transform:translate(-50%,6px);display:grid;grid-template-columns:repeat(3,200px);gap:4px 18px;padding:18px 20px 16px;background:rgba(10,20,32,.98);border:1px solid #2a3d55;border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,.55);opacity:0;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s;z-index:250;text-transform:none;letter-spacing:0}
+.nav-dd-m::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.nav-dd:hover .nav-dd-m,.nav-dd:focus-within .nav-dd-m{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.nav-dd-g{font-family:"Orbitron",system-ui,sans-serif;font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#f0883e;margin:0 0 6px 8px}
+.nav-dd-c a{display:block;padding:8px;border-radius:8px;color:#e2e8f0}
+.nav-dd-c a:hover,.nav-dd-c a:focus{background:#1a2436;color:#22d3c8}
+.nav-dd-c b{display:block;font-family:"Inter",system-ui,sans-serif;font-size:13.5px;font-weight:600;letter-spacing:0;text-transform:none}
+.nav-dd-c small{display:block;font-family:"Inter",system-ui,sans-serif;font-size:11.5px;color:#94a3b8;font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px}
+.mm-sub{display:grid;grid-template-columns:1fr 1fr;gap:0 12px;padding:4px 4px 10px;border-bottom:1px solid #2a3d55}
+.mm-sub a{border:none!important;padding:9px 0!important;font-family:"Inter",system-ui,sans-serif!important;font-size:13.5px!important;font-weight:500!important;letter-spacing:0!important;text-transform:none!important;color:#94a3b8}
+</style>
+<meta property="og:site_name" content="StormSafe Steel">
+<meta property="og:locale" content="en_US">
 </head>
 <body>
 
