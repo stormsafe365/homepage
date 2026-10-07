@@ -525,7 +525,22 @@ footer{background:#03080f;padding:64px 0 28px;border-top:1px solid var(--border)
 .rs-display{font-family:Orbitron,system-ui,sans-serif;font-weight:900;font-size:clamp(30px,5.6vw,58px);line-height:1.03;text-transform:uppercase;margin:0 0 16px}
 .rs-display span{display:block;color:#22d3c8}
 .rs-lede{color:#94a3b8;max-width:600px;line-height:1.65;margin:0 0 34px;font-size:clamp(15px,2vw,17px)}
-.rs-jumps{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr))}
+.rs-feat{display:grid;gap:14px;margin-bottom:14px}@media(min-width:760px){.rs-feat{grid-template-columns:1fr 1fr}}
+.rs-f{position:relative;display:flex;flex-direction:column;gap:8px;padding:24px 24px 22px;border-radius:14px;border:1px solid #2a3d55;background:linear-gradient(150deg,rgba(34,211,200,.12),#111827 60%);text-decoration:none;color:#e2e8f0;transition:border-color .25s,transform .25s}
+.rs-f:hover{border-color:#22d3c8;transform:translateY(-3px)}
+.rs-f-k{font-family:Orbitron,system-ui,sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#8dc63f}
+.rs-f>i{font-size:34px;color:#22d3c8}
+.rs-f b{font-family:Orbitron,system-ui,sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:.03em}
+.rs-f small{font-size:14px;color:#94a3b8;line-height:1.55;max-width:420px}
+.rs-f em{font-style:normal;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#22d3c8;margin-top:4px}
+.rs-cols{display:grid;gap:14px}@media(min-width:760px){.rs-cols{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.rs-col{background:#111827;border:1px solid #2a3d55;border-radius:14px;padding:16px 12px 10px}
+.rs-g{font-family:Orbitron,system-ui,sans-serif;font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#f0883e;margin:0 8px 8px;padding-bottom:10px;border-bottom:1px solid #1e2d42}
+.rs-col a{display:flex;gap:12px;align-items:center;padding:10px 8px;border-radius:10px;text-decoration:none;color:#e2e8f0;transition:background .2s}
+.rs-col a:hover{background:#1a2436}.rs-col a:hover b{color:#22d3c8}
+.rs-col i{flex:none;width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#22d3c8;background:rgba(34,211,200,.1)}
+.rs-col b{display:block;font-size:14.5px;font-weight:600;transition:color .2s}
+.rs-col small{font-size:12.5px;color:#94a3b8}
 .rs-jump{display:flex;gap:12px;align-items:center;background:#111827;border:1px solid #2a3d55;border-radius:12px;padding:16px;cursor:pointer;text-align:left;color:#e2e8f0;font:inherit;transition:border-color .2s,transform .2s,background .2s}
 .rs-jump:hover{border-color:#22d3c8;transform:translateY(-2px);background:#14203a}
 .rs-jump i{flex:none;width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#22d3c8;background:rgba(34,211,200,.1)}
@@ -622,23 +637,60 @@ body{padding-bottom:0!important}
 .ss-chrome .mob-cta-sub{font-family:var(--b);font-size:10px;font-weight:500;opacity:.75;letter-spacing:.02em;text-transform:none}
 @media(max-width:767px){body{padding-bottom:64px!important}}
 </style>
+<style id="nav-res-css">
+.nav-dd{position:relative;display:flex;align-items:center;height:100%}
+.nav-dd-t{display:flex;align-items:center;gap:5px}
+.nav-dd-m{position:absolute;top:calc(100% + 14px);left:50%;transform:translate(-50%,6px);display:grid;grid-template-columns:repeat(3,200px);gap:4px 18px;padding:18px 20px 16px;background:rgba(10,20,32,.98);border:1px solid #2a3d55;border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,.55);opacity:0;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s;z-index:250;text-transform:none;letter-spacing:0}
+.nav-dd-m::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.nav-dd:hover .nav-dd-m,.nav-dd:focus-within .nav-dd-m{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.nav-dd-g{font-family:"Orbitron",system-ui,sans-serif;font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#f0883e;margin:0 0 6px 8px}
+.nav-dd-c a{display:block;padding:8px;border-radius:8px;color:#e2e8f0}
+.nav-dd-c a:hover,.nav-dd-c a:focus{background:#1a2436;color:#22d3c8}
+.nav-dd-c b{display:block;font-family:"Inter",system-ui,sans-serif;font-size:13.5px;font-weight:600;letter-spacing:0;text-transform:none}
+.nav-dd-c small{display:block;font-family:"Inter",system-ui,sans-serif;font-size:11.5px;color:#94a3b8;font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px}
+.mm-sub{display:grid;grid-template-columns:1fr 1fr;gap:0 12px;padding:4px 4px 10px;border-bottom:1px solid #2a3d55}
+.mm-sub a{border:none!important;padding:9px 0!important;font-family:"Inter",system-ui,sans-serif!important;font-size:13.5px!important;font-weight:500!important;letter-spacing:0!important;text-transform:none!important;color:#94a3b8}
+</style>
+<meta property="og:site_name" content="StormSafe Steel">
+<meta property="og:url" content="https://www.stormsafesteel.com/resources">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:title" content="Steel Building FAQ &amp; Resources | StormSafe Steel">
+<meta name="twitter:description" content="Estimate your steel building, see what drives the cost, model financing, and get straight answers on wind ratings, slabs, permits, kits and warranty.">
+<meta name="twitter:image" content="https://www.stormsafesteel.com/img/buildings/cu-54x52-2.JPG">
 </head>
 <body>
 <div class="ss-chrome">
+<a href="https://www.stormsafesteel.com/about-us" target="_parent" onclick="ssCloseMenu()">About</a>
+  <a href="https://www.stormsafesteel.com/blog" target="_parent" onclick="ssCloseMenu()">Blog</a>
+  <a href="https://www.stormsafesteel.com/contact" target="_parent" onclick="ssCloseMenu()">Contact</a>
+  <a href="tel:5617715555" class="mm-cta" onclick="ssCloseMenu()">Call 561-771-5555</a>
+</div>
 </div>
 <header class="rs-hero">
   <div class="rs-wrap">
     <h1 class="rs-kw">Steel Building FAQ &amp; Resources</h1>
     <p class="rs-display">Run The Numbers.<span>Get Straight Answers.</span></p>
     <p class="rs-lede">Estimate your building, see what drives the cost, model a payment, and get answers to the questions every Florida buyer asks.</p>
-    <div class="rs-jumps">
-      <button type="button" class="rs-jump" data-tab="0"><i class="ti ti-calculator" aria-hidden="true"></i><span><b>Estimator</b><small>Starting price for your size</small></span></button>
-      <button type="button" class="rs-jump" data-tab="1"><i class="ti ti-chart-bar" aria-hidden="true"></i><span><b>Pricing Factors</b><small>What drives your cost</small></span></button>
-      <button type="button" class="rs-jump" data-tab="2"><i class="ti ti-building-bank" aria-hidden="true"></i><span><b>Financing</b><small>Model a monthly payment</small></span></button>
-      <button type="button" class="rs-jump" data-tab="3"><i class="ti ti-list-check" aria-hidden="true"></i><span><b>Checklist</b><small>Idea to install, step by step</small></span></button>
-      <a class="rs-jump" href="https://www.stormsafesteel.com/size-planner" target="_parent" style="text-decoration:none"><i class="ti ti-layout-grid" aria-hidden="true"></i><span><b>Plan Your Building</b><small>Will it fit? Check it to scale</small></span></a>
-      <a class="rs-jump" href="https://www.stormsafesteel.com/component-visualizer" target="_parent" style="text-decoration:none"><i class="ti ti-box" aria-hidden="true"></i><span><b>Component Visualizer</b><small>Every part, in 3D</small></span></a>
-      <button type="button" class="rs-jump" data-tab="faq"><i class="ti ti-help-circle" aria-hidden="true"></i><span><b>FAQ</b><small>16 straight answers</small></span></button>
+    <div class="rs-feat">
+      <a class="rs-f" href="https://www.stormsafesteel.com/size-planner" target="_parent"><span class="rs-f-k">Interactive tool</span><i class="ti ti-layout-grid" aria-hidden="true"></i><b>Plan Your Building</b><small>Lay out your cars, boats and RVs to scale and see if it all fits.</small><em>Open the planner →</em></a>
+      <a class="rs-f" href="https://www.stormsafesteel.com/component-visualizer" target="_parent"><span class="rs-f-k">Interactive tool</span><i class="ti ti-box" aria-hidden="true"></i><b>Component Visualizer</b><small>Tap any part of a steel building in 3D to see what it does.</small><em>Explore in 3D →</em></a>
+    </div>
+    <div class="rs-cols">
+      <div class="rs-col"><div class="rs-g">Plan</div>
+        <a href="https://www.stormsafesteel.com/size-guide" target="_parent"><i class="ti ti-ruler-2"></i><span><b>Size Guide</b><small>What size do you need?</small></span></a>
+        <a href="https://www.stormsafesteel.com/compare" target="_parent"><i class="ti ti-columns-3"></i><span><b>Compare Buildings</b><small>Three builds, side by side</small></span></a>
+        <a href="#plan" data-tab="0"><i class="ti ti-calculator"></i><span><b>Cost Estimator</b><small>Starting price, financing, checklist</small></span></a>
+      </div>
+      <div class="rs-col"><div class="rs-g">Learn</div>
+        <a href="https://www.stormsafesteel.com/buyers-guide" target="_parent"><i class="ti ti-route"></i><span><b>Buyer’s Guide</b><small>From idea to installed</small></span></a>
+        <a href="https://www.stormsafesteel.com/permitting" target="_parent"><i class="ti ti-file-certificate"></i><span><b>Permitting</b><small>What your county requires</small></span></a>
+        <a href="https://www.stormsafesteel.com/blog" target="_parent"><i class="ti ti-article"></i><span><b>Blog</b><small>Guides &amp; news</small></span></a>
+      </div>
+      <div class="rs-col"><div class="rs-g">Trust</div>
+        <a href="#faq" data-tab="faq"><i class="ti ti-help-circle"></i><span><b>FAQ</b><small>16 straight answers</small></span></a>
+        <a href="https://www.stormsafesteel.com/warranty" target="_parent"><i class="ti ti-shield-check"></i><span><b>Warranty</b><small>Lifetime + 20-yr rust</small></span></a>
+        <a href="https://www.stormsafesteel.com/gallery" target="_parent"><i class="ti ti-photo"></i><span><b>Gallery</b><small>Real builds</small></span></a>
+      </div>
     </div>
   </div>
 </header>
