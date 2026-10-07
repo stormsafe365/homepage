@@ -193,6 +193,25 @@ footer{background:var(--dark-2);border-top:1px solid var(--border-vis);padding:4
 .fr small{display:block;color:var(--muted);font-size:11.5px}
 .pi.tall{outline:2px dashed var(--orange);outline-offset:3px;border-radius:3px}
 .dr.toohigh .bar{box-shadow:0 0 0 2px #f0883e}
+.ph em.n{font-style:normal;color:#08121d;background:var(--lime);border-radius:4px;padding:2px 6px;margin-right:9px;font-size:9px;letter-spacing:.06em}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.row3 .inp{padding:10px 9px;text-align:center}
+.fitbanner{margin:0 6px 14px;border-radius:12px;border:1px solid var(--border-vis);background:var(--dark);overflow:hidden;transition:border-color .3s,background .3s}
+.fb-head{display:flex;gap:14px;align-items:center;padding:14px 16px}
+.fb-head>i{flex:none;width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;background:var(--dark-3);color:var(--sub)}
+.fb-head b{display:block;font-family:var(--h);font-size:17px;letter-spacing:.06em;text-transform:uppercase}
+.fb-head span{font-size:13px;color:var(--sub)}
+.fitbanner.fb-ok{border-color:var(--lime);background:linear-gradient(90deg,rgba(141,198,63,.14),var(--dark) 70%)}
+.fitbanner.fb-ok .fb-head>i{background:var(--lime);color:#08121d}.fitbanner.fb-ok b{color:var(--lime)}
+.fitbanner.fb-bad{border-color:var(--orange);background:linear-gradient(90deg,rgba(240,136,62,.16),var(--dark) 70%)}
+.fitbanner.fb-bad .fb-head>i{background:var(--orange);color:#08121d}.fitbanner.fb-bad b{color:var(--orange)}
+.fitbanner .fitlist{padding:0 12px 12px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.fitbanner .fitlist:empty{display:none}
+.tool{align-items:center}
+.tgrp{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.selbar{gap:8px;align-items:center;flex-wrap:wrap;justify-content:center;padding:6px 8px;border:1px solid var(--teal);border-radius:10px;background:rgba(34,211,200,.06)}
+.selname{font-family:var(--h);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);padding:0 6px}
+.dl{flex-wrap:wrap}.dl .warn{flex-basis:100%;color:var(--orange);font-size:12px;padding-left:20px}
 .msg{min-height:18px;font-size:12px;color:var(--orange);margin-top:6px}
 /* right column */
 .fit .big{font-family:var(--h);font-weight:900;font-size:34px;line-height:1;margin:6px 0 4px}
@@ -240,15 +259,16 @@ body{padding-bottom:0!important}
 <section class="pl" aria-label="Size planner">
   <div class="pl-grid">
     <div class="panel">
-      <div class="ph">Building <small id="area-top">1,120 SQ FT</small></div>
+      <div class="ph"><span><em class="n">01</em>Building</span><small id="area-top">1,120 SQ FT</small></div>
       <div class="pb">
-        <div class="row2">
-          <label><span class="lbl">Width (ft)</span><input class="inp" type="number" id="bw" value="28" min="10" max="80" inputmode="numeric"></label>
-          <label><span class="lbl">Length (ft)</span><input class="inp" type="number" id="bl" value="40" min="10" max="200" inputmode="numeric"></label>
+        <div class="row3">
+          <label><span class="lbl">Width</span><input class="inp" type="number" id="bw" value="28" min="10" max="80" inputmode="numeric"></label>
+          <label><span class="lbl">Length</span><input class="inp" type="number" id="bl" value="40" min="10" max="200" inputmode="numeric"></label>
+        <label><span class="lbl">Wall ht</span><input class="inp" type="number" id="bh" value="12" min="6" max="20" inputmode="numeric"></label>
         </div>
-        <label style="display:block;margin-top:10px"><span class="lbl">Wall height (ft) · your clearance</span><input class="inp" type="number" id="bh" value="12" min="6" max="20" inputmode="numeric"></label>
+        <p class="fine" style="margin-top:8px">Feet. Wall height = your clearance inside.</p>
       </div>
-      <div class="ph" style="border-top:1px solid var(--border)">Add Items <small>tap to add</small></div>
+      <div class="ph" style="border-top:1px solid var(--border)"><span><em class="n">02</em>Add Items</span><small>tap to add</small></div>
       <div class="tabs" id="tabs" role="group" aria-label="Item categories"></div>
       <div class="cat" id="cat"></div>
     </div>
@@ -260,27 +280,31 @@ body{padding-bottom:0!important}
         <div class="st"><span>Utilization</span><b id="s-u">0%</b></div>
         <div class="overlap" id="ovl"><i></i>Items overlapping</div>
       </div>
+      <div class="fitbanner" id="fitbanner" aria-live="polite">
+        <div class="fb-head"><i class="ti ti-ruler-2" id="fb-icon"></i><div><b id="fb-title">Will it fit?</b><span id="fb-sub">Add items to check floor, height and door clearance.</span></div></div>
+        <div class="fitlist" id="fitlist"></div>
+      </div>
       <div class="stage" id="stage">
         <div class="dimt" id="dimt">← 28′ wide →</div>
         <div class="frow"><div class="dims" id="dims">← 40′ long →</div><div id="floor" class="grid"><div class="empty" id="empty"><span><b>Start here</b>Tap a car, truck, boat or RV<br>on the left to drop it in.</span></div></div></div>
         <div class="dimb">Front</div>
       </div>
       <div class="tool">
-        <span class="selbar" id="selbar" style="gap:8px">
+        <span class="selbar" id="selbar"><span class="selname" id="selname"></span>
           <button type="button" class="tb" id="rot"><i class="ti ti-rotate-clockwise-2"></i>Rotate</button>
           <button type="button" class="tb danger" id="del"><i class="ti ti-trash"></i>Remove</button>
           <label class="tb" style="cursor:default">Height <input type="number" id="ih" step="0.5" min="0.5" max="20" style="width:58px;background:var(--dark-3);border:1px solid var(--border-vis);border-radius:5px;color:var(--text);font:inherit;padding:3px 6px">ft</label>
         </span>
-        <button type="button" class="tb" id="undo"><i class="ti ti-arrow-back-up"></i>Undo</button>
+        <span class="tgrp"><button type="button" class="tb" id="undo"><i class="ti ti-arrow-back-up"></i>Undo</button>
         <button type="button" class="tb danger" id="clr"><i class="ti ti-eraser"></i>Clear</button>
         <button type="button" class="tb on" id="grd"><i class="ti ti-grid-dots"></i>Grid</button>
-        <button type="button" class="tb" id="prt"><i class="ti ti-printer"></i>Print</button>
+        <button type="button" class="tb" id="prt"><i class="ti ti-printer"></i>Print</button></span>
       </div>
     </div>
 
     <div class="right" style="display:grid;gap:14px">
       <div class="panel">
-        <div class="ph">Doors <small>no overlaps</small></div>
+        <div class="ph"><span><em class="n">03</em>Doors</span><small>no overlaps</small></div>
         <div class="pb">
           <div class="row2">
             <label><span class="lbl">Type</span><select class="sel" id="dt"><option value="roll-10">Roll-up 10′</option><option value="roll-8">Roll-up 8′</option><option value="roll-9">Roll-up 9′</option><option value="roll-12">Roll-up 12′</option><option value="roll-14">Roll-up 14′</option><option value="roll-16">Roll-up 16′</option><option value="walk-3">Walk door 3′</option></select></label>
@@ -293,20 +317,15 @@ body{padding-bottom:0!important}
           <p class="fine">Drag a door along its wall. Doors can't overlap or crowd each other.</p>
         </div>
       </div>
-      <div class="panel">
-        <div class="ph">Will It Fit? <small id="fitsum"></small></div>
-        <div class="pb"><div class="fitlist" id="fitlist"><p class="fine" style="margin:0">Add items to check height and door clearance.</p></div>
-        <p class="fine">Heights are typical. Select an item to set yours (boat with a T-top, lifted truck, roof rack).</p></div>
-      </div>
       <div class="panel fit">
-        <div class="ph">Find My Size</div>
+        <div class="ph"><span><em class="n">04</em>Find My Size</span></div>
         <div class="pb" id="fit">
           <p>Add what you're storing, arrange it how you'd park it, then tap below.</p>
           <button type="button" class="cta l" id="findBtn"><i class="ti ti-ruler-measure"></i>Find my size</button>
         </div>
       </div>
       <div class="panel">
-        <div class="ph">Send My Layout</div>
+        <div class="ph"><span><em class="n">05</em>Send My Layout</span></div>
         <div class="pb">
           <p style="font-size:13px;color:var(--sub);line-height:1.55">Send this exact layout to a building specialist with your quote request. You'll get a quote and a free 3D rendering.</p>
           <button type="button" class="cta p" id="sendOpen">Send my layout →</button>
@@ -1573,18 +1592,22 @@ function render(){var sc=scale(),F=$('floor'),W=S.w*sc,H=S.l*sc;F.style.width=W+
   var used=S.items.reduce(function(s,i){var D=dims(i);return s+D[0]*D[1];},0),tot=S.w*S.l,u=tot?Math.round(used/tot*100):0;
   $('s-n').textContent=S.items.length;$('s-a').textContent=Math.round(used)+' sq ft';var ue=$('s-u');ue.textContent=u+'%';ue.className=u>75?'warn':u>=25?'good':'';
   $('ovl').classList.toggle('on',S.items.some(function(i){return overlaps(i,S.items);}));
-  $('selbar').classList.toggle('on',!!S.sel);$('undo').disabled=!S.hist.length;$('clr').disabled=!S.items.length;$('grd').classList.toggle('on',S.grid);
+  $('selbar').classList.toggle('on',!!S.sel);var sit=S.items.find(function(i){return i.id===S.sel;});if(sit)$('selname').textContent=CATALOG.find(function(c){return c.id===sit.vehicleId;}).name;$('undo').disabled=!S.hist.length;$('clr').disabled=!S.items.length;$('grd').classList.toggle('on',S.grid);
   $('bw').value=S.w;$('bl').value=S.l;$('bh').value=S.hgt;var si=S.items.find(function(i){return i.id===S.sel;});if(si&&document.activeElement!==$('ih'))$('ih').value=ht(si);renderDoorList();renderFit();save();}
-function renderDoorList(){$('doors').innerHTML=S.doors.map(function(d){return '<div class="dl'+(d.id===S.selDoor?' sel':'')+'" data-id="'+d.id+'"><i style="background:'+(d.kind==='roll'?'#22d3c8':'#f0883e')+'"></i>'+(d.kind==='roll'?d.size+'′×'+d.dh+'′ roll-up':'3′ walk door')+' · '+d.wall+(doorTooTall(d)?' <b style="color:var(--orange)">too tall for '+S.hgt+'′ walls</b>':'')+'<button type="button" class="x" aria-label="Remove door" data-x="'+d.id+'">×</button></div>';}).join('')||'<p class="fine">No doors yet.</p>';
+function renderDoorList(){$('doors').innerHTML=S.doors.map(function(d){return '<div class="dl'+(d.id===S.selDoor?' sel':'')+'" data-id="'+d.id+'"><i style="background:'+(d.kind==='roll'?'#22d3c8':'#f0883e')+'"></i>'+(d.kind==='roll'?d.size+'′×'+d.dh+'′ roll-up':'3′ walk door')+' · '+d.wall+(doorTooTall(d)?'<span class="warn">Too tall for '+S.hgt+'′ walls (max '+maxDoorH(d.wall)+'′)</span>':'')+'<button type="button" class="x" aria-label="Remove door" data-x="'+d.id+'">×</button></div>';}).join('')||'<p class="fine">No doors yet.</p>';
   $('doors').querySelectorAll('.dl').forEach(function(r){r.onclick=function(e){if(e.target.dataset.x){push();S.doors=S.doors.filter(function(d){return d.id!==e.target.dataset.x;});if(S.selDoor===e.target.dataset.x)S.selDoor=null;render();return;}S.selDoor=r.dataset.id;S.sel=null;render();};});}
-function renderFit(){var L=$('fitlist');if(!S.items.length){L.innerHTML='<p class="fine" style="margin:0">Add items to check height and door clearance.</p>';$('fitsum').textContent='';return;}
+function renderFit(){var L=$('fitlist'),B=$('fitbanner');if(!S.items.length){L.innerHTML='';B.className='fitbanner';$('fb-icon').className='ti ti-ruler-2';$('fb-title').textContent='Will it fit?';$('fb-sub').textContent='Add items to check floor, height and door clearance.';return;}
   var rolls=S.doors.filter(function(d){return d.kind==='roll'&&!doorTooTall(d);}),bad=0;
   L.innerHTML=S.items.map(function(it){var v=CATALOG.find(function(c){return c.id===it.vehicleId;}),h=ht(it),drive=v.cat!=='Games',w=Math.min(v.w,v.l),probs=[];
     if(h>S.hgt)probs.push('taller than your '+S.hgt+'′ walls');
     if(drive){var through=rolls.some(function(d){return d.size>=w+1&&d.dh>=h+0.5;});if(!through)probs.push(rolls.length?'no door big enough (needs '+Math.ceil(w+1)+'′ wide × '+Math.ceil(h+0.5)+'′ tall)':'no roll-up door to bring it in');}
     if(probs.length)bad++;
     return '<div class="fr '+(probs.length?'bad':'ok')+'"><i class="ti '+(probs.length?'ti-alert-triangle':'ti-circle-check')+'"></i><span>'+v.name+' · '+fmtH(h)+' tall<small>'+(probs.length?probs.join('; '):'fits under '+S.hgt+'′ walls'+(drive?' and through a door':''))+'</small></span></div>';}).join('');
-  var fs=$('fitsum');fs.textContent=bad?bad+' issue'+(bad>1?'s':''):'all fit';fs.style.color=bad?'var(--orange)':'var(--lime)';}
+  var ov=S.items.some(function(i){return overlaps(i,S.items);});if(ov)bad++;
+  B.className='fitbanner '+(bad?'fb-bad':'fb-ok');$('fb-icon').className='ti '+(bad?'ti-alert-triangle':'ti-circle-check');
+  $('fb-title').textContent=bad?bad+' issue'+(bad>1?'s':'')+' to fix':'Everything fits';
+  $('fb-sub').textContent=bad?(ov?'Some items overlap. ':'')+'See below, or tap Find my size.':'Under '+S.hgt+'′ walls, through your doors, no overlaps.';
+  if(!bad)L.innerHTML='';}
 /* ── actions ── */
 function addItem(vid){var v=CATALOG.find(function(c){return c.id===vid;});push();var it={id:nid++,vehicleId:vid,rotation:0,x:0,y:0},D=dims(it),placed=false;
   for(var y=1;y<=S.l-D[1]&&!placed;y+=0.5)for(var x=1;x<=S.w-D[0]&&!placed;x+=0.5){it.x=x;it.y=y;if(!overlaps(it,S.items))placed=true;}
