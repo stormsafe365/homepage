@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Steel Building Components in 3D | StormSafe Steel</title>
+<meta name="description" content="See every part of a steel building in 3D: anchors, legs, trusses, knee braces, girts, purlins, panels, trim and doors. Switch between structural and sheeted.">
+<meta name="theme-color" content="#08121d">
+<link rel="canonical" href="https://www.stormsafesteel.com/component-visualizer">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Steel Building Components in 3D | StormSafe Steel">
+<meta property="og:description" content="See every part of a steel building in 3D: anchors, legs, trusses, knee braces, girts, purlins, panels, trim and doors. Switch between structural and sheeted.">
+<meta property="og:url" content="https://www.stormsafesteel.com/component-visualizer">
+<meta property="og:image" content="https://www.stormsafesteel.com/img/buildings/cu-54x52-2.JPG">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Steel Building Components in 3D | StormSafe Steel">
+<meta name="twitter:description" content="See every part of a steel building in 3D: anchors, legs, trusses, knee braces, girts, purlins, panels, trim and doors. Switch between structural and sheeted.">
+<meta name="twitter:image" content="https://www.stormsafesteel.com/img/buildings/cu-54x52-2.JPG">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.stormsafesteel.com/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://www.stormsafesteel.com/resources"},{"@type":"ListItem","position":3,"name":"Component Visualizer","item":"https://www.stormsafesteel.com/component-visualizer"}]},{"@type":"DefinedTermSet","name":"Steel building components","hasDefinedTerm":[{"@type":"DefinedTerm","name":"Anchors","description":"Hold the building down against wind uplift. On concrete, a wedge anchor goes within 6″ of each side-wall post. With no slab, 30″ helical earth augers bolt through the base rail."},{"@type":"DefinedTerm","name":"Base Rail","description":"Ties the posts into one footprint and gives the anchors something to bolt through."},{"@type":"DefinedTerm","name":"Legs","description":"Carry the roof down to the ground and set your wall height. Legs scale with the span: single posts up to 30′ wide, double posts 31′–51′, laced ladder legs at 52′ and up."},{"@type":"DefinedTerm","name":"Roof Bows & Trusses","description":"Carry the roof across the open span with no posts in the middle. Up to 24′ wide it’s a bow (rafters, no web). From 25′ up it’s a truss, and the truss gets heavier as the building gets wider."},{"@type":"DefinedTerm","name":"Collar Tie","description":"Stiffens the peak of a bow frame. Truss frames don’t need it; the truss web does that job."},{"@type":"DefinedTerm","name":"Knee Braces","description":"Lock the corner where wall meets roof so the frame stays square when wind loads the wall. 24″ minimum on posts up to 7′, 48″ minimum on taller posts."},{"@type":"DefinedTerm","name":"Girts","description":"What your wall panels screw to. They also tie the posts together sideways."},{"@type":"DefinedTerm","name":"Purlins","description":"What your roof panels screw to. They spread the roof load from frame to frame."},{"@type":"DefinedTerm","name":"Ridge","description":"Ties every frame’s peak together down the length of the building."},{"@type":"DefinedTerm","name":"End-Wall Framing","description":"Frame the gable end so it can be sheeted and carry its own wind load."},{"@type":"DefinedTerm","name":"Framed Opening","description":"Reinforces the cut in the wall. Every roll-up gets a 12-gauge post on each side; side-wall roll-ups up to 16′ wide get a structural header."},{"@type":"DefinedTerm","name":"Roll-Up Door","description":"Your vehicle and equipment door. In coastal impact counties, doors are Hi-Impact rated."},{"@type":"DefinedTerm","name":"Walk-In Door","description":"Everyday people access without opening the big door."},{"@type":"DefinedTerm","name":"Window","description":"Light and air. Hi-Impact windows are specified in coastal impact counties."},{"@type":"DefinedTerm","name":"Roof Panels","description":"Keeps the weather out. Ribbed galvanized steel; vertical roofs run the ribs peak-to-eave so rain sheds straight off."},{"@type":"DefinedTerm","name":"Side Panels","description":"Enclose the building and help it stand up to wind. Ribbed galvanized steel."},{"@type":"DefinedTerm","name":"End Panels","description":"Close in the gable ends, around your doors."},{"@type":"DefinedTerm","name":"Wainscot","description":"A two-tone look, and a lower band that’s quick to swap if it ever gets dinged."},{"@type":"DefinedTerm","name":"Ridge Cap","description":"Seals the seam where the two roof planes meet."},{"@type":"DefinedTerm","name":"Eave & Rake Trim","description":"Finishes and seals the roof edges and gives the building its crisp outline."},{"@type":"DefinedTerm","name":"Corner Trim","description":"Covers and seals the corner where side and end panels meet."},{"@type":"DefinedTerm","name":"Opening Trim","description":"Finishes the cut panel edges around openings so water and pests stay out."}]}]}</script>
+<style>
+:root{
+  --teal:#09d6dc;--teal-dim:#07bcc1;--teal-glow:rgba(9,214,220,.10);
+  --dark:#08121d;--dark-2:#111827;--dark-3:#1a2436;--dark-4:#1f2d42;
+  --border:#1e2d42;--border-vis:#2a3d55;
+  --text:#e2e8f0;--sub:#94a3b8;--muted:#64748b;
+  --over:#f0883e;--lime:#8dc63f;--over-zone:rgba(240,136,62,.6);
+  --h:"Orbitron",system-ui,sans-serif;--b:"Inter",system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--dark);color:var(--text);font-family:var(--b);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,select{font-family:inherit}
+:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+nav.top{position:sticky;top:0;z-index:200;background:rgba(8,18,29,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border-vis);padding:0 16px;display:flex;align-items:center;justify-content:space-between;height:56px}
+@media(min-width:768px){nav.top{padding:0 32px;height:60px}}
+.nav-logo{font-family:var(--h);font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+.nav-logo span{color:var(--teal)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-phone{display:none;font-weight:600;font-size:13px;color:var(--teal)}
+@media(min-width:768px){.nav-phone{display:inline}}
+.nav-links{display:none;align-items:center;gap:24px;font-size:12px;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+@media(min-width:900px){.nav-links{display:flex}}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{display:none;background:var(--teal);color:#08121d;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:9px 16px}
+@media(min-width:900px){.nav-cta{display:inline-block}}
+.ctas{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:15px 20px;min-height:52px;flex:1 1 200px;transition:all .2s}
+.btn-primary{background:var(--teal);color:#08121d}
+.btn-primary:hover{background:var(--teal-dim)}
+.btn-secondary{border:1px solid var(--border-vis);color:var(--text)}
+.btn-secondary:hover{border-color:var(--teal);color:var(--teal)}
+body{padding-bottom:64px}
+@media(min-width:768px){body{padding-bottom:0}}
+.nav-menu-btn{background:none;border:1px solid var(--border-vis);color:var(--text);width:38px;height:38px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+@media(min-width:900px){.nav-menu-btn{display:none}}
+.mobile-menu{position:fixed;inset:56px 0 0 0;z-index:190;background:var(--dark);padding:8px 20px 28px;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column;overflow-y:auto}
+.mobile-menu.open{transform:none}
+.mobile-menu a{padding:18px 4px;border-bottom:1px solid var(--border-vis);font-family:var(--h);font-size:14px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.mobile-menu .mm-cta{background:var(--teal);color:#08121d;text-align:center;margin-top:20px;border:none}
+@media(min-width:900px){.mobile-menu{display:none}}
+section.block{padding:64px 16px}
+@media(min-width:768px){section.block{padding:104px 32px}}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-header{margin-bottom:36px}
+.section-eyebrow{font-weight:600;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--over);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:"";width:24px;height:1px;background:var(--over)}
+.h2{font-family:var(--h);font-weight:900;font-size:clamp(28px,5vw,48px);text-transform:uppercase;line-height:1.04;margin-bottom:16px}
+.h2 .teal{color:var(--teal)}
+.sub{font-size:15.5px;color:var(--sub);max-width:640px;line-height:1.65}
+.tl{color:var(--teal);font-weight:600}
+.ctas.center{justify-content:center;max-width:520px;margin:0 auto}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--ri,0)*80ms)}
+.reveal.in{opacity:1;transform:none}
+.bigcta-inner{position:relative;max-width:720px;margin:0 auto}
+.bigcta-eyebrow{font-weight:600;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--over);display:inline-block;margin-bottom:16px}
+.bigcta h2{font-family:var(--h);font-weight:900;font-size:clamp(30px,6vw,56px);text-transform:uppercase;line-height:1.02;margin-bottom:18px}
+.bigcta h2 .teal{color:var(--teal)}
+.bigcta p{font-size:16px;color:var(--sub);margin:0 auto 30px;max-width:520px;line-height:1.65}
+.bigcta .fine{font-size:11px;color:var(--muted);margin:22px auto 0}
+footer{background:var(--dark-2);border-top:1px solid var(--border-vis);padding:48px 20px 28px;font-size:13px;color:var(--sub)}
+.foot-grid{max-width:1200px;margin:0 auto;display:grid;gap:28px;grid-template-columns:1fr 1fr}
+@media(min-width:768px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+.foot-grid>div:first-child{grid-column:1/-1}
+@media(min-width:768px){.foot-grid>div:first-child{grid-column:auto}}
+.foot-grid h4{font-family:var(--h);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--text);margin-bottom:12px}
+.foot-grid a,.foot-grid span{display:block;padding:3px 0}
+.foot-grid a:hover{color:var(--teal)}
+.foot-grid .nav-logo{font-size:15px}
+.foot-grid .nav-logo span{display:inline;padding:0}
+.foot-grid .tag{margin-top:10px;max-width:280px;line-height:1.6}
+.copyright{max-width:1200px;margin:32px auto 0;padding-top:18px;border-top:1px solid var(--border);font-size:11px;color:var(--muted)}
+.mob-cta{position:fixed;bottom:0;left:0;right:0;z-index:150;display:grid;grid-template-columns:1fr 1.2fr;gap:1px;background:var(--border-vis);padding-bottom:env(safe-area-inset-bottom)}
+@media(min-width:768px){.mob-cta{display:none}}
+.mob-cta a{background:var(--dark);padding:10px 8px;text-align:center;font-family:var(--h);font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:58px}
+.mob-cta a.primary{background:var(--teal);color:#08121d}
+.mob-cta-sub{font-family:var(--b);font-size:10px;font-weight:500;opacity:.75;letter-spacing:.02em;text-transform:none}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none}}
+
+:root{--lime:#8dc63f;--orange:#f0883e;--camo:url(data:image/jpeg;base64,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)}
+.cv-hero{padding:44px 16px 28px;background:radial-gradient(ellipse 900px 420px at 85% 0%,rgba(34,211,200,.13),transparent 60%),linear-gradient(180deg,var(--dark-2),var(--dark));border-bottom:1px solid var(--border-vis)}
+@media(min-width:768px){.cv-hero{padding:64px 32px 36px}}
+.cv-hero .in{max-width:1320px;margin:0 auto}
+.kw{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.kw::before{content:"";width:28px;height:1px;background:var(--orange)}
+.display{font-family:var(--h);font-weight:900;font-size:clamp(28px,5vw,52px);line-height:1.03;text-transform:uppercase;margin-bottom:12px}
+.display span{color:var(--teal);display:block}
+.lede{color:var(--sub);max-width:620px;line-height:1.65}
+.cv{position:relative;isolation:isolate;padding:22px 12px 48px}
+.cv::before{content:"";position:absolute;inset:0;background-image:var(--camo);background-size:480px auto;opacity:.22;z-index:-1}
+@media(min-width:768px){.cv{padding:28px 24px 64px}}
+.cv-grid{max-width:1320px;margin:0 auto;display:grid;gap:14px}
+@media(min-width:1000px){.cv-grid{grid-template-columns:280px minmax(0,1fr)}}
+.panel{background:rgba(17,24,39,.94);border:1px solid var(--border-vis);border-radius:14px;overflow:hidden}
+.ph{font-family:var(--h);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);padding:13px 16px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between}
+.ph small{color:var(--muted);letter-spacing:.1em}
+.list{max-height:640px;overflow-y:auto;padding:6px 10px 14px}
+.list::-webkit-scrollbar{width:6px}.list::-webkit-scrollbar-thumb{background:var(--border-vis);border-radius:3px}
+.grp{font-family:var(--h);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);margin:14px 6px 6px}
+.ci{display:flex;align-items:center;gap:10px;width:100%;background:none;border:1px solid transparent;border-radius:8px;padding:9px 10px;color:var(--text);font:inherit;font-size:14px;font-weight:500;text-align:left;cursor:pointer;transition:background .15s,border-color .15s}
+.ci:hover{background:var(--dark-3)}
+.ci[aria-pressed="true"]{border-color:var(--lime);background:rgba(141,198,63,.1);color:var(--lime)}
+.ci i{width:8px;height:8px;border-radius:50%;flex:none;background:var(--border-vis)}
+.ci[data-layer=frame] i{background:#c3ccd6}.ci[data-layer=skin] i{background:var(--teal)}.ci[data-layer=open] i{background:var(--orange)}
+.ci.na{opacity:.4}
+.stage-panel{display:flex;flex-direction:column}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--border)}
+.seg{display:inline-flex;border:1px solid var(--border-vis);border-radius:999px;padding:3px;gap:3px;background:var(--dark)}
+.seg button{background:none;border:none;color:var(--sub);font-family:var(--h);font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:9px 14px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--teal);color:#08121d}
+.seg.w button[aria-pressed="true"]{background:var(--lime)}
+.stage{position:relative;height:min(64vh,620px);min-height:380px;background:radial-gradient(ellipse 70% 60% at 50% 55%,#12304a,var(--dark) 80%)}
+.stage canvas{display:block;width:100%;height:100%;touch-action:pan-y;cursor:grab}
+.stage canvas:active{cursor:grabbing}
+.hint{position:absolute;left:14px;bottom:12px;font-size:11.5px;color:var(--muted);pointer-events:none}
+.info{position:absolute;right:14px;top:14px;width:min(340px,calc(100% - 28px));background:rgba(8,18,29,.92);border:1px solid var(--lime);border-radius:12px;padding:16px 18px;backdrop-filter:blur(6px);transition:opacity .25s,transform .25s}
+.info.hide{opacity:0;transform:translateY(-6px);pointer-events:none}
+.info .g{font-family:var(--h);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange)}
+.info h2{font-family:var(--h);font-size:19px;font-weight:800;text-transform:uppercase;line-height:1.15;margin:6px 0 2px;color:var(--lime)}
+.info .aka{font-size:12px;color:var(--muted);margin-bottom:10px}
+.info dt{font-family:var(--h);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-top:10px}
+.info dd{font-size:13.5px;color:#cbd5e1;line-height:1.55;margin-top:3px}
+.info .x{position:absolute;top:10px;right:10px;background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer}
+@media(max-width:700px){.info{position:static;width:auto;margin:10px;border-radius:10px}.info.hide{display:none}.stage{height:440px;min-height:0}}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--sub)}
+.legend span{display:flex;align-items:center;gap:6px}.legend i{width:8px;height:8px;border-radius:50%}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:18px 14px 20px;border-top:1px solid var(--border)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 22px;font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase}
+.btn-primary{background:var(--teal);color:#08121d}.btn-secondary{border:1px solid var(--border-vis);color:var(--text)}
+.btn-secondary:hover{border-color:var(--teal);color:var(--teal)}
+
+
+/* Wix embed */
+body{padding-bottom:0!important}
+#grid{align-content:start}
+.faq summary,.c-faq summary,.rs-q summary{pointer-events:none;cursor:default}
+#rs-list{align-content:start}
+.faq summary::after,.c-faq summary::after,.rs-q summary::after{display:none}
+</style>
+</head>
+<body>
+
+<header class="cv-hero"><div class="in">
+  <h1 class="kw">Steel Building Component Visualizer</h1>
+  <p class="display">Know Every Part<span>Of Your Building.</span></p>
+  <p class="lede">Tap a part to see where it sits and what it does. Switch to Structural to see the steel under the panels, and change the width to see how the frame grows.</p>
+</div></header>
+<section class="cv" aria-label="Component visualizer">
+  <div class="cv-grid">
+    <div class="panel">
+      <div class="ph">Components <small>22 parts</small></div>
+      <div class="list" id="list">
+        <div class="grp">Foundation</div><button type="button" class="ci" data-id="anchors" data-layer="frame" aria-pressed="false"><i></i>Anchors</button><button type="button" class="ci" data-id="baserail" data-layer="frame" aria-pressed="false"><i></i>Base Rail</button>
+        <div class="grp">Frame</div><button type="button" class="ci" data-id="legs" data-layer="frame" aria-pressed="false"><i></i>Legs</button><button type="button" class="ci" data-id="trusses" data-layer="frame" aria-pressed="false"><i></i>Roof Bows & Trusses</button><button type="button" class="ci" data-id="apex" data-layer="frame" aria-pressed="false"><i></i>Collar Tie</button><button type="button" class="ci" data-id="knee" data-layer="frame" aria-pressed="false"><i></i>Knee Braces</button><button type="button" class="ci" data-id="girts" data-layer="frame" aria-pressed="false"><i></i>Girts</button><button type="button" class="ci" data-id="purlins" data-layer="frame" aria-pressed="false"><i></i>Purlins</button><button type="button" class="ci" data-id="ridge" data-layer="frame" aria-pressed="false"><i></i>Ridge</button><button type="button" class="ci" data-id="endframe" data-layer="frame" aria-pressed="false"><i></i>End-Wall Framing</button>
+        <div class="grp">Openings</div><button type="button" class="ci" data-id="frameout" data-layer="frame" aria-pressed="false"><i></i>Framed Opening</button><button type="button" class="ci" data-id="rollup" data-layer="open" aria-pressed="false"><i></i>Roll-Up Door</button><button type="button" class="ci" data-id="walk" data-layer="open" aria-pressed="false"><i></i>Walk-In Door</button><button type="button" class="ci" data-id="window" data-layer="open" aria-pressed="false"><i></i>Window</button>
+        <div class="grp">Skin</div><button type="button" class="ci" data-id="roof" data-layer="skin" aria-pressed="false"><i></i>Roof Panels</button><button type="button" class="ci" data-id="sides" data-layer="skin" aria-pressed="false"><i></i>Side Panels</button><button type="button" class="ci" data-id="ends" data-layer="skin" aria-pressed="false"><i></i>End Panels</button><button type="button" class="ci" data-id="wainscot" data-layer="skin" aria-pressed="false"><i></i>Wainscot</button>
+        <div class="grp">Trim</div><button type="button" class="ci" data-id="ridgecap" data-layer="skin" aria-pressed="false"><i></i>Ridge Cap</button><button type="button" class="ci" data-id="eavetrim" data-layer="skin" aria-pressed="false"><i></i>Eave & Rake Trim</button><button type="button" class="ci" data-id="corner" data-layer="skin" aria-pressed="false"><i></i>Corner Trim</button><button type="button" class="ci" data-id="jtrim" data-layer="skin" aria-pressed="false"><i></i>Opening Trim</button>
+      </div>
+    </div>
+    <div class="panel stage-panel">
+      <div class="bar">
+        <div class="seg" role="group" aria-label="View"><button type="button" data-v="skin" aria-pressed="true">Sheeted</button><button type="button" data-v="frame" aria-pressed="false">Structural</button></div>
+        <div class="legend"><span><i style="background:#c3ccd6"></i>Frame</span><span><i style="background:#22d3c8"></i>Panels &amp; trim</span><span><i style="background:#f0883e"></i>Openings</span></div>
+        <div class="seg w" role="group" aria-label="Width"><button type="button" data-w="24" aria-pressed="false">24′ Bow</button><button type="button" data-w="40" aria-pressed="true">40′ Truss</button></div>
+      </div>
+      <div class="stage" id="stage">
+        <canvas id="cv3d" aria-label="3D steel building. Tap a part to learn what it is."></canvas>
+        <div class="hint">Drag to turn · tap a part</div>
+        <div class="info hide" id="info" aria-live="polite"><button type="button" class="x" id="ix" aria-label="Close">×</button><div class="g" id="ig"></div><h2 id="in"></h2><div class="aka" id="ia"></div><dl><dt>Where it sits</dt><dd id="iw"></dd><dt>What it does</dt><dd id="id"></dd></dl></div>
+      </div>
+      <div class="cta-row"><a class="btn btn-primary" href="https://www.stormsafesteel.com/customize" target="_parent">Design Your Build →</a><a class="btn btn-secondary" href="https://www.stormsafesteel.com/size-planner" target="_parent">Plan Your Building</a><a class="btn btn-secondary" href="https://www.stormsafesteel.com/hurricane-rated-steel-buildings" target="_parent">Hurricane-Rated Framing</a></div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+function toggleMenu(){var m=document.getElementById('mm');var o=m.classList.toggle('open');document.querySelector('.nav-menu-btn').setAttribute('aria-expanded',o);}
+function closeMenu(){document.getElementById('mm').classList.remove('open');document.querySelector('.nav-menu-btn').setAttribute('aria-expanded','false');}
+var yr=document.getElementById('yr');if(yr)yr.textContent=new Date().getFullYear();
+
+var COMP=[{"id":"anchors","g":"Foundation","n":"Anchors","a":"wedge anchors · earth augers","w":"At the base of every post, through the base rail into your slab or the ground.","d":"Hold the building down against wind uplift. On concrete, a wedge anchor goes within 6″ of each side-wall post. With no slab, 30″ helical earth augers bolt through the base rail.","l":"frame"},{"id":"baserail","g":"Foundation","n":"Base Rail","a":"bottom rail","w":"Along the ground on all four sides, under every post.","d":"Ties the posts into one footprint and gives the anchors something to bolt through.","l":"frame"},{"id":"legs","g":"Frame","n":"Legs","a":"posts · columns","w":"Vertical, down both long sides, one at every frame.","d":"Carry the roof down to the ground and set your wall height. Legs scale with the span: single posts up to 30′ wide, double posts 31′–51′, laced ladder legs at 52′ and up.","l":"frame"},{"id":"trusses","g":"Frame","n":"Roof Bows & Trusses","a":"bows up to 24′ · trusses 25′+","w":"Spanning the full width at every leg, frame after frame down the length.","d":"Carry the roof across the open span with no posts in the middle. Up to 24′ wide it’s a bow (rafters, no web). From 25′ up it’s a truss, and the truss gets heavier as the building gets wider.","l":"frame"},{"id":"apex","g":"Frame","n":"Collar Tie","a":"apex brace · bow frames","w":"A short bar across the rafters near the peak, on bow frames.","d":"Stiffens the peak of a bow frame. Truss frames don’t need it; the truss web does that job.","l":"frame"},{"id":"knee","g":"Frame","n":"Knee Braces","a":"corner braces","w":"Diagonal, from each side-wall post up to its rafter, at 45°–60°. Not on end walls.","d":"Lock the corner where wall meets roof so the frame stays square when wind loads the wall. 24″ minimum on posts up to 7′, 48″ minimum on taller posts.","l":"frame"},{"id":"girts","g":"Frame","n":"Girts","a":"wall horizontals","w":"Horizontal rows running the length of every enclosed wall.","d":"What your wall panels screw to. They also tie the posts together sideways.","l":"frame"},{"id":"purlins","g":"Frame","n":"Purlins","a":"roof horizontals","w":"Running the length of the roof, across the top of every bow or truss.","d":"What your roof panels screw to. They spread the roof load from frame to frame.","l":"frame"},{"id":"ridge","g":"Frame","n":"Ridge","a":"peak","w":"Along the very top, where the two roof planes meet.","d":"Ties every frame’s peak together down the length of the building.","l":"frame"},{"id":"endframe","g":"Frame","n":"End-Wall Framing","a":"end posts","w":"Vertical posts across each end wall, up to the roof line.","d":"Frame the gable end so it can be sheeted and carry its own wind load.","l":"frame"},{"id":"frameout","g":"Openings","n":"Framed Opening","a":"door posts + header","w":"Around every roll-up door: a post on each side and a header across the top.","d":"Reinforces the cut in the wall. Every roll-up gets a 12-gauge post on each side; side-wall roll-ups up to 16′ wide get a structural header.","l":"frame"},{"id":"rollup","g":"Openings","n":"Roll-Up Door","a":"garage door","w":"In a framed opening on an end wall or side wall.","d":"Your vehicle and equipment door. In coastal impact counties, doors are Hi-Impact rated.","l":"open"},{"id":"walk","g":"Openings","n":"Walk-In Door","a":"man door","w":"In a side wall or end wall, usually near a corner.","d":"Everyday people access without opening the big door.","l":"open"},{"id":"window","g":"Openings","n":"Window","a":"","w":"In a side wall or end wall.","d":"Light and air. Hi-Impact windows are specified in coastal impact counties.","l":"open"},{"id":"roof","g":"Skin","n":"Roof Panels","a":"roof sheeting","w":"Across the top, screwed down to the purlins.","d":"Keeps the weather out. Ribbed galvanized steel; vertical roofs run the ribs peak-to-eave so rain sheds straight off.","l":"skin"},{"id":"sides","g":"Skin","n":"Side Panels","a":"side-wall sheeting","w":"Down both long walls, screwed to the girts.","d":"Enclose the building and help it stand up to wind. Ribbed galvanized steel.","l":"skin"},{"id":"ends","g":"Skin","n":"End Panels","a":"gable sheeting","w":"The two triangular-topped end walls.","d":"Close in the gable ends, around your doors.","l":"skin"},{"id":"wainscot","g":"Skin","n":"Wainscot","a":"two-tone band","w":"A contrasting band of panel along the bottom of the walls.","d":"A two-tone look, and a lower band that’s quick to swap if it ever gets dinged.","l":"skin"},{"id":"ridgecap","g":"Trim","n":"Ridge Cap","a":"","w":"Over the peak, along the full length of the roof.","d":"Seals the seam where the two roof planes meet.","l":"skin"},{"id":"eavetrim","g":"Trim","n":"Eave & Rake Trim","a":"edge trim","w":"Along the roof edges: the eaves on the sides and the rakes on the gable ends.","d":"Finishes and seals the roof edges and gives the building its crisp outline.","l":"skin"},{"id":"corner","g":"Trim","n":"Corner Trim","a":"","w":"Down all four outside corners.","d":"Covers and seals the corner where side and end panels meet.","l":"skin"},{"id":"jtrim","g":"Trim","n":"Opening Trim","a":"J-trim","w":"Around the edges of every door and window.","d":"Finishes the cut panel edges around openings so water and pests stay out.","l":"skin"}];
+/* Component visualizer scene (three.js r128, plain browser JS). Expects COMP from the page. */
+(function () {
+  var RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canvas = document.getElementById('cv3d'), stage = document.getElementById('stage');
+  var S = { view: 'skin', width: 40, sel: null };
+  var list = document.querySelectorAll('.ci');
+  function byId(id) { for (var i = 0; i < COMP.length; i++) if (COMP[i].id === id) return COMP[i]; }
+
+  /* ── info card + list (works even without WebGL) ── */
+  function showInfo(c) {
+    var box = document.getElementById('info');
+    if (!c) { box.classList.add('hide'); return; }
+    document.getElementById('ig').textContent = c.g;
+    document.getElementById('in').textContent = c.n;
+    document.getElementById('ia').textContent = c.a || '';
+    document.getElementById('iw').textContent = c.w;
+    document.getElementById('id').textContent = c.d;
+    box.classList.remove('hide');
+  }
+  function select(id) {
+    S.sel = id || null;
+    list.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.id === S.sel); });
+    var c = S.sel && byId(S.sel);
+    if (c) { if (c.l === 'frame' && S.view === 'skin') setView('frame'); if (c.l === 'skin' && S.view === 'frame') setView('skin'); if (c.l === 'open' && S.view === 'frame' && c.id !== 'frameout') setView('skin'); }
+    showInfo(c); if (window.cvApply) cvApply(); if (window.cvFocus) cvFocus(S.sel);
+  }
+  function setView(v) { S.view = v; document.querySelectorAll('[data-v]').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.v === v); }); if (window.cvApply) cvApply(); }
+  function markNA() { list.forEach(function (b) { b.classList.toggle('na', b.dataset.id === 'apex' && S.width > 24); }); }
+  list.forEach(function (b) { b.addEventListener('click', function () { select(S.sel === b.dataset.id ? null : b.dataset.id); if (matchMedia('(max-width:999px)').matches) stage.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'center' }); }); });
+  document.querySelectorAll('[data-v]').forEach(function (b) { b.addEventListener('click', function () { setView(b.dataset.v); }); });
+  document.querySelectorAll('[data-w]').forEach(function (b) { b.addEventListener('click', function () { S.width = +b.dataset.w; document.querySelectorAll('[data-w]').forEach(function (x) { x.setAttribute('aria-pressed', x === b); }); markNA(); if (window.cvBuild) cvBuild(); if (S.sel === 'apex' && S.width > 24) select(null); }); });
+  document.getElementById('ix').addEventListener('click', function () { select(null); });
+  markNA();
+
+  if (!window.THREE) return;
+  var R; try { R = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true }); } catch (e) { return; }
+  R.setPixelRatio(Math.min(devicePixelRatio, 2)); R.outputEncoding = THREE.sRGBEncoding;
+  var scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(30, 1.6, 1, 600);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x3b4a5c, 1.05));
+  var key = new THREE.DirectionalLight(0xffffff, .55); key.position.set(40, 60, 50); scene.add(key);
+  var rim = new THREE.DirectionalLight(0xbfefff, .3); rim.position.set(-50, 30, -40); scene.add(rim);
+  var grid = new THREE.PolarGridHelper(48, 16, 6, 96, 0x22d3c8, 0x22d3c8); grid.material.transparent = true; grid.material.opacity = .1; grid.position.y = -.42; scene.add(grid);
+  var root = new THREE.Group(); scene.add(root);
+  var LIME = new THREE.Color(0x8dc63f), UP = new THREE.Vector3(0, 1, 0);
+  var parts = {}, meshes = [];
+
+  function ribTex(base, dark, light, vertical) {
+    var c = document.createElement('canvas'); c.width = vertical ? 96 : 4; c.height = vertical ? 4 : 96; var x = c.getContext('2d');
+    x.fillStyle = base; x.fillRect(0, 0, c.width, c.height);
+    [0, 32, 64].forEach(function (p) { x.globalAlpha = .5; x.fillStyle = dark; vertical ? x.fillRect(p, 0, 5, 4) : x.fillRect(0, p, 4, 5); x.globalAlpha = .7; x.fillStyle = light; vertical ? x.fillRect(p + 5, 0, 2, 4) : x.fillRect(0, p + 5, 4, 2); });
+    var t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.encoding = THREE.sRGBEncoding; t.anisotropy = R.capabilities.getMaxAnisotropy(); return t;
+  }
+  function mat(id, p) { var m = new THREE.MeshStandardMaterial(Object.assign({ roughness: .5, metalness: .3, transparent: true }, p)); m.emissive = new THREE.Color(0); m.userData.base = m.opacity; (parts[id] = parts[id] || { mats: [], meshes: [] }).mats.push(m); return m; }
+  function add(id, mesh) { mesh.userData.comp = id; root.add(mesh); parts[id].meshes.push(mesh); meshes.push(mesh); return mesh; }
+  function box(id, m, w, h, d, x, y, z) { var me = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); me.position.set(x, y, z); return add(id, me); }
+  function beam(id, m, a, b, t) { var v = new THREE.Vector3().subVectors(b, a), len = v.length(), me = new THREE.Mesh(new THREE.BoxGeometry(t, len, t), m); me.position.copy(a).addScaledVector(v, .5); me.quaternion.setFromUnitVectors(UP, v.normalize()); return add(id, me); }
+  var V = function (x, y, z) { return new THREE.Vector3(x, y, z); };
+
+  window.cvBuild = function () {
+    while (root.children.length) { var o = root.children.pop(); if (o.geometry) o.geometry.dispose(); }
+    parts = {}; meshes = [];
+    var W = S.width, L = 30, H = 12, RISE = W / 2 * .25, TOP = H + RISE, OC = 5, X0 = -W / 2, X1 = W / 2, Z0 = -L / 2, Z1 = L / 2;
+    var bow = W <= 24, dbl = W > 30;
+    var roofY = function (x) { return H + (W / 2 - Math.abs(x)) * (RISE / (W / 2)); };
+    var steel = { color: 0xc3ccd6, metalness: .6, roughness: .32 }, steel2 = { color: 0x9aa6b3, metalness: .55, roughness: .35 };
+    var frames = []; for (var z = Z0; z <= Z1 + .01; z += OC) frames.push(z);
+    // slab (not a component)
+    var slab = new THREE.Mesh(new THREE.BoxGeometry(W + 2, .5, L + 2), new THREE.MeshStandardMaterial({ color: 0x06090d, roughness: 1, transparent: true, opacity: .85 })); slab.position.y = -.25; root.add(slab);
+    // anchors + base rail
+    var mA = mat('anchors', { color: 0x39424e, metalness: .7, roughness: .35 });
+    frames.forEach(function (z) { [X0, X1].forEach(function (x) { var c = new THREE.Mesh(new THREE.CylinderGeometry(.3, .3, 1.8, 10), mA); c.position.set(x, .2, z); add('anchors', c); box('anchors', mA, 1.1, .18, 1.1, x, .5, z); }); });
+    var mB = mat('baserail', steel);
+    [X0, X1].forEach(function (x) { beam('baserail', mB, V(x, .2, Z0), V(x, .2, Z1), .45); });
+    [Z0, Z1].forEach(function (z) { beam('baserail', mB, V(X0, .2, z), V(X1, .2, z), .45); });
+    // legs (single / double) + eave rail
+    var mL = mat('legs', steel);
+    frames.forEach(function (z) { [-1, 1].forEach(function (s) { beam('legs', mL, V(s * W / 2, 0, z), V(s * W / 2, H, z), .5); if (dbl) beam('legs', mL, V(s * (W / 2 - 1), 0, z), V(s * (W / 2 - 1), H - .2, z), .4); }); });
+    [-1, 1].forEach(function (s) { beam('legs', mL, V(s * W / 2, H, Z0), V(s * W / 2, H, Z1), .4); });
+    // rafters + truss web
+    var mT = mat('trusses', steel);
+    frames.forEach(function (z) {
+      [-1, 1].forEach(function (s) { beam('trusses', mT, V(s * W / 2, H, z), V(0, TOP, z), .5); });
+      if (!bow) {
+        var fb = .32, xc = W / 2 * (1 - fb), yc = H + RISE * fb * .55;
+        [-1, 1].forEach(function (s) {
+          beam('trusses', mT, V(s * W / 2, H - .6, z), V(s * xc, yc, z), .32);               // boxed eave lower member
+          beam('trusses', mT, V(s * xc, yc, z), V(s * xc, roofY(s * xc), z), .26);
+          var xm = xc * .5; beam('trusses', mT, V(s * xm, yc, z), V(s * xm, roofY(s * xm), z), .24);
+          beam('trusses', mT, V(s * xm, yc, z), V(0, TOP, z), .22);
+          beam('trusses', mT, V(s * xc, yc, z), V(s * xm, roofY(s * xm), z), .22);
+        });
+        beam('trusses', mT, V(-xc, yc, z), V(xc, yc, z), .32);                              // flat bottom chord
+        beam('trusses', mT, V(0, yc, z), V(0, TOP, z), .26);                                  // king post
+      }
+    });
+    // collar tie (bow only)
+    var mAp = mat('apex', steel2);
+    if (bow) frames.forEach(function (z) { var f = .72, x = W / 2 * (1 - f); beam('apex', mAp, V(-x, roofY(x) - .35, z), V(x, roofY(x) - .35, z), .3); });
+    // knee braces (side frames only, not end walls)
+    var mK = mat('knee', steel2);
+    frames.forEach(function (z) { if (Math.abs(z) > L / 2 - .1) return; [-1, 1].forEach(function (s) { beam('knee', mK, V(s * W / 2, H - 3, z), V(s * (W / 2 - 3), roofY(s * (W / 2 - 3)) - .35, z), .3); }); });
+    // girts
+    var mG = mat('girts', steel2);
+    [4, 8].forEach(function (y) { [X0, X1].forEach(function (x) { beam('girts', mG, V(x * 1.012, y, Z0), V(x * 1.012, y, Z1), .22); }); [Z0, Z1].forEach(function (z) { beam('girts', mG, V(X0, y, z * 1.006), V(-5.6, y, z * 1.006), .22); beam('girts', mG, V(5.6, y, z * 1.006), V(X1, y, z * 1.006), .22); }); });
+    // purlins + ridge
+    var mP = mat('purlins', steel2), mR = mat('ridge', steel);
+    [.22, .5, .78].forEach(function (f) { [-1, 1].forEach(function (s) { var x = s * W / 2 * (1 - f); beam('purlins', mP, V(x, roofY(x) + .3, Z0 - .3), V(x, roofY(x) + .3, Z1 + .3), .22); }); });
+    beam('ridge', mR, V(0, TOP + .25, Z0 - .3), V(0, TOP + .25, Z1 + .3), .3);
+    // end-wall framing
+    var mE = mat('endframe', steel2), eps = [];
+    for (var ex = -W / 2 + 6; ex < W / 2 - 3; ex += 6) if (Math.abs(ex) > 5.8) eps.push(ex);
+    [Z0, Z1].forEach(function (z) { eps.forEach(function (x) { beam('endframe', mE, V(x, 0, z), V(x, roofY(x), z), .34); }); });
+    // framed opening (front end wall) for a 10×10 roll-up
+    var mF = mat('frameout', { color: 0xdfe6ec, metalness: .6, roughness: .3 });
+    [-5.3, 5.3].forEach(function (x) { beam('frameout', mF, V(x, 0, Z1), V(x, roofY(x), Z1), .5); });
+    beam('frameout', mF, V(-5.6, 10.4, Z1), V(5.6, 10.4, Z1), .55);
+    // skin: sides with wainscot band, ends with door hole, roof
+    var wall = '#d9dee5', wallD = '#9aa4b1', wain = '#4a5361';
+    [X0, X1].forEach(function (x) {
+      var t = ribTex(wall, wallD, '#ffffff', true); t.repeat.set(L / 3, 1);
+      var p = new THREE.Mesh(new THREE.PlaneGeometry(L, H - 3), mat('sides', { map: t, side: THREE.DoubleSide })); p.position.set(x * 1.03, 3 + (H - 3) / 2, 0); p.rotation.y = Math.PI / 2; add('sides', p);
+      var tw = ribTex(wain, '#2b323c', '#6b7584', true); tw.repeat.set(L / 3, 1);
+      var q = new THREE.Mesh(new THREE.PlaneGeometry(L, 3), mat('wainscot', { map: tw, side: THREE.DoubleSide })); q.position.set(x * 1.03, 1.5, 0); q.rotation.y = Math.PI / 2; add('wainscot', q);
+    });
+    var sh = new THREE.Shape(); sh.moveTo(-W / 2, 0); sh.lineTo(W / 2, 0); sh.lineTo(W / 2, H); sh.lineTo(0, TOP); sh.lineTo(-W / 2, H); sh.closePath();
+    var hole = new THREE.Path(); hole.moveTo(-5, 0); hole.lineTo(5, 0); hole.lineTo(5, 10); hole.lineTo(-5, 10); hole.closePath(); var shF = sh.clone(); shF.holes = [hole];
+    [[Z1 + .35, shF, 0], [Z0 - .35, sh, Math.PI]].forEach(function (a) { var t = ribTex(wall, wallD, '#ffffff', true); t.repeat.set(1 / 3, 1); var m = new THREE.Mesh(new THREE.ShapeGeometry(a[1]), mat('ends', { map: t, side: THREE.DoubleSide })); m.position.z = a[0]; m.rotation.y = a[2]; add('ends', m); });
+    var slope = Math.hypot(W / 2, RISE), ang = Math.atan(RISE / (W / 2)), OH = .8;
+    [1, -1].forEach(function (s) { var t = ribTex('#4a5361', '#2b323c', '#6b7584', false); t.repeat.set(1, (L + 2 * OH) / 3);
+      var piv = new THREE.Group(); piv.position.set(s * W / 4, H + RISE / 2 + .55, 0); piv.rotation.z = -s * ang; root.add(piv);
+      var p = new THREE.Mesh(new THREE.PlaneGeometry(slope + OH, L + 2 * OH), mat('roof', { map: t, side: THREE.DoubleSide, metalness: .35 })); p.rotation.x = -Math.PI / 2; p.position.x = s * OH / 2; p.userData.comp = 'roof'; piv.add(p); parts.roof.meshes.push(p); meshes.push(p);
+      var mEt = mat('eavetrim', { color: 0x2a3039 });
+      var e = new THREE.Mesh(new THREE.BoxGeometry(.4, .55, L + 2 * OH), mEt); e.position.set(s * (slope / 2 + OH), -.1, 0); e.userData.comp = 'eavetrim'; piv.add(e); parts.eavetrim.meshes.push(e); meshes.push(e);
+      [L / 2 + OH, -(L / 2 + OH)].forEach(function (z) { var r = new THREE.Mesh(new THREE.BoxGeometry(slope + OH, .5, .35), mEt); r.position.set(s * OH / 2, .05, z); r.userData.comp = 'eavetrim'; piv.add(r); parts.eavetrim.meshes.push(r); meshes.push(r); });
+    });
+    box('ridgecap', mat('ridgecap', { color: 0x2a3039 }), 1.6, .4, L + 2 * OH, 0, TOP + .95, 0);
+    var mC = mat('corner', { color: 0x2a3039 });
+    [[X0, Z0], [X0, Z1], [X1, Z0], [X1, Z1]].forEach(function (a) { box('corner', mC, .6, H, .6, a[0] * 1.03, H / 2, a[1] + (a[1] > 0 ? .4 : -.4)); });
+    // openings
+    var sc = document.createElement('canvas'); sc.width = 4; sc.height = 64; var sx = sc.getContext('2d'); sx.fillStyle = '#eef1f4'; sx.fillRect(0, 0, 4, 64); sx.fillStyle = '#b8c0ca'; sx.fillRect(0, 0, 4, 3);
+    var st = new THREE.CanvasTexture(sc); st.wrapS = st.wrapT = THREE.RepeatWrapping; st.repeat.set(1, 13); st.encoding = THREE.sRGBEncoding;
+    box('rollup', mat('rollup', { map: st }), 10, 10, .15, 0, 5, Z1 + .2);
+    var mJ = mat('jtrim', { color: 0x2a3039 });
+    box('jtrim', mJ, .4, 10.4, .3, -5.15, 5.2, Z1 + .5); box('jtrim', mJ, .4, 10.4, .3, 5.15, 5.2, Z1 + .5); box('jtrim', mJ, 10.7, .4, .3, 0, 10.35, Z1 + .5);
+    var mWd = mat('walk', { color: 0xf1f4f7, roughness: .45 });
+    box('walk', mWd, .15, 7, 3, X1 * 1.03 + .12, 3.5, 8);
+    [[X1 * 1.03 + .2, 3.5, 6.35, .2, 7.2, .3], [X1 * 1.03 + .2, 3.5, 9.65, .2, 7.2, .3], [X1 * 1.03 + .2, 7.15, 8, .2, .3, 3.6]].forEach(function (a) { box('jtrim', mJ, a[3], a[4], a[5], a[0], a[1], a[2]); });
+    var mWi = mat('window', { color: 0x1d3347, roughness: .2, metalness: .6 }), mWf = mat('window', { color: 0xf1f4f7 });
+    [-4, 8].forEach(function (z) { box('window', mWf, .15, 3.6, 3.6, X0 * 1.03 - .12, 6, z); box('window', mWi, .2, 3, 3, X0 * 1.03 - .18, 6, z); });
+    var d = 108 * (W / 40 * .35 + .65); CAM.dist = d; cvApply();
+  };
+
+  var CAM = { yaw: -.75, pitch: .38, dist: 100, tx: 0, ty: 6, tz: 0, gx: 0, gy: 6, gz: 0, auto: !RM, idle: 0 };
+  window.cvApply = function () {
+    var sel = S.sel, frameView = S.view === 'frame';
+    Object.keys(parts).forEach(function (id) {
+      var c = byId(id), p = parts[id], layer = c ? c.l : 'frame';
+      var hidden = frameView && (layer === 'skin' || (layer === 'open' && id !== 'frameout'));
+      p.meshes.forEach(function (m) { m.visible = !hidden; });
+      var on = sel === id, dim = sel && !on;
+      p.mats.forEach(function (m) { m.opacity = dim ? .2 : 1; m.depthWrite = !dim; m.emissive.copy(on ? LIME : new THREE.Color(0)).multiplyScalar(on ? .55 : 0); });
+    });
+  };
+  window.cvFocus = function (id) {
+    if (!id || !parts[id] || !parts[id].meshes.length) { CAM.gx = 0; CAM.gy = 6; CAM.gz = 0; return; }
+    var b = new THREE.Box3(); parts[id].meshes.forEach(function (m) { b.expandByObject(m); });
+    var c = b.getCenter(new THREE.Vector3()); CAM.gx = c.x * .5; CAM.gy = Math.max(3, c.y * .7 + 2); CAM.gz = c.z * .5;
+    if (id === 'rollup' || id === 'frameout' || id === 'jtrim') CAM.yaw = -.35; else if (id === 'walk') CAM.yaw = -1.25; else if (id === 'window') CAM.yaw = 1.0;
+    if (id === 'anchors' || id === 'baserail') CAM.pitch = .25; else if (id === 'roof' || id === 'purlins' || id === 'ridge' || id === 'ridgecap') CAM.pitch = .6; else CAM.pitch = .38;
+    CAM.idle = 0; CAM.auto = false;
+  };
+
+  /* drag to orbit, tap to pick */
+  var drag = null, ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
+  canvas.addEventListener('pointerdown', function (e) { drag = { x: e.clientX, y: e.clientY, yaw: CAM.yaw, pitch: CAM.pitch, moved: false }; canvas.setPointerCapture(e.pointerId); CAM.auto = false; });
+  canvas.addEventListener('pointermove', function (e) { if (!drag) return; var dx = e.clientX - drag.x, dy = e.clientY - drag.y; if (Math.abs(dx) + Math.abs(dy) > 4) drag.moved = true; CAM.yaw = drag.yaw - dx * .008; CAM.pitch = Math.max(.08, Math.min(1.2, drag.pitch + dy * .005)); });
+  canvas.addEventListener('pointerup', function (e) {
+    if (drag && !drag.moved) { var r = canvas.getBoundingClientRect(); ndc.set((e.clientX - r.left) / r.width * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1); ray.setFromCamera(ndc, cam);
+      var hits = ray.intersectObjects(meshes.filter(function (m) { return m.visible; }), false); select(hits.length ? (hits[0].object.userData.comp === S.sel ? null : hits[0].object.userData.comp) : null); }
+    drag = null; CAM.idle = 0;
+  });
+
+  var visible = true; new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }).observe(canvas);
+  function resize() { var w = canvas.clientWidth, h = canvas.clientHeight; if (!w || !h) return; var pr = R.getPixelRatio(); if (canvas.width !== Math.round(w * pr) || canvas.height !== Math.round(h * pr)) { R.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix(); } }
+  var t0 = performance.now();
+  (function frame(now) {
+    requestAnimationFrame(frame); var dt = Math.min(.05, (now - t0) / 1000); t0 = now; if (!visible) return; resize();
+    if (!drag) { CAM.idle += dt; if (!CAM.auto && !S.sel && CAM.idle > 4 && !RM) CAM.auto = true; if (CAM.auto) CAM.yaw += dt * .12; }
+    var k = Math.min(1, dt * 4); CAM.tx += (CAM.gx - CAM.tx) * k; CAM.ty += (CAM.gy - CAM.ty) * k; CAM.tz += (CAM.gz - CAM.tz) * k;
+    var dist = CAM.dist * Math.max(1, 1.3 / cam.aspect) * (S.sel ? .82 : 1);
+    cam.position.set(CAM.tx + Math.sin(CAM.yaw) * Math.cos(CAM.pitch) * dist, CAM.ty + Math.sin(CAM.pitch) * dist, CAM.tz + Math.cos(CAM.yaw) * Math.cos(CAM.pitch) * dist);
+    cam.lookAt(CAM.tx, CAM.ty, CAM.tz);
+    if (S.sel) { var g = .38 + .17 * Math.sin(now / 260); (parts[S.sel] || { mats: [] }).mats.forEach(function (m) { m.emissive.copy(LIME).multiplyScalar(g); }); }
+    R.render(scene, cam);
+  })(t0);
+  cvBuild();
+})();
+
+</script>
+<script>(function(){var g=document.getElementById('grid')||document.getElementById('rs-list');if(!g)return;var t;
+function lock(){var hid=[].slice.call(g.children).filter(function(c){return c.hidden;});hid.forEach(function(c){c.hidden=false;});
+g.style.minHeight='';var hgt=g.offsetHeight;hid.forEach(function(c){c.hidden=true;});g.style.minHeight=hgt+'px';}
+addEventListener('load',lock);addEventListener('resize',function(){clearTimeout(t);t=setTimeout(lock,120);});})();</script>
+</body>
+</html>
