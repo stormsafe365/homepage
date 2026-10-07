@@ -187,6 +187,12 @@ footer{background:var(--dark-2);border-top:1px solid var(--border-vis);padding:4
 .dl i{width:12px;height:12px;border-radius:2px;flex:none}
 .dl .x{margin-left:auto;background:none;border:none;color:var(--muted);font-size:16px;cursor:pointer}
 .dl .x:hover{color:#f87171}
+.fitlist{display:grid;gap:6px}
+.fr{display:flex;gap:8px;align-items:flex-start;font-size:13px;line-height:1.45;padding:8px 10px;background:var(--dark);border:1px solid var(--border);border-radius:8px}
+.fr i{font-size:16px;line-height:1.2}.fr.ok i{color:var(--lime)}.fr.bad{border-color:rgba(240,136,62,.55)}.fr.bad i{color:var(--orange)}
+.fr small{display:block;color:var(--muted);font-size:11.5px}
+.pi.tall{outline:2px dashed var(--orange);outline-offset:3px;border-radius:3px}
+.dr.toohigh .bar{box-shadow:0 0 0 2px #f0883e}
 .msg{min-height:18px;font-size:12px;color:var(--orange);margin-top:6px}
 /* right column */
 .fit .big{font-family:var(--h);font-weight:900;font-size:34px;line-height:1;margin:6px 0 4px}
@@ -240,6 +246,7 @@ body{padding-bottom:0!important}
           <label><span class="lbl">Width (ft)</span><input class="inp" type="number" id="bw" value="28" min="10" max="80" inputmode="numeric"></label>
           <label><span class="lbl">Length (ft)</span><input class="inp" type="number" id="bl" value="40" min="10" max="200" inputmode="numeric"></label>
         </div>
+        <label style="display:block;margin-top:10px"><span class="lbl">Wall height (ft) · your clearance</span><input class="inp" type="number" id="bh" value="12" min="6" max="20" inputmode="numeric"></label>
       </div>
       <div class="ph" style="border-top:1px solid var(--border)">Add Items <small>tap to add</small></div>
       <div class="tabs" id="tabs" role="group" aria-label="Item categories"></div>
@@ -262,6 +269,7 @@ body{padding-bottom:0!important}
         <span class="selbar" id="selbar" style="gap:8px">
           <button type="button" class="tb" id="rot"><i class="ti ti-rotate-clockwise-2"></i>Rotate</button>
           <button type="button" class="tb danger" id="del"><i class="ti ti-trash"></i>Remove</button>
+          <label class="tb" style="cursor:default">Height <input type="number" id="ih" step="0.5" min="0.5" max="20" style="width:58px;background:var(--dark-3);border:1px solid var(--border-vis);border-radius:5px;color:var(--text);font:inherit;padding:3px 6px">ft</label>
         </span>
         <button type="button" class="tb" id="undo"><i class="ti ti-arrow-back-up"></i>Undo</button>
         <button type="button" class="tb danger" id="clr"><i class="ti ti-eraser"></i>Clear</button>
@@ -276,13 +284,19 @@ body{padding-bottom:0!important}
         <div class="pb">
           <div class="row2">
             <label><span class="lbl">Type</span><select class="sel" id="dt"><option value="roll-10">Roll-up 10′</option><option value="roll-8">Roll-up 8′</option><option value="roll-9">Roll-up 9′</option><option value="roll-12">Roll-up 12′</option><option value="roll-14">Roll-up 14′</option><option value="roll-16">Roll-up 16′</option><option value="walk-3">Walk door 3′</option></select></label>
-            <label><span class="lbl">Wall</span><select class="sel" id="dw"><option value="front">Front</option><option value="back">Back</option><option value="left">Left side</option><option value="right">Right side</option></select></label>
+            <label><span class="lbl">Door height</span><select class="sel" id="dh"><option>8</option><option>9</option><option selected>10</option><option>12</option><option>14</option><option>16</option></select></label>
+            <label style="grid-column:1/-1"><span class="lbl">Wall</span><select class="sel" id="dw"><option value="front">Front</option><option value="back">Back</option><option value="left">Left side</option><option value="right">Right side</option></select></label>
           </div>
           <button type="button" class="cta g" id="addDoor"><i class="ti ti-plus"></i>Add door</button>
           <div class="msg" id="dmsg" aria-live="polite"></div>
           <div class="doors" id="doors"></div>
           <p class="fine">Drag a door along its wall. Doors can't overlap or crowd each other.</p>
         </div>
+      </div>
+      <div class="panel">
+        <div class="ph">Will It Fit? <small id="fitsum"></small></div>
+        <div class="pb"><div class="fitlist" id="fitlist"><p class="fine" style="margin:0">Add items to check height and door clearance.</p></div>
+        <p class="fine">Heights are typical. Select an item to set yours (boat with a T-top, lifted truck, roof rack).</p></div>
       </div>
       <div class="panel fit">
         <div class="ph">Find My Size</div>
@@ -1501,10 +1515,18 @@ function renderMeasurementOverlay() {
 
 
 // ═════════ APP (StormSafe rebuild) ═════════
+/* typical overall heights in ft (vehicles on their own wheels/trailer); customers can edit per item */
+var HT={'small-car':4.8,'compact-car':4.8,'family-car':4.9,'luxury-car':4.9,'executive-car':4.8,'sport-car':4.3,'estate-car':5,'mpv-car':5.8,
+'small-suv':5.4,'compact-suv':5.6,'mid-suv':5.9,'large-suv':6.4,'pickup':6.5,'passenger-van':8.3,'rv-regular':9,'rv-extended':9.5,'rv-long':11.5,'box-truck':11.5,'trailer':10,
+'boat':8,'water-sport':5,'jet-ski':4.5,'kayak':1.5,'motorcycle':4,'atv':4,'go-cart':3,'bicycle':3.5,
+'tractor':9,'motocultor':3.5,'wheelbarrow':2.5,'harvester':13,'plow-tractor':4,'seeder':4,'baler':7,'sprayer':8,'rotary-cutter':3,'manure-spreader':6,'forklift':7,'workbench':3,
+'pool-table':2.7,'poker-table':2.5,'foosball':3,'tennis-table':2.5,'air-hockey':2.7,'shuffleboard':2.7,'beer-pong':2.5,'weights-rack':7};
+function ht(it){return it.h!=null?it.h:(HT[it.vehicleId]||4);}
+function fmtH(f){return formatDim(f);}
 var CATS=['Vehicles','SUVs','Trucks & RVs','Boats','Recreation','Equipment','Games'];
 var STD_W=[12,18,20,22,24,26,28,30,32,36,40,44,50,60];
-var ROLL=[8,9,10,12,14,16];
-var S={w:28,l:40,items:[],doors:[{id:'d1',wall:'front',kind:'roll',size:10,pos:9}],sel:null,selDoor:null,cat:'Vehicles',hist:[],grid:true,drag:null};
+var ROLL=[8,9,10,12,14,16],ROLLH=[8,9,10,12,14,16];
+var S={w:28,l:40,hgt:12,items:[],doors:[{id:'d1',wall:'front',kind:'roll',size:10,dh:10,pos:9}],sel:null,selDoor:null,cat:'Vehicles',hist:[],grid:true,drag:null};
 var nid=1,did=2,RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 function $(i){return document.getElementById(i);}
 function dims(it){var v=CATALOG.find(function(c){return c.id===it.vehicleId;});if(!v)return[0,0];return it.rotation%180===0?[v.w,v.l]:[v.l,v.w];}
@@ -1514,10 +1536,13 @@ var state={};function getScale(){return scale();}function getDims(vid,rot){var v
 function overlaps(it,list){var A=dims(it);return list.some(function(o){if(o.id===it.id)return false;var B=dims(o);return it.x<o.x+B[0]&&it.x+A[0]>o.x&&it.y<o.y+B[1]&&it.y+A[1]>o.y;});}
 function formatDim(ft){var f=Math.floor(ft),i=Math.round((ft-f)*12);if(i===12){f++;i=0;}return i?f+'′'+i+'"':f+'′';}
 function scale(){var st=$('stage'),aw=Math.max(200,st.clientWidth-40),ah=Math.max(320,Math.min(innerHeight*0.68,700));return Math.min(aw/S.w,ah/S.l);}
-function push(){S.hist.push(JSON.stringify({items:S.items,doors:S.doors,w:S.w,l:S.l}));if(S.hist.length>60)S.hist.shift();}
-function save(){try{localStorage.setItem('ss-planner',JSON.stringify({w:S.w,l:S.l,items:S.items,doors:S.doors}));}catch(e){}}
-function load(){try{var d=JSON.parse(localStorage.getItem('ss-planner')||'null');if(d&&d.w){S.w=d.w;S.l=d.l;S.items=d.items||[];S.doors=d.doors||S.doors;S.items.forEach(function(i){nid=Math.max(nid,i.id+1);});S.doors.forEach(function(x){did=Math.max(did,+String(x.id).slice(1)+1);});}}catch(e){}}
+function push(){S.hist.push(JSON.stringify({items:S.items,doors:S.doors,w:S.w,l:S.l,hgt:S.hgt}));if(S.hist.length>60)S.hist.shift();}
+function save(){try{localStorage.setItem('ss-planner',JSON.stringify({w:S.w,l:S.l,hgt:S.hgt,items:S.items,doors:S.doors}));}catch(e){}}
+function load(){try{var d=JSON.parse(localStorage.getItem('ss-planner')||'null');if(d&&d.w){S.w=d.w;S.l=d.l;S.hgt=d.hgt||12;S.items=d.items||[];S.doors=(d.doors||S.doors).map(function(x){if(x.dh==null)x.dh=x.kind==='roll'?x.size:7;return x;});S.items.forEach(function(i){nid=Math.max(nid,i.id+1);});S.doors.forEach(function(x){did=Math.max(did,+String(x.id).slice(1)+1);});}}catch(e){}}
 /* walls: front=bottom (y=l), back=top (y=0), left=x0, right=x=w; pos measured along the wall in ft */
+/* same rule as the quote tool (getMaxDoorHeight): eave side <= wall-2; gable end single <= wall; gable end multiple <= wall-1 */
+function maxDoorH(wall,extra){if(wall==='left'||wall==='right')return S.hgt-2;var n=S.doors.filter(function(d){return d.wall===wall&&d.kind==='roll';}).length+(extra||0);return n>1?S.hgt-1:S.hgt;}
+function doorTooTall(d){return d.kind==='roll'&&d.dh>maxDoorH(d.wall);}
 function wallLen(w){return w==='front'||w==='back'?S.w:S.l;}
 function doorClash(d,list){var gap=1;if(d.pos<0.5||d.pos+d.size>wallLen(d.wall)-0.5)return true;return list.some(function(o){return o.id!==d.id&&o.wall===d.wall&&d.pos<o.pos+o.size+gap&&d.pos+d.size+gap>o.pos;});}
 function freeSpot(wall,size){var L=wallLen(wall),c=(L-size)/2,cands=[c];for(var k=1;k<L;k++){cands.push(c-k,c+k);}for(var j=0;j<cands.length;j++){var p=snap(cands[j]),t={id:'tmp',wall:wall,size:size,pos:p};if(!doorClash(t,S.doors))return p;}return null;}
@@ -1532,16 +1557,16 @@ function render(){var sc=scale(),F=$('floor'),W=S.w*sc,H=S.l*sc;F.style.width=W+
   F.querySelectorAll('.pi,.dr,.measurements-overlay').forEach(function(e){e.remove();});
   $('empty').style.display=S.items.length?'none':'flex';
   S.items.forEach(function(it){var v=CATALOG.find(function(c){return c.id===it.vehicleId;});if(!v)return;var D=dims(it),pw=D[0]*sc,ph=D[1]*sc,e=document.createElement('div');
-    e.className='pi'+(it.id===S.sel?' sel':'')+(overlaps(it,S.items)?' ovl':'')+(S.drag&&S.drag.id===it.id?' drag':'');
+    e.className='pi'+(it.id===S.sel?' sel':'')+(overlaps(it,S.items)?' ovl':'')+(ht(it)>S.hgt?' tall':'')+(S.drag&&S.drag.id===it.id?' drag':'');
     e.style.cssText='left:'+it.x*sc+'px;top:'+it.y*sc+'px;width:'+pw+'px;height:'+ph+'px';e.dataset.id=it.id;
     var r=it.rotation%180===0;e.innerHTML='<div class="rot" style="transform:rotate('+it.rotation+'deg);'+(r?'':'width:'+ph+'px;height:'+pw+'px;margin:'+(ph-pw)/2+'px '+(pw-ph)/2+'px')+'">'+renderItem(v,r?pw:ph,r?ph:pw)+'</div>';
     e.addEventListener('pointerdown',function(ev){itemDown(ev,it.id);});F.appendChild(e);});
   state={selectedId:S.sel,items:S.items,bldgW:S.w,bldgL:S.l};var m=S.sel?renderMeasurementOverlay():'';if(m){var t=document.createElement('div');t.innerHTML=m;F.appendChild(t.firstChild);}
   var T=Math.max(5,0.5*sc);S.doors.forEach(function(d){var e=document.createElement('div'),len=d.size*sc,horiz=d.wall==='front'||d.wall==='back';
-    e.className='dr '+d.kind+(d.id===S.selDoor?' sel':'');e.dataset.id=d.id;
+    e.className='dr '+d.kind+(d.id===S.selDoor?' sel':'')+(doorTooTall(d)?' toohigh':'');e.dataset.id=d.id;
     if(horiz){e.style.cssText='left:'+d.pos*sc+'px;width:'+len+'px;height:'+T+'px;'+(d.wall==='front'?'bottom:'+(-T/2-2.5)+'px':'top:'+(-T/2-2.5)+'px');}
     else{e.style.cssText='top:'+d.pos*sc+'px;height:'+len+'px;width:'+T+'px;'+(d.wall==='left'?'left:'+(-T/2-2.5)+'px':'right:'+(-T/2-2.5)+'px');}
-    var lab=(d.kind==='roll'?d.size+'′ roll-up':'walk');
+    var lab=(d.kind==='roll'?d.size+'×'+d.dh+' roll-up':'walk');
     e.innerHTML='<span class="bar"></span><span class="tg" style="'+(d.wall==='front'?'top:-20px':d.wall==='back'?'bottom:-20px':d.wall==='left'?'left:12px':'right:12px')+'">'+lab+'</span>';
     e.addEventListener('pointerdown',function(ev){doorDown(ev,d.id);});F.appendChild(e);});
   $('dimt').textContent='← '+S.w+'′ wide →';$('dims').textContent='← '+S.l+'′ long →';$('area-top').textContent=(S.w*S.l).toLocaleString()+' SQ FT';
@@ -1549,9 +1574,17 @@ function render(){var sc=scale(),F=$('floor'),W=S.w*sc,H=S.l*sc;F.style.width=W+
   $('s-n').textContent=S.items.length;$('s-a').textContent=Math.round(used)+' sq ft';var ue=$('s-u');ue.textContent=u+'%';ue.className=u>75?'warn':u>=25?'good':'';
   $('ovl').classList.toggle('on',S.items.some(function(i){return overlaps(i,S.items);}));
   $('selbar').classList.toggle('on',!!S.sel);$('undo').disabled=!S.hist.length;$('clr').disabled=!S.items.length;$('grd').classList.toggle('on',S.grid);
-  $('bw').value=S.w;$('bl').value=S.l;renderDoorList();save();}
-function renderDoorList(){$('doors').innerHTML=S.doors.map(function(d){return '<div class="dl'+(d.id===S.selDoor?' sel':'')+'" data-id="'+d.id+'"><i style="background:'+(d.kind==='roll'?'#22d3c8':'#f0883e')+'"></i>'+(d.kind==='roll'?d.size+'′ roll-up':'3′ walk door')+' · '+d.wall+'<button type="button" class="x" aria-label="Remove door" data-x="'+d.id+'">×</button></div>';}).join('')||'<p class="fine">No doors yet.</p>';
+  $('bw').value=S.w;$('bl').value=S.l;$('bh').value=S.hgt;var si=S.items.find(function(i){return i.id===S.sel;});if(si&&document.activeElement!==$('ih'))$('ih').value=ht(si);renderDoorList();renderFit();save();}
+function renderDoorList(){$('doors').innerHTML=S.doors.map(function(d){return '<div class="dl'+(d.id===S.selDoor?' sel':'')+'" data-id="'+d.id+'"><i style="background:'+(d.kind==='roll'?'#22d3c8':'#f0883e')+'"></i>'+(d.kind==='roll'?d.size+'′×'+d.dh+'′ roll-up':'3′ walk door')+' · '+d.wall+(doorTooTall(d)?' <b style="color:var(--orange)">too tall for '+S.hgt+'′ walls</b>':'')+'<button type="button" class="x" aria-label="Remove door" data-x="'+d.id+'">×</button></div>';}).join('')||'<p class="fine">No doors yet.</p>';
   $('doors').querySelectorAll('.dl').forEach(function(r){r.onclick=function(e){if(e.target.dataset.x){push();S.doors=S.doors.filter(function(d){return d.id!==e.target.dataset.x;});if(S.selDoor===e.target.dataset.x)S.selDoor=null;render();return;}S.selDoor=r.dataset.id;S.sel=null;render();};});}
+function renderFit(){var L=$('fitlist');if(!S.items.length){L.innerHTML='<p class="fine" style="margin:0">Add items to check height and door clearance.</p>';$('fitsum').textContent='';return;}
+  var rolls=S.doors.filter(function(d){return d.kind==='roll'&&!doorTooTall(d);}),bad=0;
+  L.innerHTML=S.items.map(function(it){var v=CATALOG.find(function(c){return c.id===it.vehicleId;}),h=ht(it),drive=v.cat!=='Games',w=Math.min(v.w,v.l),probs=[];
+    if(h>S.hgt)probs.push('taller than your '+S.hgt+'′ walls');
+    if(drive){var through=rolls.some(function(d){return d.size>=w+1&&d.dh>=h+0.5;});if(!through)probs.push(rolls.length?'no door big enough (needs '+Math.ceil(w+1)+'′ wide × '+Math.ceil(h+0.5)+'′ tall)':'no roll-up door to bring it in');}
+    if(probs.length)bad++;
+    return '<div class="fr '+(probs.length?'bad':'ok')+'"><i class="ti '+(probs.length?'ti-alert-triangle':'ti-circle-check')+'"></i><span>'+v.name+' · '+fmtH(h)+' tall<small>'+(probs.length?probs.join('; '):'fits under '+S.hgt+'′ walls'+(drive?' and through a door':''))+'</small></span></div>';}).join('');
+  var fs=$('fitsum');fs.textContent=bad?bad+' issue'+(bad>1?'s':''):'all fit';fs.style.color=bad?'var(--orange)':'var(--lime)';}
 /* ── actions ── */
 function addItem(vid){var v=CATALOG.find(function(c){return c.id===vid;});push();var it={id:nid++,vehicleId:vid,rotation:0,x:0,y:0},D=dims(it),placed=false;
   for(var y=1;y<=S.l-D[1]&&!placed;y+=0.5)for(var x=1;x<=S.w-D[0]&&!placed;x+=0.5){it.x=x;it.y=y;if(!overlaps(it,S.items))placed=true;}
@@ -1570,15 +1603,20 @@ $('floor').addEventListener('pointerdown',function(ev){if(ev.target===$('floor')
 function rotateSel(){var it=S.items.find(function(i){return i.id===S.sel;});if(!it)return;push();it.rotation=(it.rotation+90)%360;var D=dims(it);it.x=Math.max(0,Math.min(S.w-D[0],it.x));it.y=Math.max(0,Math.min(S.l-D[1],it.y));render();}
 function delSel(){if(S.sel){push();S.items=S.items.filter(function(i){return i.id!==S.sel;});S.sel=null;}else if(S.selDoor){push();S.doors=S.doors.filter(function(d){return d.id!==S.selDoor;});S.selDoor=null;}render();}
 $('rot').onclick=rotateSel;$('del').onclick=delSel;
-$('undo').onclick=function(){if(!S.hist.length)return;var h=JSON.parse(S.hist.pop());S.items=h.items;S.doors=h.doors;S.w=h.w;S.l=h.l;S.sel=S.selDoor=null;render();};
+$('undo').onclick=function(){if(!S.hist.length)return;var h=JSON.parse(S.hist.pop());S.items=h.items;S.doors=h.doors;S.w=h.w;S.l=h.l;S.hgt=h.hgt||S.hgt;S.sel=S.selDoor=null;render();};
 $('clr').onclick=function(){if(!S.items.length)return;push();S.items=[];S.sel=null;render();};
 $('grd').onclick=function(){S.grid=!S.grid;render();};$('prt').onclick=function(){print();};
 function setSize(w,l){S.w=Math.max(10,Math.min(80,w));S.l=Math.max(10,Math.min(200,l));S.items.forEach(function(it){var D=dims(it);it.x=Math.max(0,Math.min(S.w-D[0],it.x));it.y=Math.max(0,Math.min(S.l-D[1],it.y));});
   S.doors=S.doors.filter(function(d){if(d.pos+d.size>wallLen(d.wall)-0.5){var p=freeSpot(d.wall,d.size);if(p===null)return false;d.pos=p;}return true;});render();}
+$('bh').onchange=function(){push();S.hgt=Math.max(6,Math.min(20,parseFloat(this.value)||S.hgt));render();};
+$('ih').onchange=function(){var it=S.items.find(function(i){return i.id===S.sel;});if(!it)return;push();it.h=Math.max(0.5,Math.min(20,parseFloat(this.value)||ht(it)));render();};
+$('dt').onchange=function(){$('dh').disabled=this.value.indexOf('walk')===0;};
 $('bw').onchange=function(){push();setSize(parseInt(this.value)||S.w,S.l);};$('bl').onchange=function(){push();setSize(S.w,parseInt(this.value)||S.l);};
 $('addDoor').onclick=function(){var v=$('dt').value.split('-'),kind=v[0],size=+v[1],wall=$('dw').value,p=freeSpot(wall,size);
   if(p===null){$('dmsg').textContent='No room for a '+size+'′ door on the '+wall+' wall without overlapping.';return;}
-  $('dmsg').textContent='';push();var d={id:'d'+(did++),wall:wall,kind:kind,size:size,pos:p};S.doors.push(d);S.selDoor=d.id;S.sel=null;render();};
+  var dh=kind==='roll'?+$('dh').value:7,mx=maxDoorH(wall,kind==='roll'?1:0);
+  if(kind==='roll'&&dh>mx){$('dmsg').textContent='A '+dh+'′ tall door is too tall for '+S.hgt+'′ walls on the '+wall+' wall (max '+mx+'′). Raise the wall height or pick a shorter door.';return;}
+  $('dmsg').textContent='';push();var d={id:'d'+(did++),wall:wall,kind:kind,size:size,dh:dh,pos:p};S.doors.push(d);S.selDoor=d.id;S.sel=null;render();};
 addEventListener('keydown',function(e){if(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;if(e.key==='r'||e.key==='R'){rotateSel();}else if(e.key==='Delete'||e.key==='Backspace'){if(S.sel||S.selDoor){e.preventDefault();delSel();}}else if(e.key==='Escape'){S.sel=S.selDoor=null;render();}});
 var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(render,120);});
 /* ── find my size ── */
@@ -1587,18 +1625,21 @@ function find(){var box=$('fit');if(!S.items.length){box.innerHTML='<p>Add at le
   var x0=1e9,y0=1e9,x1=0,y1=0;S.items.forEach(function(i){var D=dims(i);x0=Math.min(x0,i.x);y0=Math.min(y0,i.y);x1=Math.max(x1,i.x+D[0]);y1=Math.max(y1,i.y+D[1]);});
   var needW=(x1-x0)+2*CLEAR,needL=(y1-y0)+2*CLEAR,W=STD_W.find(function(w){return w>=needW;})||Math.ceil(needW),L=Math.max(20,Math.ceil(needL/5)*5);
   var widest=0;S.items.forEach(function(i){var v=CATALOG.find(function(c){return c.id===i.vehicleId;});if(/Vehicles|SUVs|Trucks|Boats/.test(v.cat))widest=Math.max(widest,v.w);});
+  var tallest=0;S.items.forEach(function(i){var v=CATALOG.find(function(c){return c.id===i.vehicleId;});if(v.cat!=='Games')tallest=Math.max(tallest,ht(i));});
+  var anyTall=Math.max.apply(null,S.items.map(ht));
+  var doorH=tallest?(ROLLH.find(function(r){return r>=tallest+0.5;})||16):null,wallH=Math.max(8,Math.ceil(anyTall+1),doorH||0);
   var door=widest?(ROLL.find(function(r){return r>=widest+3;})||16):null,ovl=S.items.some(function(i){return overlaps(i,S.items);});
   box.innerHTML='<span class="lbl">Smallest standard size that fits</span><div class="big">'+W+'′ × '+L+'′<small>'+(W*L).toLocaleString()+' SQ FT</small></div>'
-   +'<p>Your layout as arranged, plus '+CLEAR+'′ to walk around and open doors.</p>'
-   +(door?'<div class="door">Suggested roll-up: <b>'+door+'′ wide</b> or more for your widest vehicle. Door height depends on your tallest one; we\'ll confirm it on your quote.</div>':'')
+   +'<p>Your layout as arranged, plus '+CLEAR+'′ to walk around and open doors.</p><div class="door">Wall height: <b>'+wallH+'′ or more</b> for your tallest item ('+fmtH(anyTall)+').</div>'
+   +(door?'<div class="door">Front roll-up: <b>'+door+'′ wide × '+doorH+'′ tall</b> or more to bring your largest item in.</div>':'')
    +(ovl?'<p style="color:var(--orange);margin-top:8px">Some items overlap. Spread them out for an accurate size.</p>':'')
-   +'<button type="button" class="cta l" id="useSize">Use '+W+'′ × '+L+'′</button><button type="button" class="cta g" id="findBtn">Recalculate</button>';
-  $('findBtn').onclick=find;$('useSize').onclick=function(){push();var dx=CLEAR-x0,dy=CLEAR-y0;S.items.forEach(function(i){i.x=snap(i.x+dx);i.y=snap(i.y+dy);});setSize(W,L);
-    if(door){var rd=S.doors.find(function(d){return d.kind==='roll'&&d.wall==='front';});if(rd&&rd.size<door){var old=rd.size;rd.size=door;if(doorClash(rd,S.doors)){var p=freeSpot('front',door);if(p===null)rd.size=old;else rd.pos=p;}render();}}};}
+   +'<button type="button" class="cta l" id="useSize">Use '+W+'′ × '+L+'′ × '+wallH+'′</button><button type="button" class="cta g" id="findBtn">Recalculate</button>';
+  $('findBtn').onclick=find;$('useSize').onclick=function(){push();S.hgt=wallH;var dx=CLEAR-x0,dy=CLEAR-y0;S.items.forEach(function(i){i.x=snap(i.x+dx);i.y=snap(i.y+dy);});setSize(W,L);
+    if(door){var rd=S.doors.find(function(d){return d.kind==='roll'&&d.wall==='front';});if(rd&&(rd.size<door||rd.dh<doorH)){var old=rd.size;rd.size=Math.max(rd.size,door);rd.dh=Math.max(rd.dh,doorH);if(doorClash(rd,S.doors)){var p=freeSpot('front',door);if(p===null)rd.size=old;else rd.pos=p;}render();}}};}
 $('findBtn').onclick=find;
 /* ── send layout ── */
-function summary(){var lines=['Building: '+S.w+"' x "+S.l+"' ("+(S.w*S.l)+' sq ft)','Doors: '+(S.doors.map(function(d){return (d.kind==='roll'?d.size+"' roll-up":"3' walk door")+' on '+d.wall+' wall at '+d.pos+"'";}).join('; ')||'none'),'Items ('+S.items.length+'):'];
-  S.items.forEach(function(i){var v=CATALOG.find(function(c){return c.id===i.vehicleId;}),D=dims(i);lines.push(' - '+v.name+' '+formatDim(D[0])+' x '+formatDim(D[1])+" at "+i.x+"' from left, "+i.y+"' from back"+(i.rotation?' (rotated '+i.rotation+'°)':''));});return lines.join('\n');}
+function summary(){var lines=['Building: '+S.w+"' x "+S.l+"' x "+S.hgt+"' walls ("+(S.w*S.l)+' sq ft)','Doors: '+(S.doors.map(function(d){return (d.kind==='roll'?d.size+"'x"+d.dh+"' roll-up":"3' walk door")+' on '+d.wall+' wall at '+d.pos+"'";}).join('; ')||'none'),'Items ('+S.items.length+'):'];
+  S.items.forEach(function(i){var v=CATALOG.find(function(c){return c.id===i.vehicleId;}),D=dims(i);lines.push(' - '+v.name+' '+formatDim(D[0])+' x '+formatDim(D[1])+', '+formatDim(ht(i))+' tall'+" at "+i.x+"' from left, "+i.y+"' from back"+(i.rotation?' (rotated '+i.rotation+'°)':''));});return lines.join('\n');}
 $('sendOpen').onclick=function(){$('send').classList.add('on');this.style.display='none';$('send').querySelector('input').focus();};
 $('send').addEventListener('submit',function(e){e.preventDefault();$('layoutField').value=summary();var f=this,btn=f.querySelector('button[type=submit]');btn.disabled=true;btn.textContent='Sending…';
   fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}}).then(function(r){if(!r.ok)throw 0;f.classList.remove('on');$('ok').classList.add('on');})
