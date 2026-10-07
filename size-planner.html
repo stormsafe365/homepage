@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Steel Building Size Planner | StormSafe Steel</title>
+<meta name="description" content="Free steel building size planner: lay out cars, trucks, boats, RVs and equipment to scale, add doors, and find the building size that fits.">
+<meta name="theme-color" content="#08121d">
+<link rel="canonical" href="https://www.stormsafesteel.com/size-planner">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Steel Building Size Planner | StormSafe Steel">
+<meta property="og:description" content="Free steel building size planner: lay out cars, trucks, boats, RVs and equipment to scale, add doors, and find the building size that fits.">
+<meta property="og:url" content="https://www.stormsafesteel.com/size-planner">
+<meta property="og:image" content="https://www.stormsafesteel.com/img/buildings/cu-54x52-2.JPG">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Steel Building Size Planner | StormSafe Steel">
+<meta name="twitter:description" content="Free steel building size planner: lay out cars, trucks, boats, RVs and equipment to scale, add doors, and find the building size that fits.">
+<meta name="twitter:image" content="https://www.stormsafesteel.com/img/buildings/cu-54x52-2.JPG">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.stormsafesteel.com/"},{"@type":"ListItem","position":2,"name":"FAQ & Resources","item":"https://www.stormsafesteel.com/resources"},{"@type":"ListItem","position":3,"name":"Size Planner","item":"https://www.stormsafesteel.com/size-planner"}]},{"@type":"WebApplication","name":"StormSafe Steel Size Planner","url":"https://www.stormsafesteel.com/size-planner","applicationCategory":"DesignApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}]}</script>
+<style>
+:root{
+  --teal:#09d6dc;--teal-dim:#07bcc1;--teal-glow:rgba(9,214,220,.10);
+  --dark:#08121d;--dark-2:#111827;--dark-3:#1a2436;--dark-4:#1f2d42;
+  --border:#1e2d42;--border-vis:#2a3d55;
+  --text:#e2e8f0;--sub:#94a3b8;--muted:#64748b;
+  --over:#f0883e;--lime:#8dc63f;--over-zone:rgba(240,136,62,.6);
+  --h:"Orbitron",system-ui,sans-serif;--b:"Inter",system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--dark);color:var(--text);font-family:var(--b);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,select{font-family:inherit}
+:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+nav.top{position:sticky;top:0;z-index:200;background:rgba(8,18,29,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border-vis);padding:0 16px;display:flex;align-items:center;justify-content:space-between;height:56px}
+@media(min-width:768px){nav.top{padding:0 32px;height:60px}}
+.nav-logo{font-family:var(--h);font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+.nav-logo span{color:var(--teal)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-phone{display:none;font-weight:600;font-size:13px;color:var(--teal)}
+@media(min-width:768px){.nav-phone{display:inline}}
+.nav-links{display:none;align-items:center;gap:24px;font-size:12px;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+@media(min-width:900px){.nav-links{display:flex}}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{display:none;background:var(--teal);color:#08121d;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:9px 16px}
+@media(min-width:900px){.nav-cta{display:inline-block}}
+.ctas{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:15px 20px;min-height:52px;flex:1 1 200px;transition:all .2s}
+.btn-primary{background:var(--teal);color:#08121d}
+.btn-primary:hover{background:var(--teal-dim)}
+.btn-secondary{border:1px solid var(--border-vis);color:var(--text)}
+.btn-secondary:hover{border-color:var(--teal);color:var(--teal)}
+body{padding-bottom:64px}
+@media(min-width:768px){body{padding-bottom:0}}
+.nav-menu-btn{background:none;border:1px solid var(--border-vis);color:var(--text);width:38px;height:38px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+@media(min-width:900px){.nav-menu-btn{display:none}}
+.mobile-menu{position:fixed;inset:56px 0 0 0;z-index:190;background:var(--dark);padding:8px 20px 28px;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column;overflow-y:auto}
+.mobile-menu.open{transform:none}
+.mobile-menu a{padding:18px 4px;border-bottom:1px solid var(--border-vis);font-family:var(--h);font-size:14px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.mobile-menu .mm-cta{background:var(--teal);color:#08121d;text-align:center;margin-top:20px;border:none}
+@media(min-width:900px){.mobile-menu{display:none}}
+section.block{padding:64px 16px}
+@media(min-width:768px){section.block{padding:104px 32px}}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-header{margin-bottom:36px}
+.section-eyebrow{font-weight:600;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--over);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:"";width:24px;height:1px;background:var(--over)}
+.h2{font-family:var(--h);font-weight:900;font-size:clamp(28px,5vw,48px);text-transform:uppercase;line-height:1.04;margin-bottom:16px}
+.h2 .teal{color:var(--teal)}
+.sub{font-size:15.5px;color:var(--sub);max-width:640px;line-height:1.65}
+.tl{color:var(--teal);font-weight:600}
+.ctas.center{justify-content:center;max-width:520px;margin:0 auto}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--ri,0)*80ms)}
+.reveal.in{opacity:1;transform:none}
+.bigcta-inner{position:relative;max-width:720px;margin:0 auto}
+.bigcta-eyebrow{font-weight:600;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--over);display:inline-block;margin-bottom:16px}
+.bigcta h2{font-family:var(--h);font-weight:900;font-size:clamp(30px,6vw,56px);text-transform:uppercase;line-height:1.02;margin-bottom:18px}
+.bigcta h2 .teal{color:var(--teal)}
+.bigcta p{font-size:16px;color:var(--sub);margin:0 auto 30px;max-width:520px;line-height:1.65}
+.bigcta .fine{font-size:11px;color:var(--muted);margin:22px auto 0}
+footer{background:var(--dark-2);border-top:1px solid var(--border-vis);padding:48px 20px 28px;font-size:13px;color:var(--sub)}
+.foot-grid{max-width:1200px;margin:0 auto;display:grid;gap:28px;grid-template-columns:1fr 1fr}
+@media(min-width:768px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+.foot-grid>div:first-child{grid-column:1/-1}
+@media(min-width:768px){.foot-grid>div:first-child{grid-column:auto}}
+.foot-grid h4{font-family:var(--h);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--text);margin-bottom:12px}
+.foot-grid a,.foot-grid span{display:block;padding:3px 0}
+.foot-grid a:hover{color:var(--teal)}
+.foot-grid .nav-logo{font-size:15px}
+.foot-grid .nav-logo span{display:inline;padding:0}
+.foot-grid .tag{margin-top:10px;max-width:280px;line-height:1.6}
+.copyright{max-width:1200px;margin:32px auto 0;padding-top:18px;border-top:1px solid var(--border);font-size:11px;color:var(--muted)}
+.mob-cta{position:fixed;bottom:0;left:0;right:0;z-index:150;display:grid;grid-template-columns:1fr 1.2fr;gap:1px;background:var(--border-vis);padding-bottom:env(safe-area-inset-bottom)}
+@media(min-width:768px){.mob-cta{display:none}}
+.mob-cta a{background:var(--dark);padding:10px 8px;text-align:center;font-family:var(--h);font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:58px}
+.mob-cta a.primary{background:var(--teal);color:#08121d}
+.mob-cta-sub{font-family:var(--b);font-size:10px;font-weight:500;opacity:.75;letter-spacing:.02em;text-transform:none}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none}}
+
+:root{--lime:#8dc63f;--orange:#f0883e;--steel:#c3ccd6;--camo:url(data:image/jpeg;base64,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)}
+.pl-hero{padding:44px 16px 30px;background:radial-gradient(ellipse 900px 420px at 85% 0%,rgba(34,211,200,.13),transparent 60%),linear-gradient(180deg,var(--dark-2),var(--dark));border-bottom:1px solid var(--border-vis)}
+@media(min-width:768px){.pl-hero{padding:64px 32px 40px}}
+.pl-hero .in{max-width:1320px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.kw{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.kw::before{content:"";width:28px;height:1px;background:var(--orange)}
+.display{font-family:var(--h);font-weight:900;font-size:clamp(28px,5vw,52px);line-height:1.03;text-transform:uppercase;margin-bottom:12px}
+.display span{color:var(--teal);display:block}
+.lede{color:var(--sub);max-width:560px;line-height:1.65}
+.how{display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--sub)}
+.how b{font-family:var(--h);color:var(--lime);margin-right:6px}
+
+.pl{position:relative;isolation:isolate;padding:22px 12px 40px}
+.pl::before{content:"";position:absolute;inset:0;background-image:var(--camo);background-size:480px auto;opacity:.22;z-index:-1}
+@media(min-width:768px){.pl{padding:28px 24px 56px}}
+.pl-grid{max-width:1320px;margin:0 auto;display:grid;gap:14px}
+@media(min-width:1000px){.pl-grid{grid-template-columns:300px minmax(0,1fr) 290px;align-items:start}}
+.panel{background:rgba(17,24,39,.94);border:1px solid var(--border-vis);border-radius:14px;overflow:hidden}
+.ph{font-family:var(--h);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);padding:13px 16px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.ph small{color:var(--muted);letter-spacing:.1em}
+.pb{padding:14px 16px}
+.lbl{display:block;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.inp,.sel{width:100%;background:var(--dark);border:1px solid var(--border-vis);border-radius:8px;color:var(--text);font:inherit;font-size:15px;font-weight:600;padding:10px 12px}
+.inp:focus,.sel:focus{outline:none;border-color:var(--teal)}
+.area{margin-top:8px;font-size:12px;color:var(--muted)}.area b{color:var(--text)}
+/* catalog */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;padding:12px 16px 4px}
+.tab{background:none;border:1px solid var(--border-vis);color:var(--sub);font-family:var(--h);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border-radius:999px;cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--lime);border-color:var(--lime);color:#08121d}
+.cat{max-height:360px;overflow-y:auto;padding:8px 10px 12px;display:grid;gap:6px}
+@media(min-width:1000px){.cat{max-height:min(calc(100vh - 470px),540px);min-height:260px}}
+.cat::-webkit-scrollbar{width:6px}.cat::-webkit-scrollbar-thumb{background:var(--border-vis);border-radius:3px}
+.it{display:flex;align-items:center;gap:12px;width:100%;background:var(--dark);border:1px solid var(--border);border-radius:10px;padding:8px 10px;cursor:pointer;text-align:left;color:var(--text);font:inherit;transition:border-color .2s,background .2s}
+.it:hover{border-color:var(--teal);background:var(--dark-3)}
+.it .ic{width:42px;height:42px;flex:none;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.03);border-radius:8px}
+.it b{display:block;font-size:13.5px;font-weight:600}
+.it small{font-family:var(--h);font-size:10px;letter-spacing:.06em;color:var(--teal)}
+.it .add{margin-left:auto;font-family:var(--h);font-size:16px;color:var(--lime)}
+/* floor */
+.floor-panel{padding:14px 12px 18px}
+.stats{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-end;padding:2px 6px 12px}
+.st span{display:block;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.st b{font-family:var(--h);font-size:20px;font-variant-numeric:tabular-nums}
+.st b.good{color:var(--lime)}.st b.warn{color:var(--orange)}
+.overlap{display:none;align-items:center;gap:8px;color:var(--orange);font-size:12.5px;font-weight:600;margin-left:auto}
+.overlap.on{display:flex}.overlap i{width:8px;height:8px;border-radius:50%;background:var(--orange);animation:pul 1.4s ease-in-out infinite}
+@keyframes pul{50%{opacity:.35}}
+.stage{display:flex;flex-direction:column;align-items:center;overflow:hidden;padding:4px 0 6px}
+.dimt,.dimb{font-family:var(--h);font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--sub);text-transform:uppercase;margin:6px 0}
+.dimb{color:var(--orange);margin-top:16px}
+.frow{display:flex;align-items:center;gap:10px}
+.dims{font-family:var(--h);font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--sub);writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap}
+#floor{position:relative;background-color:#0b2236;outline:5px solid var(--steel);outline-offset:0;box-shadow:0 0 0 6px #4a5361,0 30px 70px rgba(0,0,0,.55);touch-action:none;user-select:none}
+#floor.grid{background-image:linear-gradient(to right,rgba(34,211,200,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(34,211,200,.07) 1px,transparent 1px),linear-gradient(to right,rgba(34,211,200,.18) 1px,transparent 1px),linear-gradient(to bottom,rgba(34,211,200,.18) 1px,transparent 1px)}
+.pi{position:absolute;cursor:grab;filter:drop-shadow(0 3px 4px rgba(0,0,0,.45))}
+.pi.drag{cursor:grabbing;z-index:20}
+.pi.sel{z-index:10;outline:2px solid var(--teal);outline-offset:3px;border-radius:3px}
+.pi.ovl{outline:2px solid var(--orange);outline-offset:3px;border-radius:3px}
+.pi .rot{width:100%;height:100%;transform-origin:center}
+.measurements-overlay{position:absolute;top:0;left:0;pointer-events:none;z-index:15}
+.measurements-overlay text{font-family:Inter,system-ui,sans-serif}
+.dr{position:absolute;z-index:25;display:flex;align-items:center;justify-content:center;cursor:grab;touch-action:none}
+.dr .bar{position:absolute;inset:0;border-radius:2px}
+.dr.roll .bar{background:repeating-linear-gradient(90deg,#e6edf3 0 3px,#b8c3cf 3px 5px);box-shadow:0 0 0 2px #22d3c8}
+.dr.walk .bar{background:var(--orange);box-shadow:0 0 0 2px #08121d}
+.dr.sel .bar{box-shadow:0 0 0 2px var(--lime),0 0 14px rgba(141,198,63,.8)}
+.dr .tg{position:absolute;white-space:nowrap;font-family:var(--h);font-size:9px;font-weight:700;letter-spacing:.08em;color:#08121d;background:var(--teal);padding:2px 6px;border-radius:3px;pointer-events:none}
+.dr.walk .tg{background:var(--orange)}
+.dr.bad .bar{box-shadow:0 0 0 2px #f87171}
+.empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:rgba(203,238,255,.55);font-size:14px;line-height:1.6;pointer-events:none}
+.empty b{display:block;font-family:var(--h);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+.tool{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.tb{display:inline-flex;align-items:center;gap:7px;background:var(--dark);border:1px solid var(--border-vis);color:var(--text);font:inherit;font-size:12.5px;font-weight:600;padding:9px 13px;border-radius:8px;cursor:pointer;transition:all .2s}
+.tb:hover:not(:disabled){border-color:var(--teal);color:var(--teal)}
+.tb:disabled{opacity:.35;cursor:default}
+.tb.on{border-color:var(--teal);color:var(--teal)}
+.tb.danger:hover:not(:disabled){border-color:#f87171;color:#f87171}
+.tb i{font-size:16px}
+.selbar{display:none}.selbar.on{display:flex}
+/* doors */
+.doors{display:grid;gap:8px}
+.dl{display:flex;align-items:center;gap:8px;font-size:13px;background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:8px 10px;cursor:pointer}
+.dl.sel{border-color:var(--lime)}
+.dl i{width:12px;height:12px;border-radius:2px;flex:none}
+.dl .x{margin-left:auto;background:none;border:none;color:var(--muted);font-size:16px;cursor:pointer}
+.dl .x:hover{color:#f87171}
+.msg{min-height:18px;font-size:12px;color:var(--orange);margin-top:6px}
+/* right column */
+.fit .big{font-family:var(--h);font-weight:900;font-size:34px;line-height:1;margin:6px 0 4px}
+.fit .big small{display:block;font-size:11px;color:var(--sub);letter-spacing:.14em;margin-top:6px}
+.fit p{font-size:13px;color:var(--sub);line-height:1.55}
+.fit .door{margin-top:10px;padding:10px 12px;border-left:3px solid var(--lime);background:rgba(141,198,63,.07);border-radius:6px;font-size:13px;line-height:1.5}
+.fit .door b{color:var(--lime)}
+.cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:48px;margin-top:12px;font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;border:none;border-radius:8px;cursor:pointer;font-family:inherit;text-decoration:none}
+.cta.p{background:var(--teal);color:#08121d}.cta.p:hover{background:var(--teal-dim)}
+.cta.g{background:none;border:1px solid var(--border-vis);color:var(--text)}.cta.g:hover{border-color:var(--teal);color:var(--teal)}
+.cta.l{background:var(--lime);color:#08121d}
+.fine{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5}
+form.send{display:none;margin-top:12px;gap:8px}
+form.send.on{display:grid}
+form.send textarea{min-height:64px;resize:vertical;font-weight:400;font-size:14px}
+.ok{display:none;margin-top:12px;padding:12px;border-radius:8px;background:rgba(141,198,63,.1);border:1px solid var(--lime);font-size:13.5px;line-height:1.5}
+.ok.on{display:block}
+@media(max-width:999px){.pl-grid>.panel:first-child{order:2}.pl-grid>.floor-panel{order:1}.pl-grid>.right{order:3}}
+@media print{.ss-chrome,.pl-hero,.panel:not(.floor-panel),.tool,.pl::before{display:none!important}.pl{padding:0}body{background:#fff}#floor{box-shadow:none}.pl-grid{display:block}.floor-panel{border:none;background:#fff}.st b,.st span,.dimt,.dimb,.dims{color:#000!important}}
+@media(prefers-reduced-motion:reduce){.overlap i{animation:none}}
+
+
+/* Wix embed */
+body{padding-bottom:0!important}
+#grid{align-content:start}
+.faq summary,.c-faq summary,.rs-q summary{pointer-events:none;cursor:default}
+#rs-list{align-content:start}
+.faq summary::after,.c-faq summary::after,.rs-q summary::after{display:none}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+</head>
+<body>
+
+<header class="pl-hero">
+  <div class="in">
+    <div>
+      <h1 class="kw">Steel Building Size Planner</h1>
+      <p class="display">Park It Before<span>You Build It.</span></p>
+      <p class="lede">Lay out your cars, trucks, boats, RVs and equipment on a to-scale floor plan. Find the building size that fits, then send the layout with your quote.</p>
+    </div>
+    <div class="how"><span><b>01</b>Tap to add</span><span><b>02</b>Drag to arrange</span><span><b>03</b>Find my size</span></div>
+  </div>
+</header>
+
+<section class="pl" aria-label="Size planner">
+  <div class="pl-grid">
+    <div class="panel">
+      <div class="ph">Building <small id="area-top">1,120 SQ FT</small></div>
+      <div class="pb">
+        <div class="row2">
+          <label><span class="lbl">Width (ft)</span><input class="inp" type="number" id="bw" value="28" min="10" max="80" inputmode="numeric"></label>
+          <label><span class="lbl">Length (ft)</span><input class="inp" type="number" id="bl" value="40" min="10" max="200" inputmode="numeric"></label>
+        </div>
+      </div>
+      <div class="ph" style="border-top:1px solid var(--border)">Add Items <small>tap to add</small></div>
+      <div class="tabs" id="tabs" role="group" aria-label="Item categories"></div>
+      <div class="cat" id="cat"></div>
+    </div>
+
+    <div class="panel floor-panel">
+      <div class="stats">
+        <div class="st"><span>Items</span><b id="s-n">0</b></div>
+        <div class="st"><span>Floor used</span><b id="s-a">0 sq ft</b></div>
+        <div class="st"><span>Utilization</span><b id="s-u">0%</b></div>
+        <div class="overlap" id="ovl"><i></i>Items overlapping</div>
+      </div>
+      <div class="stage" id="stage">
+        <div class="dimt" id="dimt">← 28′ wide →</div>
+        <div class="frow"><div class="dims" id="dims">← 40′ long →</div><div id="floor" class="grid"><div class="empty" id="empty"><span><b>Start here</b>Tap a car, truck, boat or RV<br>on the left to drop it in.</span></div></div></div>
+        <div class="dimb">Front</div>
+      </div>
+      <div class="tool">
+        <span class="selbar" id="selbar" style="gap:8px">
+          <button type="button" class="tb" id="rot"><i class="ti ti-rotate-clockwise-2"></i>Rotate</button>
+          <button type="button" class="tb danger" id="del"><i class="ti ti-trash"></i>Remove</button>
+        </span>
+        <button type="button" class="tb" id="undo"><i class="ti ti-arrow-back-up"></i>Undo</button>
+        <button type="button" class="tb danger" id="clr"><i class="ti ti-eraser"></i>Clear</button>
+        <button type="button" class="tb on" id="grd"><i class="ti ti-grid-dots"></i>Grid</button>
+        <button type="button" class="tb" id="prt"><i class="ti ti-printer"></i>Print</button>
+      </div>
+    </div>
+
+    <div class="right" style="display:grid;gap:14px">
+      <div class="panel">
+        <div class="ph">Doors <small>no overlaps</small></div>
+        <div class="pb">
+          <div class="row2">
+            <label><span class="lbl">Type</span><select class="sel" id="dt"><option value="roll-10">Roll-up 10′</option><option value="roll-8">Roll-up 8′</option><option value="roll-9">Roll-up 9′</option><option value="roll-12">Roll-up 12′</option><option value="roll-14">Roll-up 14′</option><option value="roll-16">Roll-up 16′</option><option value="walk-3">Walk door 3′</option></select></label>
+            <label><span class="lbl">Wall</span><select class="sel" id="dw"><option value="front">Front</option><option value="back">Back</option><option value="left">Left side</option><option value="right">Right side</option></select></label>
+          </div>
+          <button type="button" class="cta g" id="addDoor"><i class="ti ti-plus"></i>Add door</button>
+          <div class="msg" id="dmsg" aria-live="polite"></div>
+          <div class="doors" id="doors"></div>
+          <p class="fine">Drag a door along its wall. Doors can't overlap or crowd each other.</p>
+        </div>
+      </div>
+      <div class="panel fit">
+        <div class="ph">Find My Size</div>
+        <div class="pb" id="fit">
+          <p>Add what you're storing, arrange it how you'd park it, then tap below.</p>
+          <button type="button" class="cta l" id="findBtn"><i class="ti ti-ruler-measure"></i>Find my size</button>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="ph">Send My Layout</div>
+        <div class="pb">
+          <p style="font-size:13px;color:var(--sub);line-height:1.55">Send this exact layout to a building specialist with your quote request. You'll get a quote and a free 3D rendering.</p>
+          <button type="button" class="cta p" id="sendOpen">Send my layout →</button>
+          <form class="send" id="send" action="https://formspree.io/f/xzdowwry" method="POST">
+            <input class="inp" name="name" required placeholder="Name" autocomplete="name">
+            <input class="inp" name="email" type="email" required placeholder="Email" autocomplete="email">
+            <input class="inp" name="phone" type="tel" required placeholder="Phone" autocomplete="tel">
+            <input class="inp" name="zip" placeholder="ZIP code" inputmode="numeric" autocomplete="postal-code">
+            <textarea class="inp" name="notes" placeholder="Anything else? (optional)"></textarea>
+            <input type="hidden" name="_subject" value="Size Planner layout — quote request">
+            <input type="hidden" name="layout" id="layoutField">
+            <button type="submit" class="cta p" style="margin-top:4px">Send layout + request quote</button>
+          </form>
+          <div class="ok" id="ok"><b>Sent.</b> A building specialist will reach out within one business day with your quote.</div>
+          <a class="cta g" href="https://www.stormsafesteel.com/customize" target="_parent">Design your build →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleMenu(){var m=document.getElementById('mm');var o=m.classList.toggle('open');document.querySelector('.nav-menu-btn').setAttribute('aria-expanded',o);}
+function closeMenu(){document.getElementById('mm').classList.remove('open');document.querySelector('.nav-menu-btn').setAttribute('aria-expanded','false');}
+var yr=document.getElementById('yr');if(yr)yr.textContent=new Date().getFullYear();
+
+const CATALOG = [
+  // VEHICLES - Cars
+  { id: 'small-car',    name: 'Small Car',     w: 5.5,  l: 13,    color: '#E74C3C', shape: 'car',  variant: 'compact', cat: 'Vehicles' },
+  { id: 'compact-car',  name: 'Compact Car',   w: 5.75, l: 14,    color: '#F39C12', shape: 'car',  variant: 'compact', cat: 'Vehicles' },
+  { id: 'family-car',   name: 'Family Car',    w: 6,    l: 15,    color: '#F1C40F', shape: 'car',  variant: 'sedan',   cat: 'Vehicles' },
+  { id: 'luxury-car',   name: 'Luxury Car',    w: 6.2,  l: 17,    color: '#16A085', shape: 'car',  variant: 'luxury',  cat: 'Vehicles' },
+  { id: 'executive-car',name: 'Executive Car', w: 6.2,  l: 16,    color: '#D4A017', shape: 'car',  variant: 'sedan',   cat: 'Vehicles' },
+  { id: 'sport-car',    name: 'Sport Car',     w: 6.2,  l: 14,    color: '#C0392B', shape: 'car',  variant: 'sport',   cat: 'Vehicles' },
+  { id: 'estate-car',   name: 'Estate Car',    w: 5.83, l: 15,    color: '#ECF0F1', shape: 'car',  variant: 'estate',  cat: 'Vehicles' },
+  { id: 'mpv-car',      name: 'MPV / Minivan', w: 6.2,  l: 16,    color: '#E84A2B', shape: 'car',  variant: 'mpv',     cat: 'Vehicles' },
+  // SUVs
+  { id: 'small-suv',    name: 'Small SUV',     w: 5.67, l: 13.5,  color: '#FAFAFA', shape: 'suv',  variant: 'small',   cat: 'SUVs' },
+  { id: 'compact-suv',  name: 'Compact SUV',   w: 5.67, l: 14,    color: '#3498DB', shape: 'suv',  variant: 'small',   cat: 'SUVs' },
+  { id: 'mid-suv',      name: 'Mid-Size SUV',  w: 6.2,  l: 15,    color: '#2C3E50', shape: 'suv',  variant: 'mid',     cat: 'SUVs' },
+  { id: 'large-suv',    name: 'Large SUV',     w: 6.2,  l: 16,    color: '#E74C3C', shape: 'suv',  variant: 'large',   cat: 'SUVs' },
+  // Trucks & Vans
+  { id: 'pickup',       name: 'Pickup Truck',  w: 6.2,  l: 17.5,  color: '#16A085', shape: 'pickup',                   cat: 'Trucks & RVs' },
+  { id: 'passenger-van',name: 'Passenger Van', w: 6.2,  l: 17.5,  color: '#ECF0F1', shape: 'van',   variant: 'passenger', cat: 'Trucks & RVs' },
+  { id: 'rv-regular',   name: 'RV Van Regular',w: 6.5,  l: 19.33, color: '#ECF0F1', shape: 'van',   variant: 'rv',     cat: 'Trucks & RVs' },
+  { id: 'rv-extended',  name: 'RV Van Extended',w:6.5,  l: 20.75, color: '#E4D7C5', shape: 'van',   variant: 'rv',     cat: 'Trucks & RVs' },
+  { id: 'rv-long',      name: 'RV Van Long',   w: 6.5,  l: 24,    color: '#F1C40F', shape: 'van',   variant: 'bus',    cat: 'Trucks & RVs' },
+  { id: 'box-truck',    name: 'Box Truck',     w: 8.5,  l: 26,    color: '#F1C40F', shape: 'boxtruck',                  cat: 'Trucks & RVs' },
+  { id: 'trailer',      name: 'Trailer',       w: 8,    l: 28,    color: '#ECF0F1', shape: 'trailer',                   cat: 'Trucks & RVs' },
+  // Boats
+  { id: 'boat',         name: 'Boat',          w: 6.83, l: 18.33, color: '#E8D5B7', shape: 'boat',  variant: 'normal', cat: 'Boats' },
+  { id: 'water-sport',  name: 'Water Sport Boat', w: 3.58, l: 10.25, color: '#E67E22', shape: 'boat', variant: 'sport',cat: 'Boats' },
+  { id: 'jet-ski',      name: 'Jet Ski',       w: 4,    l: 10,    color: '#3498DB', shape: 'jetski',                    cat: 'Boats' },
+  { id: 'kayak',        name: 'Kayak',         w: 2.5,  l: 12,    color: '#E74C3C', shape: 'kayak',                     cat: 'Boats' },
+  // Recreation Vehicles
+  { id: 'motorcycle',   name: 'Motorcycle',    w: 3,    l: 7,     color: '#34495E', shape: 'motorcycle',                cat: 'Recreation' },
+  { id: 'atv',          name: 'ATV / Quad',    w: 3,    l: 5,     color: '#F39C12', shape: 'atv',                       cat: 'Recreation' },
+  { id: 'go-cart',      name: 'Go-Cart',       w: 3,    l: 4,     color: '#27AE60', shape: 'gocart',                    cat: 'Recreation' },
+  { id: 'bicycle',      name: 'Bicycle',       w: 2,    l: 5.5,   color: '#2980B9', shape: 'bicycle',                   cat: 'Recreation' },
+  // Equipment
+  { id: 'tractor',      name: 'Tractor',       w: 6.67, l: 14.83, color: '#E67E22', shape: 'tractor',                   cat: 'Equipment' },
+  { id: 'motocultor',   name: 'Motocultor',    w: 4.08, l: 7.58,  color: '#27AE60', shape: 'motocultor',                cat: 'Equipment' },
+  { id: 'wheelbarrow',  name: 'Wheelbarrow',   w: 2,    l: 3.67,  color: '#7F8C8D', shape: 'wheelbarrow',               cat: 'Equipment' },
+  { id: 'harvester',    name: 'Harvester',     w: 9.83, l: 16,    color: '#F1C40F', shape: 'harvester',                 cat: 'Equipment' },
+  { id: 'plow-tractor', name: 'Plow Tractor',  w: 7.58, l: 4.17,  color: '#2980B9', shape: 'plow',                      cat: 'Equipment' },
+  { id: 'seeder',       name: 'Seeder & Fertilizer', w: 5.5, l: 5.17, color: '#C0392B', shape: 'seeder',               cat: 'Equipment' },
+  { id: 'baler',        name: 'Baler',         w: 4.75, l: 4,     color: '#27AE60', shape: 'baler',                     cat: 'Equipment' },
+  { id: 'sprayer',      name: 'Sprayer',       w: 4.17, l: 16,    color: '#E74C3C', shape: 'sprayer',                   cat: 'Equipment' },
+  { id: 'rotary-cutter',name: 'Rotary Cutter', w: 6,    l: 6.17,  color: '#27AE60', shape: 'rotarycutter',              cat: 'Equipment' },
+  { id: 'manure-spreader',name:'Manure Spreader',w:8.58,l: 8.17,  color: '#C0392B', shape: 'manurespreader',            cat: 'Equipment' },
+  { id: 'forklift',     name: 'Forklift',      w: 4,    l: 10,    color: '#F1C40F', shape: 'forklift',                  cat: 'Equipment' },
+  { id: 'workbench',    name: 'Workbench',     w: 2.5,  l: 6,     color: '#8B4513', shape: 'box',                       cat: 'Equipment' },
+  // Recreation / Games
+  { id: 'pool-table',   name: 'Pool Table',    w: 4.5,  l: 7.83,  color: '#27AE60', shape: 'pooltable',                 cat: 'Games' },
+  { id: 'poker-table',  name: 'Poker Table',   w: 3.5,  l: 8.5,   color: '#27AE60', shape: 'pokertable',                cat: 'Games' },
+  { id: 'foosball',     name: 'Foosball Table',w: 2.5,  l: 5,     color: '#27AE60', shape: 'foosball',                  cat: 'Games' },
+  { id: 'tennis-table', name: 'Ping Pong Table',w: 5,   l: 9,     color: '#1E5631', shape: 'pingpong',                  cat: 'Games' },
+  { id: 'air-hockey',   name: 'Air Hockey',    w: 4,    l: 7,     color: '#ECF0F1', shape: 'airhockey',                 cat: 'Games' },
+  { id: 'shuffleboard', name: 'Shuffleboard',  w: 2.5,  l: 12,    color: '#D4A574', shape: 'shuffleboard',              cat: 'Games' },
+  { id: 'beer-pong',    name: 'Beer Pong Table',w: 2,   l: 8,     color: '#27AE60', shape: 'beerpong',                  cat: 'Games' },
+  { id: 'weights-rack', name: 'Weights Rack',  w: 2,    l: 7,     color: '#34495E', shape: 'weights',                   cat: 'Games' },
+];
+
+const CATEGORIES = ['Vehicles', 'SUVs', 'Trucks & RVs', 'Boats', 'Recreation', 'Equipment', 'Games'];
+
+// =========================
+// SVG RENDERING - one detailed top-down drawing per shape
+// =========================
+const shade = (hex, amt) => {
+  const c = hex.replace('#','');
+  let r = parseInt(c.substr(0,2),16), g = parseInt(c.substr(2,2),16), b = parseInt(c.substr(4,2),16);
+  r = Math.max(0, Math.min(255, r+amt));
+  g = Math.max(0, Math.min(255, g+amt));
+  b = Math.max(0, Math.min(255, b+amt));
+  return `rgb(${r},${g},${b})`;
+};
+
+function renderItem(item, w, h) {
+  // Returns an SVG string showing the top-down view of the item, scaled to w × h pixels.
+  const c = item.color;
+  const c2 = shade(c, -25);
+  const c3 = shade(c, -50);
+  const isLight = parseInt(c.substr(1,2),16) > 200;
+  const trim = isLight ? '#94A3B8' : 'rgba(0,0,0,0.35)';
+
+  switch (item.shape) {
+    case 'car': return renderCar(w, h, c, c2, c3, item.variant);
+    case 'suv': return renderSUV(w, h, c, c2, c3, item.variant);
+    case 'pickup': return renderPickup(w, h, c, c2, c3);
+    case 'van': return renderVan(w, h, c, c2, c3, item.variant);
+    case 'boxtruck': return renderBoxTruck(w, h, c, c2, c3);
+    case 'trailer': return renderTrailer(w, h, c, c2, c3);
+    case 'boat': return renderBoat(w, h, c, c2, c3, item.variant);
+    case 'jetski': return renderJetski(w, h, c, c2, c3);
+    case 'kayak': return renderKayak(w, h, c, c2, c3);
+    case 'motorcycle': return renderMotorcycle(w, h, c, c2, c3);
+    case 'atv': return renderATV(w, h, c, c2, c3);
+    case 'snowmobile': return renderSnowmobile(w, h, c, c2, c3);
+    case 'gocart': return renderGocart(w, h, c, c2, c3);
+    case 'bicycle': return renderBicycle(w, h, c, c2, c3);
+    case 'tractor': return renderTractor(w, h, c, c2, c3);
+    case 'motocultor': return renderMotocultor(w, h, c, c2, c3);
+    case 'wheelbarrow': return renderWheelbarrow(w, h, c, c2, c3);
+    case 'harvester': return renderHarvester(w, h, c, c2, c3);
+    case 'plow': return renderPlow(w, h, c, c2, c3);
+    case 'seeder': return renderSeeder(w, h, c, c2, c3);
+    case 'baler': return renderBaler(w, h, c, c2, c3);
+    case 'sprayer': return renderSprayer(w, h, c, c2, c3);
+    case 'rotarycutter': return renderRotaryCutter(w, h, c, c2, c3);
+    case 'manurespreader': return renderManureSpreader(w, h, c, c2, c3);
+    case 'forklift': return renderForklift(w, h, c, c2, c3);
+    case 'snowblower': return renderSnowblower(w, h, c, c2, c3);
+    case 'pooltable': return renderPoolTable(w, h);
+    case 'pokertable': return renderPokerTable(w, h);
+    case 'foosball': return renderFoosball(w, h);
+    case 'pingpong': return renderPingPong(w, h);
+    case 'airhockey': return renderAirHockey(w, h);
+    case 'shuffleboard': return renderShuffleboard(w, h);
+    case 'beerpong': return renderBeerPong(w, h);
+    case 'weights': return renderWeights(w, h);
+    case 'box':
+    default: return renderBox(w, h, c, c2, c3);
+  }
+}
+
+// ============ CARS ============
+function renderCar(w, h, c, c2, c3, variant) {
+  const isSport = variant === 'sport';
+  const isMPV = variant === 'mpv';
+  const isEstate = variant === 'estate';
+  const isLuxury = variant === 'luxury';
+  const isLight = parseInt(c.substr(1,2),16) > 200;
+  // For light-colored cars, use dark navy as accent. For dark cars, use light gray.
+  const accent = isLight ? '#1E4D72' : '#E8E8E8';
+  const accent2 = isLight ? '#0F2E47' : '#FFFFFF';
+
+  const r = Math.min(w, h) * (isSport ? 0.18 : 0.13);
+  const roofX1 = w * 0.18, roofX2 = w * 0.82;
+  const roofY1 = h * (isSport ? 0.36 : 0.28);
+  const roofY2 = h * (isMPV || isEstate ? 0.78 : 0.72);
+  const wsY = h * 0.18;
+  const rwY = h * 0.85;
+
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- wheel arches behind body -->
+      <rect x="-1.5" y="${h*0.13}" width="3" height="${h*0.16}" fill="#1a1a1a" rx="1"/>
+      <rect x="${w-1.5}" y="${h*0.13}" width="3" height="${h*0.16}" fill="#1a1a1a" rx="1"/>
+      <rect x="-1.5" y="${h*0.71}" width="3" height="${h*0.16}" fill="#1a1a1a" rx="1"/>
+      <rect x="${w-1.5}" y="${h*0.71}" width="3" height="${h*0.16}" fill="#1a1a1a" rx="1"/>
+      <!-- body with subtle gradient -->
+      <defs>
+        <linearGradient id="cargrad-${w}-${h}-${c.replace('#','')}" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="rgba(0,0,0,0.18)"/>
+          <stop offset="50%" stop-color="rgba(255,255,255,0.12)"/>
+          <stop offset="100%" stop-color="rgba(0,0,0,0.18)"/>
+        </linearGradient>
+      </defs>
+      <rect x="2" y="2" width="${w-4}" height="${h-4}" rx="${r}" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <rect x="2" y="2" width="${w-4}" height="${h-4}" rx="${r}" fill="url(#cargrad-${w}-${h}-${c.replace('#','')})"/>
+      <!-- hood line -->
+      <line x1="${w*0.18}" y1="${wsY}" x2="${w*0.82}" y2="${wsY}" stroke="${c2}" stroke-width="0.5" opacity="0.5"/>
+      <!-- windshield -->
+      <path d="M ${w*0.18} ${wsY} L ${w*0.82} ${wsY} L ${roofX2} ${roofY1} L ${roofX1} ${roofY1} Z" fill="rgba(130,200,230,0.88)" stroke="${c3}" stroke-width="0.4"/>
+      <!-- roof -->
+      <rect x="${roofX1}" y="${roofY1}" width="${roofX2-roofX1}" height="${roofY2-roofY1}" fill="${c2}" rx="2"/>
+      ${isLuxury ? `<rect x="${w*0.3}" y="${roofY1+(roofY2-roofY1)*0.15}" width="${w*0.4}" height="${(roofY2-roofY1)*0.5}" fill="rgba(20,20,30,0.75)" rx="2"/>` : ''}
+      <!-- side windows -->
+      <rect x="${roofX1-1}" y="${roofY1+2}" width="2" height="${roofY2-roofY1-4}" fill="rgba(130,200,230,0.55)"/>
+      <rect x="${roofX2-1}" y="${roofY1+2}" width="2" height="${roofY2-roofY1-4}" fill="rgba(130,200,230,0.55)"/>
+      <!-- rear window -->
+      <path d="M ${roofX1} ${roofY2} L ${roofX2} ${roofY2} L ${w*0.82} ${rwY} L ${w*0.18} ${rwY} Z" fill="rgba(130,200,230,0.75)" stroke="${c3}" stroke-width="0.4"/>
+      <!-- trunk line -->
+      <line x1="${w*0.18}" y1="${rwY}" x2="${w*0.82}" y2="${rwY}" stroke="${c2}" stroke-width="0.5" opacity="0.5"/>
+      <!-- door seam -->
+      <line x1="${w*0.05}" y1="${h*0.5}" x2="${w*0.95}" y2="${h*0.5}" stroke="${c2}" stroke-width="0.3" opacity="0.4"/>
+      <!-- door handles -->
+      <rect x="${w*0.06}" y="${h*0.48}" width="${w*0.04}" height="${Math.max(1.5, h*0.015)}" rx="0.5" fill="${c2}"/>
+      <rect x="${w*0.9}" y="${h*0.48}" width="${w*0.04}" height="${Math.max(1.5, h*0.015)}" rx="0.5" fill="${c2}"/>
+      <!-- side mirrors -->
+      <path d="M 0 ${h*0.22} L -2 ${h*0.24} L -2 ${h*0.29} L 0 ${h*0.3} Z" fill="${c2}" stroke="${c3}" stroke-width="0.3"/>
+      <path d="M ${w} ${h*0.22} L ${w+2} ${h*0.24} L ${w+2} ${h*0.29} L ${w} ${h*0.3} Z" fill="${c2}" stroke="${c3}" stroke-width="0.3"/>
+      <!-- headlights -->
+      <rect x="${w*0.12}" y="2" width="${w*0.2}" height="${Math.max(3, h*0.04)}" rx="2" fill="rgba(255,250,210,0.95)" stroke="rgba(160,150,90,0.5)" stroke-width="0.3"/>
+      <rect x="${w*0.68}" y="2" width="${w*0.2}" height="${Math.max(3, h*0.04)}" rx="2" fill="rgba(255,250,210,0.95)" stroke="rgba(160,150,90,0.5)" stroke-width="0.3"/>
+      <!-- grille -->
+      <rect x="${w*0.35}" y="2" width="${w*0.3}" height="${Math.max(3, h*0.045)}" rx="1" fill="rgba(30,30,30,0.7)"/>
+      <!-- taillights -->
+      <rect x="${w*0.08}" y="${h - Math.max(4, h*0.05)}" width="${w*0.28}" height="${Math.max(3, h*0.04)}" rx="1.5" fill="rgba(210,40,40,0.92)"/>
+      <rect x="${w*0.64}" y="${h - Math.max(4, h*0.05)}" width="${w*0.28}" height="${Math.max(3, h*0.04)}" rx="1.5" fill="rgba(210,40,40,0.92)"/>
+      ${isSport ? `
+        <!-- racing stripes -->
+        <rect x="${w*0.42}" y="3" width="${w*0.06}" height="${h-6}" fill="${accent}" opacity="0.92"/>
+        <rect x="${w*0.52}" y="3" width="${w*0.06}" height="${h-6}" fill="${accent}" opacity="0.92"/>
+      ` : ''}
+    </svg>`;
+}
+
+// ============ SUV ============
+function renderSUV(w, h, c, c2, c3, variant) {
+  const isLight = parseInt(c.substr(1,2),16) > 200;
+  const isSmall = variant === 'small';
+  // Small SUVs get the signature white-body, navy-roof, twin-stripe look
+  const accent = isLight ? '#1E4D72' : c2;
+  const accentDark = isLight ? '#0F2E47' : c3;
+  const useStripes = isSmall || variant === 'mid';
+  const stripeColor = isLight ? '#1E4D72' : 'rgba(255,255,255,0.6)';
+
+  const r = Math.min(w, h) * 0.1;
+  const roofX1 = w * 0.16, roofX2 = w * 0.84;
+  const roofY1 = h * 0.24, roofY2 = h * 0.76;
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- wheel arches -->
+      <rect x="-1.5" y="${h*0.13}" width="3" height="${h*0.16}" fill="#1a1a1a" rx="1"/>
+      <rect x="${w-1.5}" y="${h*0.13}" width="3" height="${h*0.16}" fill="#1a1a1a" rx="1"/>
+      <rect x="-1.5" y="${h*0.71}" width="3" height="${h*0.16}" fill="#1a1a1a" rx="1"/>
+      <rect x="${w-1.5}" y="${h*0.71}" width="3" height="${h*0.16}" fill="#1a1a1a" rx="1"/>
+      <!-- body with gradient -->
+      <defs>
+        <linearGradient id="suvgrad-${w}-${h}-${c.replace('#','')}" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="rgba(0,0,0,0.18)"/>
+          <stop offset="50%" stop-color="rgba(255,255,255,0.12)"/>
+          <stop offset="100%" stop-color="rgba(0,0,0,0.18)"/>
+        </linearGradient>
+      </defs>
+      <rect x="2" y="2" width="${w-4}" height="${h-4}" rx="${r}" fill="${c}" stroke="${accentDark}" stroke-width="0.6"/>
+      <rect x="2" y="2" width="${w-4}" height="${h-4}" rx="${r}" fill="url(#suvgrad-${w}-${h}-${c.replace('#','')})"/>
+      ${useStripes ? `
+        <!-- twin racing stripes (full length) -->
+        <rect x="${w*0.4}" y="3" width="${w*0.06}" height="${h-6}" fill="${stripeColor}"/>
+        <rect x="${w*0.54}" y="3" width="${w*0.06}" height="${h-6}" fill="${stripeColor}"/>
+      ` : ''}
+      <!-- hood section line -->
+      <line x1="${w*0.16}" y1="${h*0.18}" x2="${w*0.84}" y2="${h*0.18}" stroke="${accentDark}" stroke-width="0.4" opacity="0.5"/>
+      <!-- windshield -->
+      <path d="M ${w*0.16} ${h*0.18} L ${w*0.84} ${h*0.18} L ${roofX2} ${roofY1} L ${roofX1} ${roofY1} Z" fill="rgba(130,200,230,0.9)" stroke="${accentDark}" stroke-width="0.4"/>
+      <!-- roof (the accent-colored top) -->
+      <rect x="${roofX1}" y="${roofY1}" width="${roofX2-roofX1}" height="${roofY2-roofY1}" fill="${accent}" rx="2"/>
+      <!-- roof rails (faint lines along the long edge) -->
+      <rect x="${roofX1+1}" y="${roofY1+3}" width="1.2" height="${roofY2-roofY1-6}" fill="${accentDark}"/>
+      <rect x="${roofX2-2.2}" y="${roofY1+3}" width="1.2" height="${roofY2-roofY1-6}" fill="${accentDark}"/>
+      <!-- panoramic sunroof -->
+      <rect x="${roofX1+w*0.06}" y="${roofY1+(roofY2-roofY1)*0.15}" width="${roofX2-roofX1-w*0.12}" height="${(roofY2-roofY1)*0.55}" rx="2" fill="rgba(20,30,50,0.7)"/>
+      <!-- side windows (narrow strips beside roof) -->
+      <rect x="${roofX1-1}" y="${roofY1+2}" width="2" height="${roofY2-roofY1-4}" fill="rgba(130,200,230,0.55)"/>
+      <rect x="${roofX2-1}" y="${roofY1+2}" width="2" height="${roofY2-roofY1-4}" fill="rgba(130,200,230,0.55)"/>
+      <!-- rear window -->
+      <path d="M ${roofX1} ${roofY2} L ${roofX2} ${roofY2} L ${w*0.84} ${h*0.84} L ${w*0.16} ${h*0.84} Z" fill="rgba(130,200,230,0.75)" stroke="${accentDark}" stroke-width="0.4"/>
+      <!-- trunk line -->
+      <line x1="${w*0.16}" y1="${h*0.84}" x2="${w*0.84}" y2="${h*0.84}" stroke="${accentDark}" stroke-width="0.4" opacity="0.5"/>
+      <!-- door seam -->
+      <line x1="${w*0.05}" y1="${h*0.5}" x2="${w*0.95}" y2="${h*0.5}" stroke="${accentDark}" stroke-width="0.3" opacity="0.4"/>
+      <!-- door handles -->
+      <rect x="${w*0.05}" y="${h*0.48}" width="${w*0.04}" height="${Math.max(1.5, h*0.014)}" rx="0.5" fill="${accentDark}"/>
+      <rect x="${w*0.91}" y="${h*0.48}" width="${w*0.04}" height="${Math.max(1.5, h*0.014)}" rx="0.5" fill="${accentDark}"/>
+      <!-- side mirrors -->
+      <path d="M 0 ${h*0.22} L -2 ${h*0.24} L -2 ${h*0.29} L 0 ${h*0.3} Z" fill="${accent}" stroke="${accentDark}" stroke-width="0.3"/>
+      <path d="M ${w} ${h*0.22} L ${w+2} ${h*0.24} L ${w+2} ${h*0.29} L ${w} ${h*0.3} Z" fill="${accent}" stroke="${accentDark}" stroke-width="0.3"/>
+      <!-- headlights -->
+      <rect x="${w*0.12}" y="2" width="${w*0.2}" height="${Math.max(3, h*0.04)}" rx="2" fill="rgba(255,250,210,0.95)" stroke="rgba(160,150,90,0.5)" stroke-width="0.3"/>
+      <rect x="${w*0.68}" y="2" width="${w*0.2}" height="${Math.max(3, h*0.04)}" rx="2" fill="rgba(255,250,210,0.95)" stroke="rgba(160,150,90,0.5)" stroke-width="0.3"/>
+      <!-- grille -->
+      <rect x="${w*0.35}" y="2" width="${w*0.3}" height="${Math.max(3, h*0.045)}" rx="1" fill="rgba(30,30,30,0.7)"/>
+      <!-- taillights -->
+      <rect x="${w*0.08}" y="${h - Math.max(4, h*0.05)}" width="${w*0.28}" height="${Math.max(3, h*0.04)}" rx="1.5" fill="rgba(210,40,40,0.92)"/>
+      <rect x="${w*0.64}" y="${h - Math.max(4, h*0.05)}" width="${w*0.28}" height="${Math.max(3, h*0.04)}" rx="1.5" fill="rgba(210,40,40,0.92)"/>
+    </svg>`;
+}
+
+// ============ PICKUP ============
+function renderPickup(w, h, c, c2, c3) {
+  const cabH = h * 0.42;
+  const bedY = cabH;
+  const bedH = h - cabH;
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <rect x="-1.5" y="${h*0.1}" width="3" height="${h*0.14}" fill="#1a1a1a" rx="1"/>
+      <rect x="${w-1.5}" y="${h*0.1}" width="3" height="${h*0.14}" fill="#1a1a1a" rx="1"/>
+      <rect x="-1.5" y="${h*0.55}" width="3" height="${h*0.14}" fill="#1a1a1a" rx="1"/>
+      <rect x="${w-1.5}" y="${h*0.55}" width="3" height="${h*0.14}" fill="#1a1a1a" rx="1"/>
+      <!-- cab -->
+      <rect x="2" y="2" width="${w-4}" height="${cabH-2}" rx="6" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <rect x="3" y="3" width="${w-6}" height="${h*0.05}" rx="3" fill="rgba(255,255,255,0.18)"/>
+      <!-- windshield -->
+      <path d="M ${w*0.15} ${h*0.13} L ${w*0.85} ${h*0.13} L ${w*0.82} ${h*0.3} L ${w*0.18} ${h*0.3} Z" fill="rgba(130,200,230,0.88)" stroke="${c3}" stroke-width="0.4"/>
+      <!-- cab roof -->
+      <rect x="${w*0.18}" y="${h*0.3}" width="${w*0.64}" height="${cabH - h*0.3 - 2}" fill="${c2}" rx="2"/>
+      <!-- rear window of cab -->
+      <rect x="${w*0.2}" y="${cabH-h*0.07}" width="${w*0.6}" height="${h*0.05}" fill="rgba(130,200,230,0.7)" rx="1"/>
+      <!-- bed -->
+      <rect x="2" y="${bedY}" width="${w-4}" height="${bedH-2}" rx="3" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <rect x="6" y="${bedY+4}" width="${w-12}" height="${bedH-10}" rx="2" fill="${shade(c, -45)}"/>
+      <!-- bed pattern (corrugation lines) -->
+      ${Array.from({length: Math.floor(bedH/8)}, (_, i) => `<line x1="8" y1="${bedY+8+i*8}" x2="${w-8}" y2="${bedY+8+i*8}" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>`).join('')}
+      <!-- tailgate -->
+      <rect x="4" y="${h-5}" width="${w-8}" height="3" rx="1" fill="${c2}"/>
+      <!-- side mirrors -->
+      <path d="M 0 ${h*0.16} L -2.5 ${h*0.18} L -2.5 ${h*0.24} L 0 ${h*0.26} Z" fill="${c2}" stroke="${c3}" stroke-width="0.3"/>
+      <path d="M ${w} ${h*0.16} L ${w+2.5} ${h*0.18} L ${w+2.5} ${h*0.24} L ${w} ${h*0.26} Z" fill="${c2}" stroke="${c3}" stroke-width="0.3"/>
+      <!-- headlights -->
+      <rect x="${w*0.1}" y="2" width="${w*0.22}" height="${Math.max(3, h*0.035)}" rx="2" fill="rgba(255,250,210,0.95)"/>
+      <rect x="${w*0.68}" y="2" width="${w*0.22}" height="${Math.max(3, h*0.035)}" rx="2" fill="rgba(255,250,210,0.95)"/>
+      <rect x="${w*0.35}" y="2" width="${w*0.3}" height="${Math.max(3, h*0.04)}" rx="1" fill="rgba(30,30,30,0.7)"/>
+      <!-- taillights -->
+      <rect x="${w*0.08}" y="${h-5}" width="${w*0.2}" height="3" rx="1" fill="rgba(210,40,40,0.92)"/>
+      <rect x="${w*0.72}" y="${h-5}" width="${w*0.2}" height="3" rx="1" fill="rgba(210,40,40,0.92)"/>
+    </svg>`;
+}
+
+// ============ VAN / RV / BUS ============
+function renderVan(w, h, c, c2, c3, variant) {
+  const isBus = variant === 'bus';
+  const windowCount = Math.max(2, Math.floor((h - 25) / 18));
+  const windowSpacing = (h * 0.7 - 10) / windowCount;
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <rect x="-1.5" y="${h*0.08}" width="3" height="${h*0.12}" fill="#1a1a1a" rx="1"/>
+      <rect x="${w-1.5}" y="${h*0.08}" width="3" height="${h*0.12}" fill="#1a1a1a" rx="1"/>
+      <rect x="-1.5" y="${h*0.78}" width="3" height="${h*0.12}" fill="#1a1a1a" rx="1"/>
+      <rect x="${w-1.5}" y="${h*0.78}" width="3" height="${h*0.12}" fill="#1a1a1a" rx="1"/>
+      <!-- body -->
+      <rect x="2" y="2" width="${w-4}" height="${h-4}" rx="5" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <rect x="3" y="3" width="${w-6}" height="${h*0.04}" rx="3" fill="rgba(255,255,255,0.18)"/>
+      <!-- windshield -->
+      <path d="M ${w*0.15} ${h*0.06} L ${w*0.85} ${h*0.06} L ${w*0.82} ${h*0.18} L ${w*0.18} ${h*0.18} Z" fill="rgba(130,200,230,0.88)" stroke="${c3}" stroke-width="0.4"/>
+      <!-- decorative stripe -->
+      ${isBus ? `<rect x="2" y="${h*0.48}" width="${w-4}" height="${h*0.03}" fill="${shade(c,-30)}"/>` : ''}
+      <!-- side windows -->
+      ${Array.from({length: windowCount}, (_, i) => `
+        <rect x="3" y="${h*0.22 + i*windowSpacing}" width="${Math.max(3, w*0.07)}" height="${Math.min(15, windowSpacing-3)}" rx="1.5" fill="rgba(130,200,230,0.7)" stroke="${c3}" stroke-width="0.3"/>
+        <rect x="${w-3-Math.max(3, w*0.07)}" y="${h*0.22 + i*windowSpacing}" width="${Math.max(3, w*0.07)}" height="${Math.min(15, windowSpacing-3)}" rx="1.5" fill="rgba(130,200,230,0.7)" stroke="${c3}" stroke-width="0.3"/>
+      `).join('')}
+      <!-- roof line -->
+      <line x1="${w*0.5}" y1="${h*0.2}" x2="${w*0.5}" y2="${h*0.92}" stroke="rgba(255,255,255,0.15)" stroke-width="0.5"/>
+      <!-- AC unit (for RV) -->
+      ${!isBus ? `<rect x="${w*0.35}" y="${h*0.55}" width="${w*0.3}" height="${h*0.06}" rx="2" fill="${c2}" stroke="${c3}" stroke-width="0.3"/>` : ''}
+      <!-- rear bumper -->
+      <rect x="${w*0.1}" y="${h-4}" width="${w*0.8}" height="2.5" rx="1" fill="${c3}"/>
+      <!-- side mirrors -->
+      <path d="M 0 ${h*0.12} L -2.5 ${h*0.14} L -2.5 ${h*0.2} L 0 ${h*0.22} Z" fill="${c2}" stroke="${c3}" stroke-width="0.3"/>
+      <path d="M ${w} ${h*0.12} L ${w+2.5} ${h*0.14} L ${w+2.5} ${h*0.2} L ${w} ${h*0.22} Z" fill="${c2}" stroke="${c3}" stroke-width="0.3"/>
+      <!-- headlights -->
+      <rect x="${w*0.1}" y="2" width="${w*0.18}" height="3" rx="1.5" fill="rgba(255,250,210,0.95)"/>
+      <rect x="${w*0.72}" y="2" width="${w*0.18}" height="3" rx="1.5" fill="rgba(255,250,210,0.95)"/>
+      <rect x="${w*0.34}" y="2" width="${w*0.32}" height="3" rx="1" fill="rgba(30,30,30,0.6)"/>
+    </svg>`;
+}
+
+// ============ BOX TRUCK ============
+function renderBoxTruck(w, h, c, c2, c3) {
+  const cabH = h * 0.2;
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <rect x="-1.5" y="${h*0.05}" width="3" height="${h*0.1}" fill="#1a1a1a" rx="1"/>
+      <rect x="${w-1.5}" y="${h*0.05}" width="3" height="${h*0.1}" fill="#1a1a1a" rx="1"/>
+      <rect x="-1.5" y="${h*0.5}" width="3" height="${h*0.1}" fill="#1a1a1a" rx="1"/>
+      <rect x="${w-1.5}" y="${h*0.5}" width="3" height="${h*0.1}" fill="#1a1a1a" rx="1"/>
+      <rect x="-1.5" y="${h*0.85}" width="3" height="${h*0.1}" fill="#1a1a1a" rx="1"/>
+      <rect x="${w-1.5}" y="${h*0.85}" width="3" height="${h*0.1}" fill="#1a1a1a" rx="1"/>
+      <!-- cab -->
+      <rect x="2" y="2" width="${w-4}" height="${cabH}" rx="4" fill="${c2}" stroke="${c3}" stroke-width="0.6"/>
+      <path d="M ${w*0.15} ${h*0.04} L ${w*0.85} ${h*0.04} L ${w*0.82} ${h*0.13} L ${w*0.18} ${h*0.13} Z" fill="rgba(130,200,230,0.88)"/>
+      <!-- cargo box -->
+      <rect x="2" y="${cabH+2}" width="${w-4}" height="${h-cabH-4}" rx="2" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <!-- corrugated lines -->
+      ${Array.from({length: Math.floor((h-cabH-6)/6)}, (_, i) => `<line x1="6" y1="${cabH+6+i*6}" x2="${w-6}" y2="${cabH+6+i*6}" stroke="rgba(0,0,0,0.1)" stroke-width="0.5"/>`).join('')}
+      <!-- back door -->
+      <rect x="4" y="${h-6}" width="${w-8}" height="4" rx="1" fill="${shade(c,-30)}" stroke="${c3}" stroke-width="0.3"/>
+      <line x1="${w/2}" y1="${h-5}" x2="${w/2}" y2="${h-3}" stroke="${c3}" stroke-width="0.5"/>
+      <!-- headlights -->
+      <rect x="${w*0.1}" y="2" width="${w*0.2}" height="2.5" rx="1" fill="rgba(255,250,210,0.95)"/>
+      <rect x="${w*0.7}" y="2" width="${w*0.2}" height="2.5" rx="1" fill="rgba(255,250,210,0.95)"/>
+    </svg>`;
+}
+
+// ============ TRAILER ============
+function renderTrailer(w, h, c, c2, c3) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <rect x="-1.5" y="${h*0.55}" width="3" height="${h*0.1}" fill="#1a1a1a" rx="1"/>
+      <rect x="${w-1.5}" y="${h*0.55}" width="3" height="${h*0.1}" fill="#1a1a1a" rx="1"/>
+      <rect x="-1.5" y="${h*0.75}" width="3" height="${h*0.1}" fill="#1a1a1a" rx="1"/>
+      <rect x="${w-1.5}" y="${h*0.75}" width="3" height="${h*0.1}" fill="#1a1a1a" rx="1"/>
+      <!-- hitch -->
+      <rect x="${w*0.4}" y="-1" width="${w*0.2}" height="4" rx="1" fill="#1a1a1a"/>
+      <rect x="${w*0.45}" y="3" width="${w*0.1}" height="${h*0.06}" fill="#1a1a1a"/>
+      <!-- body -->
+      <rect x="2" y="${h*0.08}" width="${w-4}" height="${h-h*0.1}" rx="3" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <!-- corrugated panels -->
+      ${Array.from({length: Math.floor((h*0.9)/5)}, (_, i) => `<line x1="6" y1="${h*0.12+i*5}" x2="${w-6}" y2="${h*0.12+i*5}" stroke="rgba(0,0,0,0.1)" stroke-width="0.5"/>`).join('')}
+      <!-- side ridges -->
+      <rect x="3" y="${h*0.1}" width="2" height="${h*0.85}" fill="${c2}" opacity="0.6"/>
+      <rect x="${w-5}" y="${h*0.1}" width="2" height="${h*0.85}" fill="${c2}" opacity="0.6"/>
+      <!-- back door -->
+      <rect x="4" y="${h-5}" width="${w-8}" height="3" rx="1" fill="${shade(c,-30)}"/>
+      <!-- license plate area -->
+      <rect x="${w*0.4}" y="${h-4}" width="${w*0.2}" height="2" fill="#fafafa"/>
+    </svg>`;
+}
+
+// ============ BOAT ============
+function renderBoat(w, h, c, c2, c3, variant) {
+  const isSport = variant === 'sport';
+  const mx = w / 2;
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- Hull (cream/beige) -->
+      <path d="M ${mx} 1
+               C ${w*0.28} ${h*0.03}, ${w*0.06} ${h*0.16}, ${w*0.06} ${h*0.3}
+               L ${w*0.06} ${h*0.88}
+               C ${w*0.06} ${h*0.94}, ${w*0.14} ${h*0.97}, ${w*0.22} ${h*0.97}
+               L ${w*0.78} ${h*0.97}
+               C ${w*0.86} ${h*0.97}, ${w*0.94} ${h*0.94}, ${w*0.94} ${h*0.88}
+               L ${w*0.94} ${h*0.3}
+               C ${w*0.94} ${h*0.16}, ${w*0.72} ${h*0.03}, ${mx} 1 Z"
+            fill="#F5E5C5" stroke="#9C7A50" stroke-width="0.7"/>
+      <!-- inner hull highlight -->
+      <path d="M ${mx} 3 C ${w*0.3} ${h*0.05}, ${w*0.09} ${h*0.17}, ${w*0.09} ${h*0.3}"
+            fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="0.5"/>
+      <!-- Bow cleat -->
+      <circle cx="${mx}" cy="${h*0.08}" r="${Math.max(1.2, Math.min(w*0.035, 2.5))}" fill="#D4B074" stroke="#6B4A1F" stroke-width="0.4"/>
+      <!-- Forward V-cushion seating (tan rounded triangle) -->
+      <path d="M ${mx} ${h*0.13}
+               C ${w*0.34} ${h*0.16}, ${w*0.2} ${h*0.24}, ${w*0.2} ${h*0.34}
+               L ${w*0.2} ${h*0.42}
+               L ${w*0.8} ${h*0.42}
+               L ${w*0.8} ${h*0.34}
+               C ${w*0.8} ${h*0.24}, ${w*0.66} ${h*0.16}, ${mx} ${h*0.13} Z"
+            fill="#D9B889" stroke="#9C7A50" stroke-width="0.4"/>
+      <!-- Cushion seam -->
+      <path d="M ${mx} ${h*0.16} L ${mx} ${h*0.42}" stroke="#9C7A50" stroke-width="0.3" opacity="0.6"/>
+      ${!isSport ? `
+        <!-- Dashboard / windshield wrap-around (dark navy blue) -->
+        <path d="M ${w*0.2} ${h*0.42}
+                 L ${w*0.8} ${h*0.42}
+                 L ${w*0.8} ${h*0.46}
+                 C ${w*0.8} ${h*0.53}, ${w*0.66} ${h*0.58}, ${mx} ${h*0.58}
+                 C ${w*0.34} ${h*0.58}, ${w*0.2} ${h*0.53}, ${w*0.2} ${h*0.46} Z"
+              fill="#1E4D72" stroke="#0F2E47" stroke-width="0.5"/>
+        <!-- Light blue cushion strip -->
+        <path d="M ${w*0.22} ${h*0.47}
+                 C ${w*0.22} ${h*0.52}, ${w*0.34} ${h*0.56}, ${mx} ${h*0.56}
+                 C ${w*0.66} ${h*0.56}, ${w*0.78} ${h*0.52}, ${w*0.78} ${h*0.47}
+                 L ${w*0.78} ${h*0.5}
+                 C ${w*0.78} ${h*0.54}, ${w*0.66} ${h*0.555}, ${mx} ${h*0.555}
+                 C ${w*0.34} ${h*0.555}, ${w*0.22} ${h*0.54}, ${w*0.22} ${h*0.5} Z"
+              fill="#5B9BD5"/>
+        <!-- Dashboard buttons (left cluster) -->
+        ${w > 25 ? `
+          <circle cx="${w*0.28}" cy="${h*0.46}" r="${Math.max(0.5, w*0.014)}" fill="#FFD700"/>
+          <circle cx="${w*0.32}" cy="${h*0.465}" r="${Math.max(0.5, w*0.014)}" fill="#E74C3C"/>
+          <circle cx="${w*0.36}" cy="${h*0.47}" r="${Math.max(0.5, w*0.014)}" fill="#FF8C00"/>
+          <circle cx="${w*0.4}" cy="${h*0.465}" r="${Math.max(0.5, w*0.014)}" fill="#27AE60"/>
+          <!-- right cluster -->
+          <circle cx="${w*0.6}" cy="${h*0.465}" r="${Math.max(0.5, w*0.014)}" fill="#FFD700"/>
+          <circle cx="${w*0.64}" cy="${h*0.47}" r="${Math.max(0.5, w*0.014)}" fill="#E74C3C"/>
+          <circle cx="${w*0.68}" cy="${h*0.465}" r="${Math.max(0.5, w*0.014)}" fill="#FF8C00"/>
+          <circle cx="${w*0.72}" cy="${h*0.46}" r="${Math.max(0.5, w*0.014)}" fill="#27AE60"/>
+        ` : ''}
+        <!-- Steering wheel -->
+        <circle cx="${mx}" cy="${h*0.48}" r="${Math.max(2, Math.min(w*0.085, 6))}" fill="none" stroke="#0F2E47" stroke-width="${Math.max(0.8, w*0.012)}"/>
+        <circle cx="${mx}" cy="${h*0.48}" r="${Math.max(0.7, Math.min(w*0.025, 2))}" fill="#0F2E47"/>
+        ${w > 30 ? `
+          <line x1="${mx-w*0.07}" y1="${h*0.48}" x2="${mx+w*0.07}" y2="${h*0.48}" stroke="#0F2E47" stroke-width="0.6"/>
+          <line x1="${mx}" y1="${h*0.44}" x2="${mx}" y2="${h*0.52}" stroke="#0F2E47" stroke-width="0.6"/>
+        ` : ''}
+      ` : `
+        <!-- Sport boat: low-profile windshield -->
+        <path d="M ${w*0.25} ${h*0.42} Q ${mx} ${h*0.36}, ${w*0.75} ${h*0.42} L ${w*0.75} ${h*0.48} L ${w*0.25} ${h*0.48} Z"
+              fill="#1E4D72" stroke="#0F2E47" stroke-width="0.4"/>
+      `}
+      <!-- Wood plank floor/deck -->
+      <rect x="${w*0.22}" y="${h*0.6}" width="${w*0.56}" height="${h*0.3}" rx="2" fill="#D4A574" stroke="#9C7A50" stroke-width="0.4"/>
+      <!-- Plank lines -->
+      ${Array.from({length: Math.max(3, Math.floor(h*0.3/5))}, (_, i) => `
+        <line x1="${w*0.22}" y1="${h*0.62 + i*5}" x2="${w*0.78}" y2="${h*0.62 + i*5}" stroke="#9C7A50" stroke-width="0.35" opacity="0.7"/>
+      `).join('')}
+      <!-- Cross plank divider -->
+      <line x1="${mx}" y1="${h*0.6}" x2="${mx}" y2="${h*0.9}" stroke="#9C7A50" stroke-width="0.3" opacity="0.5"/>
+      <!-- Outboard motor housing -->
+      <rect x="${mx-w*0.075}" y="${h*0.92}" width="${w*0.15}" height="${h*0.07}" rx="1.5" fill="#1E4D72" stroke="#0F2E47" stroke-width="0.4"/>
+      <!-- Motor accents -->
+      <rect x="${mx-w*0.06}" y="${h*0.935}" width="${w*0.04}" height="${h*0.04}" fill="#E74C3C"/>
+      <rect x="${mx+w*0.02}" y="${h*0.94}" width="${w*0.03}" height="${h*0.03}" fill="#FFD700"/>
+    </svg>`;
+}
+
+// ============ JET SKI ============
+function renderJetski(w, h, c, c2, c3) {
+  const mx = w / 2;
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- hull -->
+      <path d="M ${mx} 2 L ${w-3} ${h*0.25} L ${w-3} ${h-4} Q ${w-3} ${h-2}, ${w-5} ${h-2} L 5 ${h-2} Q 3 ${h-2}, 3 ${h-4} L 3 ${h*0.25} Z" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <!-- top deck -->
+      <path d="M ${mx} ${h*0.1} L ${w-7} ${h*0.3} L ${w-7} ${h*0.85} L 7 ${h*0.85} L 7 ${h*0.3} Z" fill="${shade(c,-20)}"/>
+      <!-- handlebars area -->
+      <ellipse cx="${mx}" cy="${h*0.4}" rx="${w*0.25}" ry="${h*0.06}" fill="${c3}"/>
+      <!-- seat -->
+      <rect x="${w*0.3}" y="${h*0.55}" width="${w*0.4}" height="${h*0.25}" rx="${w*0.15}" fill="${shade(c,-40)}"/>
+      <!-- stripe -->
+      <rect x="${w*0.45}" y="${h*0.15}" width="${w*0.1}" height="${h*0.7}" fill="white" opacity="0.5"/>
+    </svg>`;
+}
+
+// ============ KAYAK ============
+function renderKayak(w, h, c, c2, c3) {
+  const mx = w/2;
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <path d="M ${mx} 1 Q 2 ${h*0.2}, 3 ${h*0.5} Q 2 ${h*0.8}, ${mx} ${h-1} Q ${w-2} ${h*0.8}, ${w-3} ${h*0.5} Q ${w-2} ${h*0.2}, ${mx} 1 Z" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <ellipse cx="${mx}" cy="${h*0.5}" rx="${w*0.2}" ry="${h*0.1}" fill="rgba(0,0,0,0.3)"/>
+      <line x1="${mx}" y1="2" x2="${mx}" y2="${h-2}" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+    </svg>`;
+}
+
+// ============ MOTORCYCLE ============
+function renderMotorcycle(w, h, c, c2, c3) {
+  const mx = w/2;
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- front wheel -->
+      <ellipse cx="${mx}" cy="${h*0.12}" rx="${w*0.35}" ry="${h*0.06}" fill="#1a1a1a"/>
+      <ellipse cx="${mx}" cy="${h*0.12}" rx="${w*0.25}" ry="${h*0.04}" fill="#3a3a3a"/>
+      <!-- handlebars -->
+      <rect x="${w*0.1}" y="${h*0.18}" width="${w*0.8}" height="2" rx="1" fill="${c3}"/>
+      <!-- fuel tank -->
+      <ellipse cx="${mx}" cy="${h*0.35}" rx="${w*0.3}" ry="${h*0.1}" fill="${c}" stroke="${c3}" stroke-width="0.5"/>
+      <!-- seat -->
+      <rect x="${w*0.25}" y="${h*0.5}" width="${w*0.5}" height="${h*0.2}" rx="${w*0.15}" fill="${shade(c,-40)}"/>
+      <!-- rear -->
+      <rect x="${w*0.35}" y="${h*0.72}" width="${w*0.3}" height="${h*0.08}" rx="2" fill="${c2}"/>
+      <!-- rear wheel -->
+      <ellipse cx="${mx}" cy="${h*0.88}" rx="${w*0.35}" ry="${h*0.06}" fill="#1a1a1a"/>
+      <ellipse cx="${mx}" cy="${h*0.88}" rx="${w*0.25}" ry="${h*0.04}" fill="#3a3a3a"/>
+    </svg>`;
+}
+
+// ============ ATV ============
+function renderATV(w, h, c, c2, c3) {
+  const mx = w/2;
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- wheels (4 corners) -->
+      <ellipse cx="${w*0.15}" cy="${h*0.18}" rx="${w*0.18}" ry="${h*0.08}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.85}" cy="${h*0.18}" rx="${w*0.18}" ry="${h*0.08}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.15}" cy="${h*0.82}" rx="${w*0.18}" ry="${h*0.08}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.85}" cy="${h*0.82}" rx="${w*0.18}" ry="${h*0.08}" fill="#1a1a1a"/>
+      <!-- body -->
+      <rect x="${w*0.18}" y="${h*0.1}" width="${w*0.64}" height="${h*0.8}" rx="${w*0.15}" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <!-- front grill -->
+      <rect x="${w*0.3}" y="${h*0.08}" width="${w*0.4}" height="${h*0.08}" rx="2" fill="${c3}"/>
+      <!-- handlebars -->
+      <rect x="${w*0.15}" y="${h*0.32}" width="${w*0.7}" height="2" rx="1" fill="${c3}"/>
+      <!-- seat -->
+      <rect x="${w*0.3}" y="${h*0.45}" width="${w*0.4}" height="${h*0.25}" rx="${w*0.1}" fill="${shade(c,-40)}"/>
+      <!-- rear rack -->
+      <rect x="${w*0.25}" y="${h*0.75}" width="${w*0.5}" height="${h*0.1}" rx="2" fill="${c3}" opacity="0.7"/>
+      <line x1="${w*0.3}" y1="${h*0.77}" x2="${w*0.7}" y2="${h*0.77}" stroke="${c}" stroke-width="0.5"/>
+      <line x1="${w*0.3}" y1="${h*0.81}" x2="${w*0.7}" y2="${h*0.81}" stroke="${c}" stroke-width="0.5"/>
+    </svg>`;
+}
+
+// ============ SNOWMOBILE ============
+function renderSnowmobile(w, h, c, c2, c3) {
+  const mx = w/2;
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- skis -->
+      <path d="M ${w*0.15} 2 Q ${w*0.1} 5, ${w*0.15} ${h*0.4} L ${w*0.25} ${h*0.4} L ${w*0.25} 6 Q ${w*0.2} 2, ${w*0.15} 2 Z" fill="${shade(c,-30)}" stroke="${c3}" stroke-width="0.4"/>
+      <path d="M ${w*0.85} 2 Q ${w*0.9} 5, ${w*0.85} ${h*0.4} L ${w*0.75} ${h*0.4} L ${w*0.75} 6 Q ${w*0.8} 2, ${w*0.85} 2 Z" fill="${shade(c,-30)}" stroke="${c3}" stroke-width="0.4"/>
+      <!-- nose cone -->
+      <path d="M ${mx} ${h*0.08} L ${w*0.7} ${h*0.25} L ${w*0.3} ${h*0.25} Z" fill="${c}" stroke="${c3}" stroke-width="0.5"/>
+      <!-- handlebars -->
+      <rect x="${w*0.15}" y="${h*0.3}" width="${w*0.7}" height="2" rx="1" fill="${c3}"/>
+      <!-- body -->
+      <rect x="${w*0.2}" y="${h*0.3}" width="${w*0.6}" height="${h*0.5}" rx="${w*0.1}" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <!-- windshield -->
+      <path d="M ${w*0.3} ${h*0.32} Q ${mx} ${h*0.28}, ${w*0.7} ${h*0.32} L ${w*0.7} ${h*0.38} L ${w*0.3} ${h*0.38} Z" fill="rgba(130,200,230,0.7)"/>
+      <!-- seat -->
+      <rect x="${w*0.3}" y="${h*0.55}" width="${w*0.4}" height="${h*0.2}" rx="${w*0.1}" fill="${shade(c,-50)}"/>
+      <!-- track -->
+      <rect x="${w*0.25}" y="${h*0.8}" width="${w*0.5}" height="${h*0.18}" rx="3" fill="#1a1a1a"/>
+      ${Array.from({length: 6}, (_, i) => `<line x1="${w*0.27}" y1="${h*0.83+i*3}" x2="${w*0.73}" y2="${h*0.83+i*3}" stroke="#444" stroke-width="0.5"/>`).join('')}
+    </svg>`;
+}
+
+// ============ GO-CART ============
+function renderGocart(w, h, c, c2, c3) {
+  const mx = w/2;
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- wheels -->
+      <ellipse cx="${w*0.12}" cy="${h*0.22}" rx="${w*0.13}" ry="${h*0.08}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.88}" cy="${h*0.22}" rx="${w*0.13}" ry="${h*0.08}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.12}" cy="${h*0.78}" rx="${w*0.13}" ry="${h*0.1}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.88}" cy="${h*0.78}" rx="${w*0.13}" ry="${h*0.1}" fill="#1a1a1a"/>
+      <!-- chassis -->
+      <rect x="${w*0.2}" y="${h*0.15}" width="${w*0.6}" height="${h*0.7}" rx="${w*0.12}" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <!-- nose -->
+      <path d="M ${mx} ${h*0.05} L ${w*0.7} ${h*0.2} L ${w*0.3} ${h*0.2} Z" fill="${c}" stroke="${c3}" stroke-width="0.5"/>
+      <!-- steering wheel -->
+      <circle cx="${mx}" cy="${h*0.45}" r="${Math.min(w*0.1, 5)}" fill="none" stroke="${c3}" stroke-width="1.5"/>
+      <line x1="${mx-w*0.08}" y1="${h*0.45}" x2="${mx+w*0.08}" y2="${h*0.45}" stroke="${c3}" stroke-width="1"/>
+      <!-- seat -->
+      <rect x="${w*0.3}" y="${h*0.55}" width="${w*0.4}" height="${h*0.3}" rx="${w*0.05}" fill="${shade(c,-40)}"/>
+      <!-- number plate -->
+      <rect x="${w*0.4}" y="${h*0.62}" width="${w*0.2}" height="${h*0.1}" rx="2" fill="white" stroke="${c3}" stroke-width="0.4"/>
+    </svg>`;
+}
+
+// ============ BICYCLE ============
+function renderBicycle(w, h, c, c2, c3) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="${w*0.5}" cy="${h*0.15}" rx="${w*0.4}" ry="${h*0.05}" fill="#1a1a1a"/>
+      <rect x="${w*0.1}" y="${h*0.2}" width="${w*0.8}" height="2" rx="1" fill="${c3}"/>
+      <rect x="${w*0.3}" y="${h*0.25}" width="${w*0.4}" height="${h*0.5}" rx="3" fill="${c}" stroke="${c3}" stroke-width="0.5"/>
+      <ellipse cx="${w*0.5}" cy="${h*0.85}" rx="${w*0.4}" ry="${h*0.05}" fill="#1a1a1a"/>
+    </svg>`;
+}
+
+// ============ TRACTOR ============
+function renderTractor(w, h, c, c2, c3) {
+  const mx = w/2;
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- front wheels (smaller) -->
+      <ellipse cx="${w*0.15}" cy="${h*0.18}" rx="${w*0.13}" ry="${h*0.06}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.85}" cy="${h*0.18}" rx="${w*0.13}" ry="${h*0.06}" fill="#1a1a1a"/>
+      <!-- rear wheels (larger) -->
+      <ellipse cx="${w*0.08}" cy="${h*0.78}" rx="${w*0.18}" ry="${h*0.12}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.08}" cy="${h*0.78}" rx="${w*0.12}" ry="${h*0.07}" fill="#3a3a3a"/>
+      <ellipse cx="${w*0.92}" cy="${h*0.78}" rx="${w*0.18}" ry="${h*0.12}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.92}" cy="${h*0.78}" rx="${w*0.12}" ry="${h*0.07}" fill="#3a3a3a"/>
+      <!-- engine hood -->
+      <rect x="${w*0.25}" y="2" width="${w*0.5}" height="${h*0.35}" rx="${w*0.05}" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <!-- grille -->
+      <rect x="${w*0.3}" y="${h*0.05}" width="${w*0.4}" height="${h*0.06}" rx="2" fill="${c3}"/>
+      ${Array.from({length: 4}, (_, i) => `<line x1="${w*0.32}" y1="${h*0.06+i*0.02*h}" x2="${w*0.68}" y2="${h*0.06+i*0.02*h}" stroke="${c}" stroke-width="0.3"/>`).join('')}
+      <!-- exhaust pipe -->
+      <rect x="${w*0.3}" y="${h*0.12}" width="${h*0.04}" height="${h*0.15}" rx="2" fill="#2a2a2a"/>
+      <!-- cab -->
+      <rect x="${w*0.2}" y="${h*0.4}" width="${w*0.6}" height="${h*0.4}" rx="${w*0.06}" fill="${shade(c,-20)}" stroke="${c3}" stroke-width="0.6"/>
+      <!-- cab windows -->
+      <rect x="${w*0.24}" y="${h*0.43}" width="${w*0.52}" height="${h*0.12}" rx="2" fill="rgba(130,200,230,0.7)" stroke="${c3}" stroke-width="0.3"/>
+      <rect x="${w*0.24}" y="${h*0.6}" width="${w*0.52}" height="${h*0.15}" rx="2" fill="rgba(130,200,230,0.6)" stroke="${c3}" stroke-width="0.3"/>
+      <!-- driver -->
+      <circle cx="${mx}" cy="${h*0.55}" r="${h*0.04}" fill="${shade('#8B4513', 0)}"/>
+    </svg>`;
+}
+
+// ============ MOTOCULTOR (small walk-behind tiller) ============
+function renderMotocultor(w, h, c, c2, c3) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- handles -->
+      <path d="M ${w*0.2} ${h*0.85} L ${w*0.3} ${h*0.55}" stroke="${c3}" stroke-width="2"/>
+      <path d="M ${w*0.8} ${h*0.85} L ${w*0.7} ${h*0.55}" stroke="${c3}" stroke-width="2"/>
+      <rect x="${w*0.15}" y="${h*0.82}" width="${w*0.7}" height="3" rx="1.5" fill="${c3}"/>
+      <!-- engine body -->
+      <rect x="${w*0.2}" y="${h*0.25}" width="${w*0.6}" height="${h*0.35}" rx="${w*0.05}" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <!-- engine top -->
+      <rect x="${w*0.3}" y="${h*0.15}" width="${w*0.4}" height="${h*0.15}" rx="3" fill="${shade(c,-20)}"/>
+      <!-- tilling blades at front -->
+      <ellipse cx="${w*0.5}" cy="${h*0.1}" rx="${w*0.3}" ry="${h*0.05}" fill="#1a1a1a"/>
+      ${Array.from({length: 6}, (_, i) => `<rect x="${w*0.2 + i*w*0.1}" y="${h*0.05}" width="2" height="${h*0.1}" fill="${c3}"/>`).join('')}
+    </svg>`;
+}
+
+// ============ WHEELBARROW ============
+function renderWheelbarrow(w, h, c, c2, c3) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- handles -->
+      <rect x="${w*0.1}" y="${h*0.75}" width="${w*0.8}" height="2" fill="${c3}"/>
+      <rect x="${w*0.1}" y="${h*0.85}" width="${w*0.15}" height="${h*0.1}" rx="1" fill="${shade('#8B4513', 0)}"/>
+      <rect x="${w*0.75}" y="${h*0.85}" width="${w*0.15}" height="${h*0.1}" rx="1" fill="${shade('#8B4513', 0)}"/>
+      <!-- bucket -->
+      <path d="M ${w*0.15} ${h*0.2} L ${w*0.85} ${h*0.2} L ${w*0.75} ${h*0.7} L ${w*0.25} ${h*0.7} Z" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <path d="M ${w*0.18} ${h*0.22} L ${w*0.82} ${h*0.22} L ${w*0.74} ${h*0.68} L ${w*0.26} ${h*0.68} Z" fill="${shade(c,-25)}"/>
+      <!-- wheel at front -->
+      <ellipse cx="${w*0.5}" cy="${h*0.1}" rx="${w*0.1}" ry="${h*0.06}" fill="#1a1a1a"/>
+    </svg>`;
+}
+
+// ============ HARVESTER ============
+function renderHarvester(w, h, c, c2, c3) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- header (cutting platform at front) -->
+      <rect x="2" y="2" width="${w-4}" height="${h*0.18}" rx="2" fill="${shade(c,-30)}" stroke="${c3}" stroke-width="0.5"/>
+      <!-- header reel -->
+      <rect x="6" y="${h*0.05}" width="${w-12}" height="${h*0.08}" rx="3" fill="${c2}"/>
+      ${Array.from({length: 8}, (_, i) => `<line x1="${10+(w-20)*i/7}" y1="${h*0.06}" x2="${10+(w-20)*i/7}" y2="${h*0.12}" stroke="${c3}" stroke-width="0.5"/>`).join('')}
+      <!-- feeder -->
+      <rect x="${w*0.35}" y="${h*0.2}" width="${w*0.3}" height="${h*0.15}" fill="${c}" stroke="${c3}" stroke-width="0.5"/>
+      <!-- main body -->
+      <rect x="${w*0.1}" y="${h*0.35}" width="${w*0.8}" height="${h*0.5}" rx="${w*0.04}" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <!-- cab -->
+      <rect x="${w*0.25}" y="${h*0.4}" width="${w*0.5}" height="${h*0.22}" rx="3" fill="${shade(c,-10)}" stroke="${c3}" stroke-width="0.5"/>
+      <rect x="${w*0.28}" y="${h*0.42}" width="${w*0.44}" height="${h*0.15}" rx="2" fill="rgba(130,200,230,0.7)" stroke="${c3}" stroke-width="0.3"/>
+      <!-- grain bin -->
+      <rect x="${w*0.15}" y="${h*0.65}" width="${w*0.7}" height="${h*0.18}" rx="2" fill="${shade(c,-30)}"/>
+      <!-- wheels -->
+      <ellipse cx="${w*0.1}" cy="${h*0.5}" rx="${w*0.04}" ry="${h*0.08}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.9}" cy="${h*0.5}" rx="${w*0.04}" ry="${h*0.08}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.1}" cy="${h*0.85}" rx="${w*0.05}" ry="${h*0.07}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.9}" cy="${h*0.85}" rx="${w*0.05}" ry="${h*0.07}" fill="#1a1a1a"/>
+      <!-- unloading auger -->
+      <rect x="${w*0.85}" y="${h*0.45}" width="${w*0.2}" height="3" rx="1" fill="${c3}"/>
+    </svg>`;
+}
+
+// ============ PLOW TRACTOR (wide implement) ============
+function renderPlow(w, h, c, c2, c3) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- frame bar -->
+      <rect x="2" y="${h*0.4}" width="${w-4}" height="${h*0.2}" rx="2" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <!-- hitch -->
+      <rect x="${w*0.4}" y="${h*0.1}" width="${w*0.2}" height="${h*0.32}" rx="2" fill="${c2}" stroke="${c3}" stroke-width="0.5"/>
+      <rect x="${w*0.45}" y="${h*0.06}" width="${w*0.1}" height="${h*0.08}" rx="2" fill="#2a2a2a"/>
+      <!-- plow shares (curved blades) -->
+      ${[0.12, 0.3, 0.5, 0.7, 0.88].map(p => `
+        <path d="M ${w*p} ${h*0.6} Q ${w*p-3} ${h*0.85}, ${w*p-6} ${h*0.95}" stroke="${c3}" stroke-width="2" fill="none"/>
+        <path d="M ${w*p} ${h*0.6} Q ${w*p-3} ${h*0.85}, ${w*p-6} ${h*0.95}" stroke="${shade('#888', 0)}" stroke-width="1" fill="none"/>
+        <rect x="${w*p-1}" y="${h*0.6}" width="2" height="${h*0.2}" fill="${c3}"/>
+      `).join('')}
+    </svg>`;
+}
+
+// ============ SEEDER ============
+function renderSeeder(w, h, c, c2, c3) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- hopper boxes (across the top) -->
+      ${[0.1, 0.3, 0.5, 0.7, 0.9].map(p => `
+        <rect x="${w*p-w*0.07}" y="${h*0.05}" width="${w*0.14}" height="${h*0.35}" rx="2" fill="${c}" stroke="${c3}" stroke-width="0.5"/>
+        <rect x="${w*p-w*0.05}" y="${h*0.08}" width="${w*0.1}" height="${h*0.08}" fill="${shade(c,-30)}"/>
+      `).join('')}
+      <!-- frame -->
+      <rect x="2" y="${h*0.4}" width="${w-4}" height="${h*0.15}" rx="2" fill="${c2}" stroke="${c3}" stroke-width="0.5"/>
+      <!-- drop tubes -->
+      ${[0.1, 0.3, 0.5, 0.7, 0.9].map(p => `<rect x="${w*p-1}" y="${h*0.55}" width="2" height="${h*0.3}" fill="${c3}"/>`).join('')}
+      <!-- ground wheels / openers -->
+      ${[0.15, 0.35, 0.55, 0.75, 0.95].map(p => `<ellipse cx="${w*p}" cy="${h*0.92}" rx="${w*0.04}" ry="${h*0.05}" fill="#1a1a1a"/>`).join('')}
+    </svg>`;
+}
+
+// ============ BALER ============
+function renderBaler(w, h, c, c2, c3) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <rect x="${w*0.1}" y="${h*0.15}" width="${w*0.8}" height="${h*0.7}" rx="${w*0.06}" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <!-- pickup head at front -->
+      <rect x="${w*0.05}" y="${h*0.05}" width="${w*0.9}" height="${h*0.12}" rx="${w*0.05}" fill="${shade(c,-20)}" stroke="${c3}" stroke-width="0.5"/>
+      ${Array.from({length: 6}, (_, i) => `<line x1="${w*0.1+i*w*0.13}" y1="${h*0.07}" x2="${w*0.1+i*w*0.13}" y2="${h*0.15}" stroke="${c3}" stroke-width="0.4"/>`).join('')}
+      <!-- bale chamber (round) -->
+      <circle cx="${w*0.5}" cy="${h*0.55}" r="${Math.min(w*0.3, h*0.3)}" fill="${shade(c,-30)}" stroke="${c3}" stroke-width="0.5"/>
+      <circle cx="${w*0.5}" cy="${h*0.55}" r="${Math.min(w*0.22, h*0.22)}" fill="${shade('#FFD700', -30)}" opacity="0.7"/>
+      <!-- wheels -->
+      <ellipse cx="${w*0.05}" cy="${h*0.65}" rx="${w*0.04}" ry="${h*0.08}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.95}" cy="${h*0.65}" rx="${w*0.04}" ry="${h*0.08}" fill="#1a1a1a"/>
+    </svg>`;
+}
+
+// ============ SPRAYER ============
+function renderSprayer(w, h, c, c2, c3) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- main tank -->
+      <rect x="${w*0.2}" y="${h*0.15}" width="${w*0.6}" height="${h*0.45}" rx="${w*0.15}" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <ellipse cx="${w*0.5}" cy="${h*0.15}" rx="${w*0.3}" ry="${h*0.04}" fill="${shade(c,-15)}"/>
+      <!-- cap -->
+      <rect x="${w*0.4}" y="${h*0.1}" width="${w*0.2}" height="${h*0.07}" rx="2" fill="${c3}"/>
+      <!-- boom (long horizontal spray bar) -->
+      <rect x="2" y="${h*0.65}" width="${w-4}" height="3" rx="1.5" fill="${c2}"/>
+      ${Array.from({length: 7}, (_, i) => `<rect x="${w*0.05 + i*w*0.15-0.5}" y="${h*0.68}" width="1" height="${h*0.04}" fill="${c3}"/>`).join('')}
+      <!-- ground wheels -->
+      <ellipse cx="${w*0.15}" cy="${h*0.85}" rx="${w*0.06}" ry="${h*0.08}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.85}" cy="${h*0.85}" rx="${w*0.06}" ry="${h*0.08}" fill="#1a1a1a"/>
+    </svg>`;
+}
+
+// ============ ROTARY CUTTER ============
+function renderRotaryCutter(w, h, c, c2, c3) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <rect x="${w*0.05}" y="${h*0.2}" width="${w*0.9}" height="${h*0.65}" rx="${w*0.06}" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <!-- hitch -->
+      <rect x="${w*0.45}" y="${h*0.05}" width="${w*0.1}" height="${h*0.18}" rx="2" fill="${c3}"/>
+      <!-- top deck plate -->
+      <rect x="${w*0.1}" y="${h*0.25}" width="${w*0.8}" height="${h*0.55}" rx="${w*0.04}" fill="${shade(c,-15)}"/>
+      <!-- rotor housings -->
+      <circle cx="${w*0.35}" cy="${h*0.55}" r="${Math.min(w*0.13, h*0.18)}" fill="${shade(c,-30)}" stroke="${c3}" stroke-width="0.5"/>
+      <circle cx="${w*0.65}" cy="${h*0.55}" r="${Math.min(w*0.13, h*0.18)}" fill="${shade(c,-30)}" stroke="${c3}" stroke-width="0.5"/>
+      <line x1="${w*0.27}" y1="${h*0.55}" x2="${w*0.43}" y2="${h*0.55}" stroke="${c3}" stroke-width="1"/>
+      <line x1="${w*0.57}" y1="${h*0.55}" x2="${w*0.73}" y2="${h*0.55}" stroke="${c3}" stroke-width="1"/>
+      <!-- rear roller -->
+      <rect x="${w*0.1}" y="${h*0.85}" width="${w*0.8}" height="${h*0.08}" rx="${h*0.04}" fill="${c3}"/>
+    </svg>`;
+}
+
+// ============ MANURE SPREADER ============
+function renderManureSpreader(w, h, c, c2, c3) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- hitch -->
+      <rect x="${w*0.45}" y="${h*0.02}" width="${w*0.1}" height="${h*0.08}" rx="2" fill="${c3}"/>
+      <!-- main box -->
+      <rect x="${w*0.1}" y="${h*0.1}" width="${w*0.8}" height="${h*0.7}" rx="${w*0.04}" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <!-- top rim -->
+      <rect x="${w*0.08}" y="${h*0.1}" width="${w*0.84}" height="${h*0.04}" fill="${shade(c,-25)}"/>
+      <!-- contents -->
+      <rect x="${w*0.15}" y="${h*0.15}" width="${w*0.7}" height="${h*0.6}" fill="${shade('#8B4513', 30)}" opacity="0.6"/>
+      <!-- side panels -->
+      <line x1="${w*0.3}" y1="${h*0.1}" x2="${w*0.3}" y2="${h*0.8}" stroke="${c3}" stroke-width="0.5"/>
+      <line x1="${w*0.5}" y1="${h*0.1}" x2="${w*0.5}" y2="${h*0.8}" stroke="${c3}" stroke-width="0.5"/>
+      <line x1="${w*0.7}" y1="${h*0.1}" x2="${w*0.7}" y2="${h*0.8}" stroke="${c3}" stroke-width="0.5"/>
+      <!-- rear beaters -->
+      <rect x="${w*0.1}" y="${h*0.8}" width="${w*0.8}" height="${h*0.08}" rx="${h*0.04}" fill="${shade(c,-30)}"/>
+      <!-- wheels -->
+      <ellipse cx="${w*0.05}" cy="${h*0.6}" rx="${w*0.04}" ry="${h*0.1}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.95}" cy="${h*0.6}" rx="${w*0.04}" ry="${h*0.1}" fill="#1a1a1a"/>
+    </svg>`;
+}
+
+// ============ FORKLIFT ============
+function renderForklift(w, h, c, c2, c3) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- forks at front -->
+      <rect x="${w*0.25}" y="2" width="${w*0.08}" height="${h*0.25}" fill="${c3}"/>
+      <rect x="${w*0.67}" y="2" width="${w*0.08}" height="${h*0.25}" fill="${c3}"/>
+      <!-- mast -->
+      <rect x="${w*0.2}" y="${h*0.22}" width="${w*0.6}" height="${h*0.1}" rx="2" fill="${shade(c,-20)}" stroke="${c3}" stroke-width="0.5"/>
+      <!-- body -->
+      <rect x="${w*0.1}" y="${h*0.3}" width="${w*0.8}" height="${h*0.5}" rx="${w*0.06}" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <!-- operator cage/cab -->
+      <rect x="${w*0.2}" y="${h*0.35}" width="${w*0.6}" height="${h*0.35}" rx="3" fill="${shade(c,-15)}" stroke="${c3}" stroke-width="0.5"/>
+      <!-- seat -->
+      <rect x="${w*0.35}" y="${h*0.5}" width="${w*0.3}" height="${h*0.18}" rx="3" fill="${c3}"/>
+      <!-- counterweight (rear) -->
+      <rect x="${w*0.1}" y="${h*0.7}" width="${w*0.8}" height="${h*0.18}" rx="${w*0.04}" fill="${shade(c,-30)}" stroke="${c3}" stroke-width="0.5"/>
+      <!-- wheels -->
+      <ellipse cx="${w*0.15}" cy="${h*0.4}" rx="${w*0.05}" ry="${h*0.06}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.85}" cy="${h*0.4}" rx="${w*0.05}" ry="${h*0.06}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.15}" cy="${h*0.82}" rx="${w*0.05}" ry="${h*0.06}" fill="#1a1a1a"/>
+      <ellipse cx="${w*0.85}" cy="${h*0.82}" rx="${w*0.05}" ry="${h*0.06}" fill="#1a1a1a"/>
+    </svg>`;
+}
+
+// ============ SNOWBLOWER ============
+function renderSnowblower(w, h, c, c2, c3) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- auger housing at front -->
+      <rect x="2" y="2" width="${w-4}" height="${h*0.2}" rx="2" fill="${shade(c,-25)}" stroke="${c3}" stroke-width="0.5"/>
+      <!-- chute -->
+      <circle cx="${w*0.5}" cy="${h*0.25}" r="${Math.min(w*0.25, h*0.08)}" fill="${c2}" stroke="${c3}" stroke-width="0.5"/>
+      <!-- engine -->
+      <rect x="${w*0.2}" y="${h*0.3}" width="${w*0.6}" height="${h*0.3}" rx="3" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <!-- handles -->
+      <rect x="${w*0.15}" y="${h*0.6}" width="2" height="${h*0.3}" fill="${c3}"/>
+      <rect x="${w-w*0.15-2}" y="${h*0.6}" width="2" height="${h*0.3}" fill="${c3}"/>
+      <rect x="${w*0.1}" y="${h*0.88}" width="${w*0.8}" height="3" rx="1.5" fill="${c3}"/>
+      <!-- tracks/wheels -->
+      <rect x="3" y="${h*0.6}" width="${w*0.12}" height="${h*0.25}" rx="2" fill="#1a1a1a"/>
+      <rect x="${w-w*0.12-3}" y="${h*0.6}" width="${w*0.12}" height="${h*0.25}" rx="2" fill="#1a1a1a"/>
+    </svg>`;
+}
+
+// ============ POOL TABLE ============
+function renderPoolTable(w, h) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <!-- outer wood rail -->
+      <rect x="1" y="1" width="${w-2}" height="${h-2}" rx="6" fill="#6B3410" stroke="#3D1E08" stroke-width="0.8"/>
+      <!-- inner felt -->
+      <rect x="${w*0.08}" y="${h*0.05}" width="${w*0.84}" height="${h*0.9}" rx="3" fill="#0E6B3A" stroke="#073F22" stroke-width="0.5"/>
+      <!-- pockets (4 corners + 2 middle) -->
+      <circle cx="${w*0.1}" cy="${h*0.06}" r="${Math.min(w*0.06, 4)}" fill="#000"/>
+      <circle cx="${w*0.9}" cy="${h*0.06}" r="${Math.min(w*0.06, 4)}" fill="#000"/>
+      <circle cx="${w*0.1}" cy="${h*0.94}" r="${Math.min(w*0.06, 4)}" fill="#000"/>
+      <circle cx="${w*0.9}" cy="${h*0.94}" r="${Math.min(w*0.06, 4)}" fill="#000"/>
+      <circle cx="${w*0.05}" cy="${h*0.5}" r="${Math.min(w*0.05, 3.5)}" fill="#000"/>
+      <circle cx="${w*0.95}" cy="${h*0.5}" r="${Math.min(w*0.05, 3.5)}" fill="#000"/>
+      <!-- balls in rack -->
+      ${h > 70 ? `
+        <circle cx="${w*0.5}" cy="${h*0.3}" r="${Math.min(w*0.04, 2)}" fill="#fff"/>
+        <circle cx="${w*0.5}" cy="${h*0.7}" r="${Math.min(w*0.04, 2)}" fill="#FFD700"/>
+        <circle cx="${w*0.46}" cy="${h*0.72}" r="${Math.min(w*0.04, 2)}" fill="#FF4444"/>
+        <circle cx="${w*0.54}" cy="${h*0.72}" r="${Math.min(w*0.04, 2)}" fill="#4169E1"/>
+        <circle cx="${w*0.42}" cy="${h*0.74}" r="${Math.min(w*0.04, 2)}" fill="#8B008B"/>
+        <circle cx="${w*0.5}" cy="${h*0.74}" r="${Math.min(w*0.04, 2)}" fill="#000"/>
+        <circle cx="${w*0.58}" cy="${h*0.74}" r="${Math.min(w*0.04, 2)}" fill="#FF8C00"/>
+      ` : ''}
+      <!-- center spot -->
+      <circle cx="${w*0.5}" cy="${h*0.5}" r="0.8" fill="#fff"/>
+    </svg>`;
+}
+
+// ============ POKER TABLE (oval) ============
+function renderPokerTable(w, h) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="${w*0.5}" cy="${h*0.5}" rx="${w*0.48}" ry="${h*0.48}" fill="#1a1a1a" stroke="#000" stroke-width="0.5"/>
+      <ellipse cx="${w*0.5}" cy="${h*0.5}" rx="${w*0.42}" ry="${h*0.42}" fill="#0E6B3A"/>
+      <!-- dealer chip area -->
+      <ellipse cx="${w*0.5}" cy="${h*0.5}" rx="${w*0.15}" ry="${h*0.12}" fill="#0A5230" stroke="#063820" stroke-width="0.3"/>
+      <!-- chips -->
+      ${h > 50 ? [
+        [0.5, 0.5, '#fff'], [0.45, 0.48, '#FF4444'], [0.55, 0.48, '#1E90FF'],
+        [0.5, 0.55, '#000']
+      ].map(([x,y,c]) => `<circle cx="${w*x}" cy="${h*y}" r="${Math.min(w*0.025, 2)}" fill="${c}" stroke="#000" stroke-width="0.3"/>`).join('') : ''}
+      <!-- cards -->
+      ${h > 60 ? `
+        <rect x="${w*0.42}" y="${h*0.3}" width="${Math.min(w*0.06,4)}" height="${Math.min(h*0.08,6)}" rx="0.5" fill="white" stroke="#444" stroke-width="0.3" transform="rotate(15 ${w*0.45} ${h*0.34})"/>
+        <rect x="${w*0.52}" y="${h*0.3}" width="${Math.min(w*0.06,4)}" height="${Math.min(h*0.08,6)}" rx="0.5" fill="white" stroke="#444" stroke-width="0.3" transform="rotate(-12 ${w*0.55} ${h*0.34})"/>
+      ` : ''}
+    </svg>`;
+}
+
+// ============ FOOSBALL ============
+function renderFoosball(w, h) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="${w-2}" height="${h-2}" rx="3" fill="#3D1E08" stroke="#1a0c03" stroke-width="0.5"/>
+      <rect x="${w*0.05}" y="${h*0.04}" width="${w*0.9}" height="${h*0.92}" fill="#0E6B3A"/>
+      <!-- center line -->
+      <line x1="${w*0.05}" y1="${h*0.5}" x2="${w*0.95}" y2="${h*0.5}" stroke="#fff" stroke-width="0.4" opacity="0.5"/>
+      <circle cx="${w*0.5}" cy="${h*0.5}" r="${Math.min(w*0.08, 4)}" fill="none" stroke="#fff" stroke-width="0.4" opacity="0.5"/>
+      <!-- rods with players -->
+      ${[0.18, 0.32, 0.5, 0.68, 0.82].map((y, i) => {
+        const playerColor = i % 2 === 0 ? '#1E90FF' : '#FF4444';
+        const count = i === 0 || i === 4 ? 1 : (i === 1 || i === 3 ? 2 : 5);
+        return `
+          <line x1="-2" y1="${h*y}" x2="${w+2}" y2="${h*y}" stroke="#888" stroke-width="1.5"/>
+          ${Array.from({length: count}, (_, j) => `<circle cx="${w*(0.1 + (j+1)*(0.8/(count+1)))}" cy="${h*y}" r="${Math.min(w*0.04, 2.5)}" fill="${playerColor}" stroke="#000" stroke-width="0.3"/>`).join('')}
+        `;
+      }).join('')}
+      <!-- goals -->
+      <rect x="${w*0.42}" y="0" width="${w*0.16}" height="${h*0.05}" fill="#000"/>
+      <rect x="${w*0.42}" y="${h*0.95}" width="${w*0.16}" height="${h*0.05}" fill="#000"/>
+    </svg>`;
+}
+
+// ============ PING PONG ============
+function renderPingPong(w, h) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="${w-2}" height="${h-2}" rx="3" fill="#1E5631" stroke="#0D2F1A" stroke-width="0.5"/>
+      <!-- white border lines -->
+      <rect x="${w*0.05}" y="${h*0.04}" width="${w*0.9}" height="${h*0.92}" fill="none" stroke="#fff" stroke-width="0.6"/>
+      <!-- net -->
+      <rect x="${w*0.04}" y="${h*0.49}" width="${w*0.92}" height="${h*0.02}" fill="#fff" opacity="0.85"/>
+      <!-- center line -->
+      <line x1="${w*0.5}" y1="${h*0.05}" x2="${w*0.5}" y2="${h*0.95}" stroke="#fff" stroke-width="0.5" opacity="0.7"/>
+      <!-- paddles -->
+      ${h > 60 ? `
+        <ellipse cx="${w*0.25}" cy="${h*0.2}" rx="${Math.min(w*0.06,4)}" ry="${Math.min(h*0.04,4)}" fill="#C0392B" stroke="#000" stroke-width="0.3"/>
+        <rect x="${w*0.25-1}" y="${h*0.22}" width="2" height="${Math.min(h*0.05,4)}" fill="#000"/>
+        <ellipse cx="${w*0.75}" cy="${h*0.8}" rx="${Math.min(w*0.06,4)}" ry="${Math.min(h*0.04,4)}" fill="#000" stroke="#222" stroke-width="0.3"/>
+        <rect x="${w*0.75-1}" y="${h*0.82}" width="2" height="${Math.min(h*0.05,4)}" fill="#444"/>
+      ` : ''}
+      <!-- ball -->
+      ${h > 50 ? `<circle cx="${w*0.5}" cy="${h*0.35}" r="${Math.min(w*0.02,1.5)}" fill="#fff"/>` : ''}
+    </svg>`;
+}
+
+// ============ AIR HOCKEY ============
+function renderAirHockey(w, h) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="${w-2}" height="${h-2}" rx="6" fill="#222" stroke="#000" stroke-width="0.5"/>
+      <rect x="${w*0.05}" y="${h*0.05}" width="${w*0.9}" height="${h*0.9}" rx="3" fill="#fafafa"/>
+      <!-- center line and circle -->
+      <line x1="${w*0.05}" y1="${h*0.5}" x2="${w*0.95}" y2="${h*0.5}" stroke="#C0392B" stroke-width="0.5"/>
+      <circle cx="${w*0.5}" cy="${h*0.5}" r="${Math.min(w*0.1, h*0.05)}" fill="none" stroke="#C0392B" stroke-width="0.5"/>
+      <!-- goal slots -->
+      <rect x="${w*0.35}" y="0" width="${w*0.3}" height="${h*0.06}" fill="#000"/>
+      <rect x="${w*0.35}" y="${h*0.94}" width="${w*0.3}" height="${h*0.06}" fill="#000"/>
+      <!-- mallets -->
+      ${h > 50 ? `
+        <circle cx="${w*0.5}" cy="${h*0.25}" r="${Math.min(w*0.07,4)}" fill="#1E90FF" stroke="#000" stroke-width="0.4"/>
+        <circle cx="${w*0.5}" cy="${h*0.25}" r="${Math.min(w*0.03,2)}" fill="#000"/>
+        <circle cx="${w*0.5}" cy="${h*0.75}" r="${Math.min(w*0.07,4)}" fill="#C0392B" stroke="#000" stroke-width="0.4"/>
+        <circle cx="${w*0.5}" cy="${h*0.75}" r="${Math.min(w*0.03,2)}" fill="#000"/>
+      ` : ''}
+      <!-- puck -->
+      <circle cx="${w*0.5}" cy="${h*0.5}" r="${Math.min(w*0.03,1.5)}" fill="#FFD700"/>
+    </svg>`;
+}
+
+// ============ SHUFFLEBOARD ============
+function renderShuffleboard(w, h) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="${w-2}" height="${h-2}" rx="3" fill="#5D4037" stroke="#2D1810" stroke-width="0.5"/>
+      <rect x="${w*0.15}" y="${h*0.02}" width="${w*0.7}" height="${h*0.96}" fill="#D4A574"/>
+      <!-- wood grain -->
+      ${Array.from({length: 8}, (_, i) => `<line x1="${w*0.15}" y1="${h*(0.05+i*0.12)}" x2="${w*0.85}" y2="${h*(0.05+i*0.12)}" stroke="#8B6F47" stroke-width="0.3" opacity="0.5"/>`).join('')}
+      <!-- scoring zones at each end -->
+      <line x1="${w*0.15}" y1="${h*0.1}" x2="${w*0.85}" y2="${h*0.1}" stroke="#000" stroke-width="0.5"/>
+      <line x1="${w*0.15}" y1="${h*0.18}" x2="${w*0.85}" y2="${h*0.18}" stroke="#000" stroke-width="0.5"/>
+      <line x1="${w*0.15}" y1="${h*0.82}" x2="${w*0.85}" y2="${h*0.82}" stroke="#000" stroke-width="0.5"/>
+      <line x1="${w*0.15}" y1="${h*0.9}" x2="${w*0.85}" y2="${h*0.9}" stroke="#000" stroke-width="0.5"/>
+      <text x="${w*0.5}" y="${h*0.07}" text-anchor="middle" font-size="${Math.min(h*0.03,4)}" fill="#000" font-weight="bold">3</text>
+      <text x="${w*0.5}" y="${h*0.95}" text-anchor="middle" font-size="${Math.min(h*0.03,4)}" fill="#000" font-weight="bold">3</text>
+      <!-- pucks -->
+      ${h > 80 ? `
+        <circle cx="${w*0.4}" cy="${h*0.15}" r="${Math.min(w*0.06,2.5)}" fill="#1E90FF" stroke="#000" stroke-width="0.3"/>
+        <circle cx="${w*0.55}" cy="${h*0.13}" r="${Math.min(w*0.06,2.5)}" fill="#C0392B" stroke="#000" stroke-width="0.3"/>
+        <circle cx="${w*0.45}" cy="${h*0.86}" r="${Math.min(w*0.06,2.5)}" fill="#1E90FF" stroke="#000" stroke-width="0.3"/>
+        <circle cx="${w*0.6}" cy="${h*0.88}" r="${Math.min(w*0.06,2.5)}" fill="#C0392B" stroke="#000" stroke-width="0.3"/>
+      ` : ''}
+    </svg>`;
+}
+
+// ============ BEER PONG ============
+function renderBeerPong(w, h) {
+  const cupR = Math.min(w*0.15, h*0.04);
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="${w-2}" height="${h-2}" rx="2" fill="#1E5631" stroke="#0D2F1A" stroke-width="0.5"/>
+      <rect x="${w*0.04}" y="${h*0.02}" width="${w*0.92}" height="${h*0.96}" fill="#27AE60"/>
+      <!-- cups at top (10-rack triangle) -->
+      ${[[[0.5,0.06]],
+        [[0.4,0.11],[0.6,0.11]],
+        [[0.3,0.16],[0.5,0.16],[0.7,0.16]],
+        [[0.2,0.21],[0.4,0.21],[0.6,0.21],[0.8,0.21]]
+      ].flat().map(([x,y]) => `<circle cx="${w*x}" cy="${h*y}" r="${cupR}" fill="#C0392B" stroke="#7B1A0E" stroke-width="0.4"/>`).join('')}
+      <!-- cups at bottom -->
+      ${[[[0.5,0.94]],
+        [[0.4,0.89],[0.6,0.89]],
+        [[0.3,0.84],[0.5,0.84],[0.7,0.84]],
+        [[0.2,0.79],[0.4,0.79],[0.6,0.79],[0.8,0.79]]
+      ].flat().map(([x,y]) => `<circle cx="${w*x}" cy="${h*y}" r="${cupR}" fill="#C0392B" stroke="#7B1A0E" stroke-width="0.4"/>`).join('')}
+      <!-- center logo area -->
+      <line x1="${w*0.04}" y1="${h*0.5}" x2="${w*0.96}" y2="${h*0.5}" stroke="#fff" stroke-width="0.4" opacity="0.5"/>
+    </svg>`;
+}
+
+// ============ WEIGHTS RACK ============
+function renderWeights(w, h) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="${w-2}" height="${h-2}" rx="3" fill="#1a1a1a" stroke="#000" stroke-width="0.5"/>
+      <!-- shelf lines -->
+      ${[0.2, 0.4, 0.6, 0.8].map(y => `<line x1="${w*0.05}" y1="${h*y}" x2="${w*0.95}" y2="${h*y}" stroke="#444" stroke-width="0.5"/>`).join('')}
+      <!-- dumbbells (pairs on each shelf) -->
+      ${[0.15, 0.35, 0.55, 0.75].map((y, i) => {
+        const size = 0.08 - i*0.01;
+        return `
+          <g>
+            <circle cx="${w*0.25}" cy="${h*y}" r="${Math.min(w*size, h*0.04)}" fill="#444" stroke="#222" stroke-width="0.3"/>
+            <rect x="${w*0.25}" y="${h*y - 1}" width="${w*0.15}" height="2" fill="#888"/>
+            <circle cx="${w*0.4}" cy="${h*y}" r="${Math.min(w*size, h*0.04)}" fill="#444" stroke="#222" stroke-width="0.3"/>
+            <circle cx="${w*0.6}" cy="${h*y}" r="${Math.min(w*size, h*0.04)}" fill="#C0392B" stroke="#000" stroke-width="0.3"/>
+            <rect x="${w*0.6}" y="${h*y - 1}" width="${w*0.15}" height="2" fill="#888"/>
+            <circle cx="${w*0.75}" cy="${h*y}" r="${Math.min(w*size, h*0.04)}" fill="#C0392B" stroke="#000" stroke-width="0.3"/>
+          </g>
+        `;
+      }).join('')}
+    </svg>`;
+}
+
+// ============ BOX (generic) ============
+function renderBox(w, h, c, c2, c3) {
+  return `
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="${w-4}" height="${h-4}" rx="3" fill="${c}" stroke="${c3}" stroke-width="0.6"/>
+      <rect x="5" y="5" width="${w-10}" height="${h-10}" rx="2" fill="${shade(c,-20)}"/>
+      <line x1="5" y1="${h*0.5}" x2="${w-5}" y2="${h*0.5}" stroke="${c3}" stroke-width="0.4" stroke-dasharray="2,2"/>
+    </svg>`;
+}
+
+// =========================
+// MEASUREMENT OVERLAY
+// =========================
+function renderMeasurementOverlay() {
+  if (!state.selectedId) return '';
+  const item = state.items.find(i => i.id === state.selectedId);
+  if (!item) return '';
+  const v = CATALOG.find(c => c.id === item.vehicleId);
+  if (!v) return '';
+
+  const scale = getScale();
+  const [vw, vl] = getDims(item.vehicleId, item.rotation);
+
+  const distL = item.x;
+  const distR = state.bldgW - item.x - vw;
+  const distT = item.y;
+  const distB = state.bldgL - item.y - vl;
+
+  const itemL = item.x * scale;
+  const itemT = item.y * scale;
+  const itemR = (item.x + vw) * scale;
+  const itemB = (item.y + vl) * scale;
+  const itemCx = itemL + (vw * scale) / 2;
+  const itemCy = itemT + (vl * scale) / 2;
+  const totalW = state.bldgW * scale;
+  const totalH = state.bldgL * scale;
+
+  const G = '#8dc63f';   // green for dimension lines
+  const B = '#22d3c8';   // blue for selection box
+  const fmtFt = (ft) => formatDim(ft);
+
+  // Helper to draw a dimension line with ticks at each end
+  const tickSize = 5;
+  const labelBg = (x, y, txt, color) => {
+    const len = String(txt).length;
+    const w = len * 5 + 10;
+    return `
+      <rect x="${x - w/2}" y="${y - 8}" width="${w}" height="16" rx="3" fill="#08121d" stroke="${color}" stroke-width="0.8" opacity="0.96"/>
+      <text x="${x}" y="${y + 4}" text-anchor="middle" font-size="11" font-weight="700" fill="${color}">${txt}</text>
+    `;
+  };
+
+  let svg = '';
+
+  // TOP measurement (back wall to item top)
+  if (distT > 0.05) {
+    const lineX = itemCx;
+    svg += `
+      <line x1="${lineX}" y1="0" x2="${lineX}" y2="${itemT}" stroke="${G}" stroke-width="1.2"/>
+      <line x1="${lineX - tickSize}" y1="0.5" x2="${lineX + tickSize}" y2="0.5" stroke="${G}" stroke-width="1.5"/>
+      <line x1="${lineX - tickSize}" y1="${itemT - 0.5}" x2="${lineX + tickSize}" y2="${itemT - 0.5}" stroke="${G}" stroke-width="1.5"/>
+      <polygon points="${lineX-3},6 ${lineX+3},6 ${lineX},1" fill="${G}"/>
+      <polygon points="${lineX-3},${itemT-6} ${lineX+3},${itemT-6} ${lineX},${itemT-1}" fill="${G}"/>
+      ${labelBg(lineX, itemT / 2, fmtFt(distT), G)}
+    `;
+  }
+
+  // BOTTOM measurement (item bottom to front wall)
+  if (distB > 0.05) {
+    const lineX = itemCx;
+    const midY = (itemB + totalH) / 2;
+    svg += `
+      <line x1="${lineX}" y1="${itemB}" x2="${lineX}" y2="${totalH}" stroke="${G}" stroke-width="1.2"/>
+      <line x1="${lineX - tickSize}" y1="${itemB + 0.5}" x2="${lineX + tickSize}" y2="${itemB + 0.5}" stroke="${G}" stroke-width="1.5"/>
+      <line x1="${lineX - tickSize}" y1="${totalH - 0.5}" x2="${lineX + tickSize}" y2="${totalH - 0.5}" stroke="${G}" stroke-width="1.5"/>
+      <polygon points="${lineX-3},${itemB+6} ${lineX+3},${itemB+6} ${lineX},${itemB+1}" fill="${G}"/>
+      <polygon points="${lineX-3},${totalH-6} ${lineX+3},${totalH-6} ${lineX},${totalH-1}" fill="${G}"/>
+      ${labelBg(lineX, midY, fmtFt(distB), G)}
+    `;
+  }
+
+  // LEFT measurement (left wall to item left)
+  if (distL > 0.05) {
+    const lineY = itemCy;
+    svg += `
+      <line x1="0" y1="${lineY}" x2="${itemL}" y2="${lineY}" stroke="${G}" stroke-width="1.2"/>
+      <line x1="0.5" y1="${lineY - tickSize}" x2="0.5" y2="${lineY + tickSize}" stroke="${G}" stroke-width="1.5"/>
+      <line x1="${itemL - 0.5}" y1="${lineY - tickSize}" x2="${itemL - 0.5}" y2="${lineY + tickSize}" stroke="${G}" stroke-width="1.5"/>
+      <polygon points="6,${lineY-3} 6,${lineY+3} 1,${lineY}" fill="${G}"/>
+      <polygon points="${itemL-6},${lineY-3} ${itemL-6},${lineY+3} ${itemL-1},${lineY}" fill="${G}"/>
+      ${labelBg(itemL / 2, lineY - 12, fmtFt(distL), G)}
+    `;
+  }
+
+  // RIGHT measurement (item right to right wall)
+  if (distR > 0.05) {
+    const lineY = itemCy;
+    const midX = (itemR + totalW) / 2;
+    svg += `
+      <line x1="${itemR}" y1="${lineY}" x2="${totalW}" y2="${lineY}" stroke="${G}" stroke-width="1.2"/>
+      <line x1="${itemR + 0.5}" y1="${lineY - tickSize}" x2="${itemR + 0.5}" y2="${lineY + tickSize}" stroke="${G}" stroke-width="1.5"/>
+      <line x1="${totalW - 0.5}" y1="${lineY - tickSize}" x2="${totalW - 0.5}" y2="${lineY + tickSize}" stroke="${G}" stroke-width="1.5"/>
+      <polygon points="${itemR+6},${lineY-3} ${itemR+6},${lineY+3} ${itemR+1},${lineY}" fill="${G}"/>
+      <polygon points="${totalW-6},${lineY-3} ${totalW-6},${lineY+3} ${totalW-1},${lineY}" fill="${G}"/>
+      ${labelBg(midX, lineY - 12, fmtFt(distR), G)}
+    `;
+  }
+
+  // Item bounding box + dimension label
+  svg += `
+    <rect x="${itemL - 1}" y="${itemT - 1}" width="${vw * scale + 2}" height="${vl * scale + 2}" rx="2" fill="none" stroke="${B}" stroke-width="1.5"/>
+    ${labelBg(itemL + (vw * scale) / 2, itemT - 12, `${fmtFt(vw)} × ${fmtFt(vl)}`, B)}
+  `;
+
+  return `<svg class="measurements-overlay" width="${totalW}" height="${totalH}" viewBox="0 0 ${totalW} ${totalH}" xmlns="http://www.w3.org/2000/svg">${svg}</svg>`;
+}
+
+
+// ═════════ APP (StormSafe rebuild) ═════════
+var CATS=['Vehicles','SUVs','Trucks & RVs','Boats','Recreation','Equipment','Games'];
+var STD_W=[12,18,20,22,24,26,28,30,32,36,40,44,50,60];
+var ROLL=[8,9,10,12,14,16];
+var S={w:28,l:40,items:[],doors:[{id:'d1',wall:'front',kind:'roll',size:10,pos:9}],sel:null,selDoor:null,cat:'Vehicles',hist:[],grid:true,drag:null};
+var nid=1,did=2,RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function $(i){return document.getElementById(i);}
+function dims(it){var v=CATALOG.find(function(c){return c.id===it.vehicleId;});if(!v)return[0,0];return it.rotation%180===0?[v.w,v.l]:[v.l,v.w];}
+function snap(v){return Math.round(v*2)/2;}
+/* names the original measurement overlay expects */
+var state={};function getScale(){return scale();}function getDims(vid,rot){var v=CATALOG.find(function(c){return c.id===vid;});if(!v)return[0,0];return rot%180===0?[v.w,v.l]:[v.l,v.w];}
+function overlaps(it,list){var A=dims(it);return list.some(function(o){if(o.id===it.id)return false;var B=dims(o);return it.x<o.x+B[0]&&it.x+A[0]>o.x&&it.y<o.y+B[1]&&it.y+A[1]>o.y;});}
+function formatDim(ft){var f=Math.floor(ft),i=Math.round((ft-f)*12);if(i===12){f++;i=0;}return i?f+'′'+i+'"':f+'′';}
+function scale(){var st=$('stage'),aw=Math.max(200,st.clientWidth-40),ah=Math.max(320,Math.min(innerHeight*0.68,700));return Math.min(aw/S.w,ah/S.l);}
+function push(){S.hist.push(JSON.stringify({items:S.items,doors:S.doors,w:S.w,l:S.l}));if(S.hist.length>60)S.hist.shift();}
+function save(){try{localStorage.setItem('ss-planner',JSON.stringify({w:S.w,l:S.l,items:S.items,doors:S.doors}));}catch(e){}}
+function load(){try{var d=JSON.parse(localStorage.getItem('ss-planner')||'null');if(d&&d.w){S.w=d.w;S.l=d.l;S.items=d.items||[];S.doors=d.doors||S.doors;S.items.forEach(function(i){nid=Math.max(nid,i.id+1);});S.doors.forEach(function(x){did=Math.max(did,+String(x.id).slice(1)+1);});}}catch(e){}}
+/* walls: front=bottom (y=l), back=top (y=0), left=x0, right=x=w; pos measured along the wall in ft */
+function wallLen(w){return w==='front'||w==='back'?S.w:S.l;}
+function doorClash(d,list){var gap=1;if(d.pos<0.5||d.pos+d.size>wallLen(d.wall)-0.5)return true;return list.some(function(o){return o.id!==d.id&&o.wall===d.wall&&d.pos<o.pos+o.size+gap&&d.pos+d.size+gap>o.pos;});}
+function freeSpot(wall,size){var L=wallLen(wall),c=(L-size)/2,cands=[c];for(var k=1;k<L;k++){cands.push(c-k,c+k);}for(var j=0;j<cands.length;j++){var p=snap(cands[j]),t={id:'tmp',wall:wall,size:size,pos:p};if(!doorClash(t,S.doors))return p;}return null;}
+/* ── render ── */
+function renderTabs(){$('tabs').innerHTML=CATS.map(function(c){return '<button type="button" class="tab" aria-pressed="'+(c===S.cat)+'" data-c="'+c+'">'+c+'</button>';}).join('');
+  $('tabs').querySelectorAll('.tab').forEach(function(b){b.onclick=function(){S.cat=b.dataset.c;renderTabs();renderCat();};});}
+function renderCat(){$('cat').innerHTML=CATALOG.filter(function(v){return v.cat===S.cat;}).map(function(v){var a=v.w/v.l,iw=a>1?38:38*a,ih=a>1?38/a:38;
+  return '<button type="button" class="it" data-id="'+v.id+'"><span class="ic">'+renderItem(v,iw,ih)+'</span><span><b>'+v.name+'</b><small>'+formatDim(v.w)+' × '+formatDim(v.l)+'</small></span><span class="add">+</span></button>';}).join('');
+  $('cat').querySelectorAll('.it').forEach(function(b){b.onclick=function(){addItem(b.dataset.id);};});}
+function render(){var sc=scale(),F=$('floor'),W=S.w*sc,H=S.l*sc;F.style.width=W+'px';F.style.height=H+'px';F.classList.toggle('grid',S.grid);
+  F.style.backgroundSize=sc+'px '+sc+'px,'+sc+'px '+sc+'px,'+sc*5+'px '+sc*5+'px,'+sc*5+'px '+sc*5+'px';
+  F.querySelectorAll('.pi,.dr,.measurements-overlay').forEach(function(e){e.remove();});
+  $('empty').style.display=S.items.length?'none':'flex';
+  S.items.forEach(function(it){var v=CATALOG.find(function(c){return c.id===it.vehicleId;});if(!v)return;var D=dims(it),pw=D[0]*sc,ph=D[1]*sc,e=document.createElement('div');
+    e.className='pi'+(it.id===S.sel?' sel':'')+(overlaps(it,S.items)?' ovl':'')+(S.drag&&S.drag.id===it.id?' drag':'');
+    e.style.cssText='left:'+it.x*sc+'px;top:'+it.y*sc+'px;width:'+pw+'px;height:'+ph+'px';e.dataset.id=it.id;
+    var r=it.rotation%180===0;e.innerHTML='<div class="rot" style="transform:rotate('+it.rotation+'deg);'+(r?'':'width:'+ph+'px;height:'+pw+'px;margin:'+(ph-pw)/2+'px '+(pw-ph)/2+'px')+'">'+renderItem(v,r?pw:ph,r?ph:pw)+'</div>';
+    e.addEventListener('pointerdown',function(ev){itemDown(ev,it.id);});F.appendChild(e);});
+  state={selectedId:S.sel,items:S.items,bldgW:S.w,bldgL:S.l};var m=S.sel?renderMeasurementOverlay():'';if(m){var t=document.createElement('div');t.innerHTML=m;F.appendChild(t.firstChild);}
+  var T=Math.max(5,0.5*sc);S.doors.forEach(function(d){var e=document.createElement('div'),len=d.size*sc,horiz=d.wall==='front'||d.wall==='back';
+    e.className='dr '+d.kind+(d.id===S.selDoor?' sel':'');e.dataset.id=d.id;
+    if(horiz){e.style.cssText='left:'+d.pos*sc+'px;width:'+len+'px;height:'+T+'px;'+(d.wall==='front'?'bottom:'+(-T/2-2.5)+'px':'top:'+(-T/2-2.5)+'px');}
+    else{e.style.cssText='top:'+d.pos*sc+'px;height:'+len+'px;width:'+T+'px;'+(d.wall==='left'?'left:'+(-T/2-2.5)+'px':'right:'+(-T/2-2.5)+'px');}
+    var lab=(d.kind==='roll'?d.size+'′ roll-up':'walk');
+    e.innerHTML='<span class="bar"></span><span class="tg" style="'+(d.wall==='front'?'top:-20px':d.wall==='back'?'bottom:-20px':d.wall==='left'?'left:12px':'right:12px')+'">'+lab+'</span>';
+    e.addEventListener('pointerdown',function(ev){doorDown(ev,d.id);});F.appendChild(e);});
+  $('dimt').textContent='← '+S.w+'′ wide →';$('dims').textContent='← '+S.l+'′ long →';$('area-top').textContent=(S.w*S.l).toLocaleString()+' SQ FT';
+  var used=S.items.reduce(function(s,i){var D=dims(i);return s+D[0]*D[1];},0),tot=S.w*S.l,u=tot?Math.round(used/tot*100):0;
+  $('s-n').textContent=S.items.length;$('s-a').textContent=Math.round(used)+' sq ft';var ue=$('s-u');ue.textContent=u+'%';ue.className=u>75?'warn':u>=25?'good':'';
+  $('ovl').classList.toggle('on',S.items.some(function(i){return overlaps(i,S.items);}));
+  $('selbar').classList.toggle('on',!!S.sel);$('undo').disabled=!S.hist.length;$('clr').disabled=!S.items.length;$('grd').classList.toggle('on',S.grid);
+  $('bw').value=S.w;$('bl').value=S.l;renderDoorList();save();}
+function renderDoorList(){$('doors').innerHTML=S.doors.map(function(d){return '<div class="dl'+(d.id===S.selDoor?' sel':'')+'" data-id="'+d.id+'"><i style="background:'+(d.kind==='roll'?'#22d3c8':'#f0883e')+'"></i>'+(d.kind==='roll'?d.size+'′ roll-up':'3′ walk door')+' · '+d.wall+'<button type="button" class="x" aria-label="Remove door" data-x="'+d.id+'">×</button></div>';}).join('')||'<p class="fine">No doors yet.</p>';
+  $('doors').querySelectorAll('.dl').forEach(function(r){r.onclick=function(e){if(e.target.dataset.x){push();S.doors=S.doors.filter(function(d){return d.id!==e.target.dataset.x;});if(S.selDoor===e.target.dataset.x)S.selDoor=null;render();return;}S.selDoor=r.dataset.id;S.sel=null;render();};});}
+/* ── actions ── */
+function addItem(vid){var v=CATALOG.find(function(c){return c.id===vid;});push();var it={id:nid++,vehicleId:vid,rotation:0,x:0,y:0},D=dims(it),placed=false;
+  for(var y=1;y<=S.l-D[1]&&!placed;y+=0.5)for(var x=1;x<=S.w-D[0]&&!placed;x+=0.5){it.x=x;it.y=y;if(!overlaps(it,S.items))placed=true;}
+  if(!placed){it.rotation=90;D=dims(it);for(var y2=1;y2<=S.l-D[1]&&!placed;y2+=0.5)for(var x2=1;x2<=S.w-D[0]&&!placed;x2+=0.5){it.x=x2;it.y=y2;if(!overlaps(it,S.items))placed=true;}}
+  if(!placed){it.rotation=0;D=dims(it);it.x=Math.max(0,(S.w-D[0])/2);it.y=Math.max(0,(S.l-D[1])/2);}
+  S.items.push(it);S.sel=it.id;S.selDoor=null;render();if(matchMedia('(max-width:999px)').matches)$('floor').scrollIntoView({behavior:RM?'auto':'smooth',block:'center'});}
+function pos(ev){var r=$('floor').getBoundingClientRect(),sc=scale();return{x:(ev.clientX-r.left)/sc,y:(ev.clientY-r.top)/sc};}
+function itemDown(ev,id){ev.preventDefault();ev.stopPropagation();var it=S.items.find(function(i){return i.id===id;}),p=pos(ev);S.sel=id;S.selDoor=null;push();S.drag={kind:'item',id:id,sx:p.x,sy:p.y,ox:it.x,oy:it.y,moved:false};render();}
+function doorDown(ev,id){ev.preventDefault();ev.stopPropagation();var d=S.doors.find(function(x){return x.id===id;}),p=pos(ev);S.selDoor=id;S.sel=null;push();S.drag={kind:'door',id:id,sx:p.x,sy:p.y,op:d.pos,moved:false};render();}
+addEventListener('pointermove',function(ev){var g=S.drag;if(!g)return;var p=pos(ev),dx=p.x-g.sx,dy=p.y-g.sy;if(Math.abs(dx)+Math.abs(dy)>0.2)g.moved=true;
+  if(g.kind==='item'){var it=S.items.find(function(i){return i.id===g.id;}),D=dims(it);it.x=snap(Math.max(0,Math.min(S.w-D[0],g.ox+dx)));it.y=snap(Math.max(0,Math.min(S.l-D[1],g.oy+dy)));}
+  else{var d=S.doors.find(function(x){return x.id===g.id;}),horiz=d.wall==='front'||d.wall==='back',np=snap(g.op+(horiz?dx:dy)),t={id:d.id,wall:d.wall,size:d.size,pos:np};if(!doorClash(t,S.doors))d.pos=np;}
+  render();});
+addEventListener('pointerup',function(){if(S.drag){if(!S.drag.moved)S.hist.pop();S.drag=null;render();}});
+$('floor').addEventListener('pointerdown',function(ev){if(ev.target===$('floor')||ev.target.closest('.empty')){S.sel=null;S.selDoor=null;render();}});
+function rotateSel(){var it=S.items.find(function(i){return i.id===S.sel;});if(!it)return;push();it.rotation=(it.rotation+90)%360;var D=dims(it);it.x=Math.max(0,Math.min(S.w-D[0],it.x));it.y=Math.max(0,Math.min(S.l-D[1],it.y));render();}
+function delSel(){if(S.sel){push();S.items=S.items.filter(function(i){return i.id!==S.sel;});S.sel=null;}else if(S.selDoor){push();S.doors=S.doors.filter(function(d){return d.id!==S.selDoor;});S.selDoor=null;}render();}
+$('rot').onclick=rotateSel;$('del').onclick=delSel;
+$('undo').onclick=function(){if(!S.hist.length)return;var h=JSON.parse(S.hist.pop());S.items=h.items;S.doors=h.doors;S.w=h.w;S.l=h.l;S.sel=S.selDoor=null;render();};
+$('clr').onclick=function(){if(!S.items.length)return;push();S.items=[];S.sel=null;render();};
+$('grd').onclick=function(){S.grid=!S.grid;render();};$('prt').onclick=function(){print();};
+function setSize(w,l){S.w=Math.max(10,Math.min(80,w));S.l=Math.max(10,Math.min(200,l));S.items.forEach(function(it){var D=dims(it);it.x=Math.max(0,Math.min(S.w-D[0],it.x));it.y=Math.max(0,Math.min(S.l-D[1],it.y));});
+  S.doors=S.doors.filter(function(d){if(d.pos+d.size>wallLen(d.wall)-0.5){var p=freeSpot(d.wall,d.size);if(p===null)return false;d.pos=p;}return true;});render();}
+$('bw').onchange=function(){push();setSize(parseInt(this.value)||S.w,S.l);};$('bl').onchange=function(){push();setSize(S.w,parseInt(this.value)||S.l);};
+$('addDoor').onclick=function(){var v=$('dt').value.split('-'),kind=v[0],size=+v[1],wall=$('dw').value,p=freeSpot(wall,size);
+  if(p===null){$('dmsg').textContent='No room for a '+size+'′ door on the '+wall+' wall without overlapping.';return;}
+  $('dmsg').textContent='';push();var d={id:'d'+(did++),wall:wall,kind:kind,size:size,pos:p};S.doors.push(d);S.selDoor=d.id;S.sel=null;render();};
+addEventListener('keydown',function(e){if(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;if(e.key==='r'||e.key==='R'){rotateSel();}else if(e.key==='Delete'||e.key==='Backspace'){if(S.sel||S.selDoor){e.preventDefault();delSel();}}else if(e.key==='Escape'){S.sel=S.selDoor=null;render();}});
+var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(render,120);});
+/* ── find my size ── */
+var CLEAR=3;
+function find(){var box=$('fit');if(!S.items.length){box.innerHTML='<p>Add at least one item first, then tap Find my size.</p><button type="button" class="cta l" id="findBtn">Find my size</button>';$('findBtn').onclick=find;return;}
+  var x0=1e9,y0=1e9,x1=0,y1=0;S.items.forEach(function(i){var D=dims(i);x0=Math.min(x0,i.x);y0=Math.min(y0,i.y);x1=Math.max(x1,i.x+D[0]);y1=Math.max(y1,i.y+D[1]);});
+  var needW=(x1-x0)+2*CLEAR,needL=(y1-y0)+2*CLEAR,W=STD_W.find(function(w){return w>=needW;})||Math.ceil(needW),L=Math.max(20,Math.ceil(needL/5)*5);
+  var widest=0;S.items.forEach(function(i){var v=CATALOG.find(function(c){return c.id===i.vehicleId;});if(/Vehicles|SUVs|Trucks|Boats/.test(v.cat))widest=Math.max(widest,v.w);});
+  var door=widest?(ROLL.find(function(r){return r>=widest+3;})||16):null,ovl=S.items.some(function(i){return overlaps(i,S.items);});
+  box.innerHTML='<span class="lbl">Smallest standard size that fits</span><div class="big">'+W+'′ × '+L+'′<small>'+(W*L).toLocaleString()+' SQ FT</small></div>'
+   +'<p>Your layout as arranged, plus '+CLEAR+'′ to walk around and open doors.</p>'
+   +(door?'<div class="door">Suggested roll-up: <b>'+door+'′ wide</b> or more for your widest vehicle. Door height depends on your tallest one; we\'ll confirm it on your quote.</div>':'')
+   +(ovl?'<p style="color:var(--orange);margin-top:8px">Some items overlap. Spread them out for an accurate size.</p>':'')
+   +'<button type="button" class="cta l" id="useSize">Use '+W+'′ × '+L+'′</button><button type="button" class="cta g" id="findBtn">Recalculate</button>';
+  $('findBtn').onclick=find;$('useSize').onclick=function(){push();var dx=CLEAR-x0,dy=CLEAR-y0;S.items.forEach(function(i){i.x=snap(i.x+dx);i.y=snap(i.y+dy);});setSize(W,L);
+    if(door){var rd=S.doors.find(function(d){return d.kind==='roll'&&d.wall==='front';});if(rd&&rd.size<door){var old=rd.size;rd.size=door;if(doorClash(rd,S.doors)){var p=freeSpot('front',door);if(p===null)rd.size=old;else rd.pos=p;}render();}}};}
+$('findBtn').onclick=find;
+/* ── send layout ── */
+function summary(){var lines=['Building: '+S.w+"' x "+S.l+"' ("+(S.w*S.l)+' sq ft)','Doors: '+(S.doors.map(function(d){return (d.kind==='roll'?d.size+"' roll-up":"3' walk door")+' on '+d.wall+' wall at '+d.pos+"'";}).join('; ')||'none'),'Items ('+S.items.length+'):'];
+  S.items.forEach(function(i){var v=CATALOG.find(function(c){return c.id===i.vehicleId;}),D=dims(i);lines.push(' - '+v.name+' '+formatDim(D[0])+' x '+formatDim(D[1])+" at "+i.x+"' from left, "+i.y+"' from back"+(i.rotation?' (rotated '+i.rotation+'°)':''));});return lines.join('\n');}
+$('sendOpen').onclick=function(){$('send').classList.add('on');this.style.display='none';$('send').querySelector('input').focus();};
+$('send').addEventListener('submit',function(e){e.preventDefault();$('layoutField').value=summary();var f=this,btn=f.querySelector('button[type=submit]');btn.disabled=true;btn.textContent='Sending…';
+  fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}}).then(function(r){if(!r.ok)throw 0;f.classList.remove('on');$('ok').classList.add('on');})
+  .catch(function(){btn.disabled=false;btn.textContent='Send layout + request quote';alert('Could not send right now. Please call 561-771-5555.');});});
+/* boot */
+load();renderTabs();renderCat();render();
+
+</script>
+<script>(function(){var g=document.getElementById('grid')||document.getElementById('rs-list');if(!g)return;var t;
+function lock(){var hid=[].slice.call(g.children).filter(function(c){return c.hidden;});hid.forEach(function(c){c.hidden=false;});
+g.style.minHeight='';var hgt=g.offsetHeight;hid.forEach(function(c){c.hidden=true;});g.style.minHeight=hgt+'px';}
+addEventListener('load',lock);addEventListener('resize',function(){clearTimeout(t);t=setTimeout(lock,120);});})();</script>
+</body>
+</html>
