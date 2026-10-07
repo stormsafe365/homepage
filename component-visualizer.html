@@ -325,7 +325,6 @@ var COMP=[{"id":"anchors","g":"Foundation","n":"Anchors","a":"wedge anchors · e
     // framed opening (front end wall) for a 10×10 roll-up
     var mF = mat('frameout', { color: 0xdfe6ec, metalness: .6, roughness: .3 });
     [-5.3, 5.3].forEach(function (x) { beam('frameout', mF, V(x, 0, Z1), V(x, roofY(x) - .2, Z1), .55); });
-    beam('frameout', mF, V(0, 10.7, Z1), V(0, TOP - .2, Z1), .4);
     var mHd = mat('header', { color: 0xdfe6ec, metalness: .6, roughness: .3 });
     beam('header', mHd, V(-5.6, 10.4, Z1), V(5.6, 10.4, Z1), .6);
     var mSo = mat('sideopen', { color: 0xdfe6ec, metalness: .6, roughness: .3 }), soZ0 = -10, soZ1 = -1;
