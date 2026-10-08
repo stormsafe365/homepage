@@ -11,11 +11,11 @@
 <meta property="og:title" content="About Us: Family-Owned Steel Buildings | StormSafe Steel">
 <meta property="og:description" content="StormSafe Steel is a family-owned, owner-operated steel building company in Florida. Work directly with the owners from the first call to installation.">
 <meta property="og:url" content="https://www.stormsafesteel.com/about-us">
-<meta property="og:image" content="https://www.stormsafesteel.com/img/pages/about-white-shop.jpg">
+<meta property="og:image" content="https://www.stormsafesteel.com/img/pages/about-white-shop-1600.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About Us: Family-Owned Steel Buildings | StormSafe Steel">
 <meta name="twitter:description" content="StormSafe Steel is a family-owned, owner-operated steel building company in Florida. Work directly with the owners from the first call to installation.">
-<meta name="twitter:image" content="https://www.stormsafesteel.com/img/pages/about-white-shop.jpg">
+<meta name="twitter:image" content="https://www.stormsafesteel.com/img/pages/about-white-shop-1600.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -156,9 +156,10 @@ footer{background:var(--dark-2);border-top:1px solid var(--border-vis);padding:4
 .tick li.t{color:var(--teal)}
 @keyframes tick{to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.tick{overflow-x:auto}.tick-t{animation:none}}
-.pan{position:relative;overflow:hidden;height:clamp(240px,40vw,540px);background:var(--dark-2);border-bottom:1px solid var(--border-vis)}
-.pan img{position:absolute;top:0;left:0;width:128%;max-width:none;height:100%;object-fit:cover;object-position:center 62%;transform:translate3d(0,0,0);transition:transform .25s linear;will-change:transform}
-.pan::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(8,18,29,.35),transparent 30%,transparent 70%,rgba(8,18,29,.55))}
+.pan{position:relative;overflow:hidden;height:clamp(260px,44vw,640px);background:var(--dark-2);border-bottom:1px solid var(--border-vis)}
+.pan img{position:absolute;top:0;left:0;width:112%;max-width:none;height:100%;object-fit:cover;object-position:center 55%;transform:translate3d(0,0,0);will-change:transform;backface-visibility:hidden}
+.pan.emb img{transition:transform .12s linear}
+.pan::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 82%,rgba(8,18,29,.35))}
 @media(prefers-reduced-motion:reduce){.pan img{width:100%;transition:none}}
 .story{display:grid;gap:28px}@media(min-width:900px){.story{grid-template-columns:1.3fr .7fr;gap:48px;align-items:start}}
 .prose p{color:var(--sub);line-height:1.75;font-size:16.5px;margin-bottom:16px}.prose p b{color:var(--text);font-weight:600}
@@ -238,7 +239,7 @@ tr.mo-r{transform:translateX(-14px)}tr.mo-r.mo-in{transform:none}
 <div class="ab-tag"><span>Family owned &amp; operated</span><span>Local · West Palm Beach, FL</span></div></div>
 </div></header>
 <div class="tick" role="marquee" aria-label="Why StormSafe"><div class="tick-t"><ul><li>Fully customizable</li><li>Fast installation</li><li class="t">Family owned &amp; operated</li><li>Engineered &amp; certified</li><li>Built to outlast</li><li class="t">High grade galvanized steel</li><li>Certified up to 170 mph</li><li>100% USA-made steel</li></ul><ul aria-hidden="true"><li>Fully customizable</li><li>Fast installation</li><li class="t">Family owned &amp; operated</li><li>Engineered &amp; certified</li><li>Built to outlast</li><li class="t">High grade galvanized steel</li><li>Certified up to 170 mph</li><li>100% USA-made steel</li></ul></div></div>
-<div class="pan" id="pan"><img src="https://stormsafe365.github.io/homepage/img/about-white-shop.jpg" alt="White StormSafe steel building with a full-length lean-to porch and two large open bays" width="2000" height="1199"></div>
+<div class="pan" id="pan"><img src="https://stormsafe365.github.io/homepage/img/about-white-shop-1600.jpg" srcset="https://stormsafe365.github.io/homepage/img/about-white-shop-1600.jpg 1600w, /img/pages/about-white-shop-3000.jpg 3000w" sizes="112vw" fetchpriority="high" alt="White StormSafe steel building with a full-length lean-to porch and two large open bays" width="3000" height="1799"></div>
 
 <section class="g-sec camo"><div class="g-in story">
 <div class="prose reveal"><div class="ek">Our Story</div>
@@ -293,8 +294,9 @@ function toggleMenu(){var m=document.getElementById('mm');var o=m.classList.togg
 function closeMenu(){document.getElementById('mm').classList.remove('open');document.querySelector('.nav-menu-btn').setAttribute('aria-expanded','false');}
 var yr=document.getElementById('yr');if(yr)yr.textContent=new Date().getFullYear();
 (function(){var p=document.getElementById('pan');if(!p||!matchMedia('(prefers-reduced-motion: no-preference)').matches)return;var img=p.querySelector('img');
-function set(k){k=Math.max(0,Math.min(1,k));img.style.transform='translate3d('+(-k*21.875)+'%,0,0)';}
+function set(k){k=Math.max(0,Math.min(1,k));img.style.transform='translate3d('+(-k*10.714)+'%,0,0)';}
 if(window.top===window){var q=0;function f(){q=0;var r=p.getBoundingClientRect(),h=innerHeight;set((h-r.top)/(h+r.height));}addEventListener('scroll',function(){if(!q)q=requestAnimationFrame(f);},{passive:true});addEventListener('resize',f);f();return;}
+p.classList.add('emb');
 // inside the Wix embed the frame never scrolls: read progress from intersection ratios against the parent page
 if(!('IntersectionObserver' in window))return;var th=[];for(var i=0;i<=100;i++)th.push(i/100);
 new IntersectionObserver(function(es){var e=es[0],r=e.intersectionRatio,entering=e.intersectionRect.top<=e.boundingClientRect.top+1;set(entering?r*.5:1-r*.5);},{threshold:th}).observe(p);})();
