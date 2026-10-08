@@ -11,11 +11,11 @@
 <meta property="og:title" content="About Us: Family-Owned Steel Buildings | StormSafe Steel">
 <meta property="og:description" content="StormSafe Steel is a family-owned, owner-operated steel building company in Florida. Work directly with the owners from the first call to installation.">
 <meta property="og:url" content="https://www.stormsafesteel.com/about-us">
-<meta property="og:image" content="https://www.stormsafesteel.com/img/pages/about-30x60x12-1.jpg">
+<meta property="og:image" content="https://www.stormsafesteel.com/img/pages/about-white-shop.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About Us: Family-Owned Steel Buildings | StormSafe Steel">
 <meta name="twitter:description" content="StormSafe Steel is a family-owned, owner-operated steel building company in Florida. Work directly with the owners from the first call to installation.">
-<meta name="twitter:image" content="https://www.stormsafesteel.com/img/pages/about-30x60x12-1.jpg">
+<meta name="twitter:image" content="https://www.stormsafesteel.com/img/pages/about-white-shop.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -139,17 +139,27 @@ footer{background:var(--dark-2);border-top:1px solid var(--border-vis);padding:4
 
 .ab-hero{padding:48px 16px 56px;background:radial-gradient(ellipse 900px 460px at 90% 0%,rgba(34,211,200,.14),transparent 60%),linear-gradient(180deg,var(--dark-2),var(--dark));border-bottom:1px solid var(--border-vis)}
 @media(min-width:768px){.ab-hero{padding:80px 32px 84px}}
-.ab-grid{max-width:1200px;margin:0 auto;display:grid;gap:36px;align-items:center}
-@media(min-width:900px){.ab-grid{grid-template-columns:1.05fr .95fr;gap:56px}}
+.ab-grid{max-width:1200px;margin:0 auto}
+.ab-grid>div{max-width:780px}
 .ab-hero h1{font-family:var(--h);font-weight:900;font-size:clamp(28px,4.8vw,52px);line-height:1.05;text-transform:uppercase;margin-bottom:18px}
 .ab-hero h1 span{color:var(--teal);display:block}
 .ab-hero .lede b{color:var(--text);font-weight:600}
-.ab-ph{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--border-vis);aspect-ratio:4/3;background:var(--dark-2)}
-.ab-ph img{width:100%;height:100%;object-fit:cover;display:block}
-.ab-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,18,29,.85))}
-.ab-tag{position:absolute;left:16px;bottom:14px;z-index:1;display:flex;gap:8px;flex-wrap:wrap}
+.ab-tag{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
 .ab-tag span{font-family:var(--h);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 11px;border-radius:999px;background:rgba(8,18,29,.82);border:1px solid var(--border-vis);color:var(--text)}
 .ab-tag span:first-child{border-color:var(--teal);color:var(--teal)}
+.tick{overflow:hidden;border-bottom:1px solid var(--border);background:var(--dark);padding:13px 0}
+.tick-t{display:flex;width:max-content;animation:tick 42s linear infinite}
+.tick:hover .tick-t{animation-play-state:paused}
+.tick ul{display:flex;list-style:none;margin:0;padding:0}
+.tick li{font-family:var(--h);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;color:var(--text);display:flex;align-items:center}
+.tick li::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--teal);margin:0 30px}
+.tick li.t{color:var(--teal)}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.tick{overflow-x:auto}.tick-t{animation:none}}
+.pan{position:relative;overflow:hidden;height:clamp(240px,40vw,540px);background:var(--dark-2);border-bottom:1px solid var(--border-vis)}
+.pan img{position:absolute;top:0;left:0;width:128%;max-width:none;height:100%;object-fit:cover;object-position:center 62%;transform:translate3d(0,0,0);transition:transform .25s linear;will-change:transform}
+.pan::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(8,18,29,.35),transparent 30%,transparent 70%,rgba(8,18,29,.55))}
+@media(prefers-reduced-motion:reduce){.pan img{width:100%;transition:none}}
 .story{display:grid;gap:28px}@media(min-width:900px){.story{grid-template-columns:1.3fr .7fr;gap:48px;align-items:start}}
 .prose p{color:var(--sub);line-height:1.75;font-size:16.5px;margin-bottom:16px}.prose p b{color:var(--text);font-weight:600}
 .prose .big{font-family:var(--h);font-weight:800;font-size:clamp(18px,2.4vw,22px);color:var(--text);text-transform:uppercase;letter-spacing:.03em;line-height:1.3}
@@ -194,8 +204,6 @@ tr.mo-r{transform:translateX(-14px)}tr.mo-r.mo-in{transform:none}
 .mo-hot>.mo-glow{opacity:1}
 .mo-card{transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .35s,box-shadow .35s}
 .mo-card.mo-hot{border-color:rgba(34,211,200,.28)!important}
-.mo-tilt{transition:transform .5s cubic-bezier(.16,1,.3,1);will-change:transform}
-.mo-tilt img{transition:transform .8s cubic-bezier(.16,1,.3,1)}.mo-tilt:hover img{transform:scale(1.04)}
 .mo-rip{position:absolute;border-radius:50%;pointer-events:none;background:rgba(255,255,255,.35);transform:scale(0);animation:mo-rip .6s ease-out forwards}
 @keyframes mo-rip{to{transform:scale(1);opacity:0}}
 .btn,.chip,.pick{transition:transform .15s,background .2s,color .2s,border-color .2s}
@@ -226,9 +234,11 @@ tr.mo-r{transform:translateX(-14px)}tr.mo-r.mo-in{transform:none}
 <div><div class="kw">About StormSafe Steel</div>
 <h1>Built by People Who <span>Believe in Doing Things Right</span></h1>
 <p class="lede">StormSafe Steel was founded by a husband-and-wife team with a simple idea: <b>steel buildings are a great product, but the experience of buying one should be better.</b></p>
-<div class="ctas" style="margin-top:26px"><a class="btn btn-p" href="https://www.stormsafesteel.com/customize" target="_parent">Design Your Build →</a><a class="btn btn-g" href="tel:5617715555">Call 561-771-5555</a></div></div>
-<div class="ab-ph"><img src="https://stormsafe365.github.io/homepage/img/about-30x60x12-1.jpg" alt="30 × 60 × 12 StormSafe steel building" width="1200" height="900"><div class="ab-tag"><span>Family owned &amp; operated</span><span>Local · West Palm Beach, FL</span></div></div>
+<div class="ctas" style="margin-top:26px"><a class="btn btn-p" href="https://www.stormsafesteel.com/customize" target="_parent">Design Your Build →</a><a class="btn btn-g" href="tel:5617715555">Call 561-771-5555</a></div>
+<div class="ab-tag"><span>Family owned &amp; operated</span><span>Local · West Palm Beach, FL</span></div></div>
 </div></header>
+<div class="tick" role="marquee" aria-label="Why StormSafe"><div class="tick-t"><ul><li>Fully customizable</li><li>Fast installation</li><li class="t">Family owned &amp; operated</li><li>Engineered &amp; certified</li><li>Built to outlast</li><li class="t">High grade galvanized steel</li><li>Certified up to 170 mph</li><li>100% USA-made steel</li></ul><ul aria-hidden="true"><li>Fully customizable</li><li>Fast installation</li><li class="t">Family owned &amp; operated</li><li>Engineered &amp; certified</li><li>Built to outlast</li><li class="t">High grade galvanized steel</li><li>Certified up to 170 mph</li><li>100% USA-made steel</li></ul></div></div>
+<div class="pan" id="pan"><img src="https://stormsafe365.github.io/homepage/img/about-white-shop.jpg" alt="White StormSafe steel building with a full-length lean-to porch and two large open bays" width="2000" height="1199"></div>
 
 <section class="g-sec camo"><div class="g-in story">
 <div class="prose reveal"><div class="ek">Our Story</div>
@@ -282,7 +292,12 @@ tr.mo-r{transform:translateX(-14px)}tr.mo-r.mo-in{transform:none}
 function toggleMenu(){var m=document.getElementById('mm');var o=m.classList.toggle('open');document.querySelector('.nav-menu-btn').setAttribute('aria-expanded',o);}
 function closeMenu(){document.getElementById('mm').classList.remove('open');document.querySelector('.nav-menu-btn').setAttribute('aria-expanded','false');}
 var yr=document.getElementById('yr');if(yr)yr.textContent=new Date().getFullYear();
-
+(function(){var p=document.getElementById('pan');if(!p||!matchMedia('(prefers-reduced-motion: no-preference)').matches)return;var img=p.querySelector('img');
+function set(k){k=Math.max(0,Math.min(1,k));img.style.transform='translate3d('+(-k*21.875)+'%,0,0)';}
+if(window.top===window){var q=0;function f(){q=0;var r=p.getBoundingClientRect(),h=innerHeight;set((h-r.top)/(h+r.height));}addEventListener('scroll',function(){if(!q)q=requestAnimationFrame(f);},{passive:true});addEventListener('resize',f);f();return;}
+// inside the Wix embed the frame never scrolls: read progress from intersection ratios against the parent page
+if(!('IntersectionObserver' in window))return;var th=[];for(var i=0;i<=100;i++)th.push(i/100);
+new IntersectionObserver(function(es){var e=es[0],r=e.intersectionRatio,entering=e.intersectionRect.top<=e.boundingClientRect.top+1;set(entering?r*.5:1-r*.5);},{threshold:th}).observe(p);})();
 (function(){var els=document.querySelectorAll('.reveal');if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});els.forEach(function(e){io.observe(e);});})();
 </script>
@@ -316,7 +331,7 @@ document.querySelectorAll('.big,.term,.trust-num,.stat-n,[data-count]').forEach(
   if(skip(el)||el.childNodes.length!==1||el.firstChild.nodeType!==3)return;
   var m=/^(\D*?)(\d{1,3})(?!\d|,)(.*)$/.exec(el.textContent);if(!m||+m[2]<2)return;
   el.dataset.moCount=m[1]+'|'+m[2]+'|'+m[3];watch(el);});
-// 4. pointer spotlight on cards + photo tilt (mouse only)
+// 4. pointer spotlight on cards (mouse only)
 if(fine){
   document.querySelectorAll('.card').forEach(function(c){if(skip(c))return;
     if(getComputedStyle(c).position==='static')c.style.position='relative';
@@ -324,10 +339,6 @@ if(fine){
     c.addEventListener('pointerenter',function(){if(!g){g=document.createElement('i');g.className='mo-glow';g.setAttribute('aria-hidden','true');c.insertBefore(g,c.firstChild);}c.classList.add('mo-hot');});
     c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');});
     c.addEventListener('pointerleave',function(){c.classList.remove('mo-hot');});});
-  document.querySelectorAll('.ab-ph,.sg-tban,[data-tilt]').forEach(function(p){p.classList.add('mo-tilt');
-    p.addEventListener('pointermove',function(e){var r=p.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-      p.style.transform='perspective(900px) rotateY('+(x*6)+'deg) rotateX('+(-y*6)+'deg)';});
-    p.addEventListener('pointerleave',function(){p.style.transform='';});});
 }
 // 5. press ripple + arrow nudge on buttons and chips
 document.querySelectorAll('.btn-p').forEach(function(b){var n=b.lastChild;if(n&&n.nodeType===3&&/→\s*$/.test(n.nodeValue)){n.nodeValue=n.nodeValue.replace(/\s*→\s*$/,' ');var a=document.createElement('span');a.className='mo-arrow';a.setAttribute('aria-hidden','true');a.textContent='→';b.appendChild(a);}});

@@ -182,8 +182,6 @@ tr.mo-r{transform:translateX(-14px)}tr.mo-r.mo-in{transform:none}
 .mo-hot>.mo-glow{opacity:1}
 .mo-card{transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .35s,box-shadow .35s}
 .mo-card.mo-hot{border-color:rgba(34,211,200,.28)!important}
-.mo-tilt{transition:transform .5s cubic-bezier(.16,1,.3,1);will-change:transform}
-.mo-tilt img{transition:transform .8s cubic-bezier(.16,1,.3,1)}.mo-tilt:hover img{transform:scale(1.04)}
 .mo-rip{position:absolute;border-radius:50%;pointer-events:none;background:rgba(255,255,255,.35);transform:scale(0);animation:mo-rip .6s ease-out forwards}
 @keyframes mo-rip{to{transform:scale(1);opacity:0}}
 .btn,.chip,.pick{transition:transform .15s,background .2s,color .2s,border-color .2s}
@@ -267,7 +265,7 @@ document.querySelectorAll('.big,.term,.trust-num,.stat-n,[data-count]').forEach(
   if(skip(el)||el.childNodes.length!==1||el.firstChild.nodeType!==3)return;
   var m=/^(\D*?)(\d{1,3})(?!\d|,)(.*)$/.exec(el.textContent);if(!m||+m[2]<2)return;
   el.dataset.moCount=m[1]+'|'+m[2]+'|'+m[3];watch(el);});
-// 4. pointer spotlight on cards + photo tilt (mouse only)
+// 4. pointer spotlight on cards (mouse only)
 if(fine){
   document.querySelectorAll('.card').forEach(function(c){if(skip(c))return;
     if(getComputedStyle(c).position==='static')c.style.position='relative';
@@ -275,10 +273,6 @@ if(fine){
     c.addEventListener('pointerenter',function(){if(!g){g=document.createElement('i');g.className='mo-glow';g.setAttribute('aria-hidden','true');c.insertBefore(g,c.firstChild);}c.classList.add('mo-hot');});
     c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');});
     c.addEventListener('pointerleave',function(){c.classList.remove('mo-hot');});});
-  document.querySelectorAll('.ab-ph,.sg-tban,[data-tilt]').forEach(function(p){p.classList.add('mo-tilt');
-    p.addEventListener('pointermove',function(e){var r=p.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-      p.style.transform='perspective(900px) rotateY('+(x*6)+'deg) rotateX('+(-y*6)+'deg)';});
-    p.addEventListener('pointerleave',function(){p.style.transform='';});});
 }
 // 5. press ripple + arrow nudge on buttons and chips
 document.querySelectorAll('.btn-p').forEach(function(b){var n=b.lastChild;if(n&&n.nodeType===3&&/→\s*$/.test(n.nodeValue)){n.nodeValue=n.nodeValue.replace(/\s*→\s*$/,' ');var a=document.createElement('span');a.className='mo-arrow';a.setAttribute('aria-hidden','true');a.textContent='→';b.appendChild(a);}});
